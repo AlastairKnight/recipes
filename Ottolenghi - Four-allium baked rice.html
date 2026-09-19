@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four-allium baked rice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Four-allium baked rice</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Cook <b>1 hr 15 min</b></span><span class="chip">Prep <b>25 min</b></span><span class="chip">Serves <b>6</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/four-allium-baked-rice.jpeg" alt="Four-allium baked rice" loading="lazy">
+<p class="lede"></p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="four-allium-baked-rice-i1"><label for="four-allium-baked-rice-i1">500g leeks, trimmed, white and light green parts cut into 1&#189;cm-thick rounds</label></li><li><input type="checkbox" id="four-allium-baked-rice-i2"><label for="four-allium-baked-rice-i2">4 shallots, peeled and sliced into 1cm-thick rounds (240g net weight)</label></li><li><input type="checkbox" id="four-allium-baked-rice-i3"><label for="four-allium-baked-rice-i3">6 spring onions, trimmed, white parts cut into 1&#189;cm lengths, green parts thinly sliced (60g)</label></li><li><input type="checkbox" id="four-allium-baked-rice-i4"><label for="four-allium-baked-rice-i4">1 cinnamon stick, broken in half</label></li><li><input type="checkbox" id="four-allium-baked-rice-i5"><label for="four-allium-baked-rice-i5">2 fresh bay leaves</label></li><li><input type="checkbox" id="four-allium-baked-rice-i6"><label for="four-allium-baked-rice-i6">2 tbsp olive oil</label></li><li><input type="checkbox" id="four-allium-baked-rice-i7"><label for="four-allium-baked-rice-i7">Salt</label></li><li><input type="checkbox" id="four-allium-baked-rice-i8"><label for="four-allium-baked-rice-i8">3 garlic cloves, peeled and thinly sliced</label></li><li><input type="checkbox" id="four-allium-baked-rice-i9"><label for="four-allium-baked-rice-i9">2&#189; tsp cumin seeds, toasted</label></li><li><input type="checkbox" id="four-allium-baked-rice-i10"><label for="four-allium-baked-rice-i10">250g basmati rice, rinsed until the water runs clear</label></li></ul><p class="ing-group-heading">For the pine nut burnt butter</p><ul class="ing"><li><input type="checkbox" id="four-allium-baked-rice-i11"><label for="four-allium-baked-rice-i11">50g unsalted butter</label></li><li><input type="checkbox" id="four-allium-baked-rice-i12"><label for="four-allium-baked-rice-i12">2 fresh bay leaves</label></li><li><input type="checkbox" id="four-allium-baked-rice-i13"><label for="four-allium-baked-rice-i13">20g pine nuts</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to its highest setting, or 240C (220C fan)/475F/gas 9.</p></li><li><span class="n">2</span><p>Put the leeks, shallots, spring onion whites, cinnamon, two bay leaves, oil and a teaspoon of salt in a 30cm x 20cm baking dish. Mix well, cover tightly with foil and bake for 40 minutes, stirring once gently halfway, until the leeks are soft but still hold their shape.</p></li><li><span class="n">3</span><p>Lift off the foil, stir in the garlic, cumin and rice, then pour in 500ml boiling water. Replace the foil, secure it tightly and return the dish to the oven for 25 minutes, or until all the liquid has been absorbed. Remove from the oven, then leave, still covered in the foil, to steam gently for 10-15 minutes.</p></li><li><span class="n">4</span><p>Meanwhile, make the pine nut butter. Put the butter and bay leaves in a small frying pan on a medium-high heat. Melt the butter and cook for five minutes, until it’s nicely browned and starts to smell nutty. Add the pine nuts and cook, stirring, for a minute, until golden all over. Transfer to a heatproof bowl to stop the cooking.</p></li><li><span class="n">5</span><p>When you’re ready to serve, remove and discard the foil, then gently fluff up the rice with a fork. Pour the burnt butter mixture all over the top and serve warm with the sliced spring onion greens sprinkled on top.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-four-allium-baked-rice-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Four-allium baked rice.docx -->
+</body>
+</html>

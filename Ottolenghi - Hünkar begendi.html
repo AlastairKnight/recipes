@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H&#252;nkar begendi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">H&#252;nkar begendi</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Serves <b>four.</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/h-nkar-begendi.jpeg" alt="H&#252;nkar begendi" loading="lazy">
+<p class="lede">If it’s good enough for an Ottoman sultan, it’s certainly good enough for me.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="h-nkar-begendi-i1"><label for="h-nkar-begendi-i1">750g lamb leg, cut into 3cm dice</label></li><li><input type="checkbox" id="h-nkar-begendi-i2"><label for="h-nkar-begendi-i2">50g plain flour</label></li><li><input type="checkbox" id="h-nkar-begendi-i3"><label for="h-nkar-begendi-i3">Salt and black pepper</label></li><li><input type="checkbox" id="h-nkar-begendi-i4"><label for="h-nkar-begendi-i4">3 tbsp olive oil</label></li><li><input type="checkbox" id="h-nkar-begendi-i5"><label for="h-nkar-begendi-i5">1 onion, peeled and sliced 1cm thick</label></li><li><input type="checkbox" id="h-nkar-begendi-i6"><label for="h-nkar-begendi-i6">2 green peppers, core and seeds removed, cut into long, 2cm-wide strips</label></li><li><input type="checkbox" id="h-nkar-begendi-i7"><label for="h-nkar-begendi-i7">3 garlic cloves, thinly sliced</label></li><li><input type="checkbox" id="h-nkar-begendi-i8"><label for="h-nkar-begendi-i8">1&#189; tbsp tomato paste</label></li><li><input type="checkbox" id="h-nkar-begendi-i9"><label for="h-nkar-begendi-i9">&#188; tsp cayenne pepper</label></li><li><input type="checkbox" id="h-nkar-begendi-i10"><label for="h-nkar-begendi-i10">2 fresh plum tomatoes, peeled and roughly chopped</label></li><li><input type="checkbox" id="h-nkar-begendi-i11"><label for="h-nkar-begendi-i11">2 bay leaves</label></li><li><input type="checkbox" id="h-nkar-begendi-i12"><label for="h-nkar-begendi-i12">2 cinnamon sticks</label></li><li><input type="checkbox" id="h-nkar-begendi-i13"><label for="h-nkar-begendi-i13">180ml chicken stock</label></li><li><input type="checkbox" id="h-nkar-begendi-i14"><label for="h-nkar-begendi-i14">3 aubergines, pricked in several places with a sharp knife</label></li><li><input type="checkbox" id="h-nkar-begendi-i15"><label for="h-nkar-begendi-i15">50g unsalted butter</label></li><li><input type="checkbox" id="h-nkar-begendi-i16"><label for="h-nkar-begendi-i16">350ml whole milk</label></li><li><input type="checkbox" id="h-nkar-begendi-i17"><label for="h-nkar-begendi-i17">⅛ tsp ground nutmeg</label></li><li><input type="checkbox" id="h-nkar-begendi-i18"><label for="h-nkar-begendi-i18">20g kashkaval (or pecorino), coarsely grated</label></li><li><input type="checkbox" id="h-nkar-begendi-i19"><label for="h-nkar-begendi-i19">5g parsley, finely chopped</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Mix the lamb in a large bowl with a tablespoon of the flour, a teaspoon of salt and half a teaspoon of pepper. On a high flame, heat two tablespoons of oil in a large, heavy-based casserole for which you have a lid. Sear the lamb, in batches if need be, for four minutes, turning regularly to brown it all over. Transfer to a bowl, turn the heat to medium-high and add the remaining tablespoon of oil. Saute the onions and peppers for five minutes, stirring now and then, until soft, then add the garlic. Stir for a minute, add the tomato paste, cayenne, plum tomatoes, bay, cinnamon and stock, then return the meat to the pot. Bring to a boil, turn down the heat to medium-low, cover and simmer for an hour and a half, until the lamb is very tender.</p></li><li><span class="n">2</span><p>Line the stove top with a big sheet of tin foil (make holes for the gas rings), then turn on three rings to a medium heat. Put an aubergine on top of each flame and roast for 15-18 minutes, turning occasionally, until the skin is burnt and the flesh soft and smoked. (Alternatively, heat the grill to its highest setting, put the aubergines on a foil-lined tray and grill for about an hour, turning every 20 minutes or so, until deflated and charred all over.) Once the aubergines are cool enough to handle, scrape out the flesh and discard the skin. Roughly chop the flesh and put it in a colander to drain for 30 minutes.</p></li><li><span class="n">3</span><p>Put a medium saucepan on a medium heat. Add the butter and, once it has melted, stir through the remaining 40g flour and cook for two minutes, until the roux is bubbling and slightly thickened. Slowly pour in the milk, whisking continuously until smooth. Cook over a medium-low heat for four minutes, stirring, until thick. Remove from the heat, and add the nutmeg, cheese, half a teaspoon of salt and a good grind of pepper. Stir in the aubergine pulp and half the parsley, then divide between four shallow bowls and top with the hot lamb and sauce. Sprinkle over the last of the parsley and serve.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-h-nkar-begendi-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - H&#252;nkar begendi.docx -->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Durban bunny chow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Durban bunny chow</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>35 min</b></span><span class="chip">Cook <b>2 hr 30 min</b></span><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/durban-bunny-chow.jpeg" alt="Durban bunny chow" loading="lazy">
+<p class="lede">Bunny chow is traditionally made with mutton and served in hollowed-out bread. It’s totally comforting (as well as being the perfect antidote to a heavy night out, according to Calvin). If you prefer, serve the curry alongside rice instead of inside the rolls. If you can, it’s best to make the curry a day ahead, so the flavours develop.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="durban-bunny-chow-i1"><label for="durban-bunny-chow-i1">70g ghee, or olive oil</label></li><li><input type="checkbox" id="durban-bunny-chow-i2"><label for="durban-bunny-chow-i2">750g stewing&#160;lamb or mutton on the bone&#160;(scrag, for preference), cut into 3cm chunks</label></li><li><input type="checkbox" id="durban-bunny-chow-i3"><label for="durban-bunny-chow-i3">3 onions, peeled and roughly chopped (480g)</label></li><li><input type="checkbox" id="durban-bunny-chow-i4"><label for="durban-bunny-chow-i4">30g piece fresh ginger, peeled and finely grated</label></li><li><input type="checkbox" id="durban-bunny-chow-i5"><label for="durban-bunny-chow-i5">6 garlic cloves, peeled and crushed</label></li><li><input type="checkbox" id="durban-bunny-chow-i6"><label for="durban-bunny-chow-i6">3 mild green chillies, cut at an angle into 1cm-thick slices</label></li><li><input type="checkbox" id="durban-bunny-chow-i7"><label for="durban-bunny-chow-i7">4&#189; tbsp leaf masala&#160;(see recipe below)</label></li><li><input type="checkbox" id="durban-bunny-chow-i8"><label for="durban-bunny-chow-i8">&#190; tsp ground turmeric</label></li><li><input type="checkbox" id="durban-bunny-chow-i9"><label for="durban-bunny-chow-i9">2 cinnamon sticks</label></li><li><input type="checkbox" id="durban-bunny-chow-i10"><label for="durban-bunny-chow-i10">3 whole star anise</label></li><li><input type="checkbox" id="durban-bunny-chow-i11"><label for="durban-bunny-chow-i11">2 fresh bay leaves</label></li><li><input type="checkbox" id="durban-bunny-chow-i12"><label for="durban-bunny-chow-i12">6 large plum tomatoes, roughly grated and skins discarded (750g)</label></li><li><input type="checkbox" id="durban-bunny-chow-i13"><label for="durban-bunny-chow-i13">750ml chicken stock</label></li><li><input type="checkbox" id="durban-bunny-chow-i14"><label for="durban-bunny-chow-i14">Salt</label></li><li><input type="checkbox" id="durban-bunny-chow-i15"><label for="durban-bunny-chow-i15">550g maris piper potatoes&#160;(about 3-4), peeled and cut into 3cm chunks</label></li><li><input type="checkbox" id="durban-bunny-chow-i16"><label for="durban-bunny-chow-i16">2 carrots, peeled and cut into 3cm chunks (150g)</label></li><li><input type="checkbox" id="durban-bunny-chow-i17"><label for="durban-bunny-chow-i17">20g coriander, leaves picked and stalks finely chopped</label></li><li><input type="checkbox" id="durban-bunny-chow-i18"><label for="durban-bunny-chow-i18">4 soft white bread rolls</label></li></ul><p class="ing-group-heading">For the curry leaf oil</p><ul class="ing"><li><input type="checkbox" id="durban-bunny-chow-i19"><label for="durban-bunny-chow-i19">30g ghee, or olive oil</label></li><li><input type="checkbox" id="durban-bunny-chow-i20"><label for="durban-bunny-chow-i20">4 sprigs fresh curry leaves&#160;– about 20 leaves</label></li></ul><p class="ing-group-heading">For the carrot sambal</p><ul class="ing"><li><input type="checkbox" id="durban-bunny-chow-i21"><label for="durban-bunny-chow-i21">3 carrots, peeled and shaved into ribbons with a peeler (200g)</label></li><li><input type="checkbox" id="durban-bunny-chow-i22"><label for="durban-bunny-chow-i22">1 small red onion, peeled and finely sliced (100g)</label></li><li><input type="checkbox" id="durban-bunny-chow-i23"><label for="durban-bunny-chow-i23">3 tbsp white-wine vinegar</label></li><li><input type="checkbox" id="durban-bunny-chow-i24"><label for="durban-bunny-chow-i24">&#189; garlic clove, grated</label></li><li><input type="checkbox" id="durban-bunny-chow-i25"><label for="durban-bunny-chow-i25">10g piece fresh ginger, peeled and finely grated</label></li><li><input type="checkbox" id="durban-bunny-chow-i26"><label for="durban-bunny-chow-i26">1 tsp soft light brown sugar</label></li><li><input type="checkbox" id="durban-bunny-chow-i27"><label for="durban-bunny-chow-i27">1 bird’s eye chilli, thinly sliced (if you don’t like heat, leave it out)</label></li><li><input type="checkbox" id="durban-bunny-chow-i28"><label for="durban-bunny-chow-i28">1 tbsp lime juice</label></li><li><input type="checkbox" id="durban-bunny-chow-i29"><label for="durban-bunny-chow-i29">2 tsp olive oil</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put a 28cm-wide, heavy-based casserole pan on a medium-high heat. Heat 35g ghee until it’s searing hot, then brown the lamb on all sides in two or three batches, so as not to overcrowd the pan. Once seared and nicely coloured, transfer to a medium bowl and repeat with the remaining lamb.</p></li><li><span class="n">2</span><p>Add the remaining 35g ghee to the pan with the onions and cook, stirring frequently, for 20 minutes, until softened and golden brown. Add the next eight ingredients, stir well and cook for another three to five minutes, until fragrant. Return the lamb and any juices from the bowl to the pan, then stir in the tomatoes, chicken stock and a teaspoon and a half of salt.</p></li><li><span class="n">3</span><p>Add the potatoes and carrots to the pot, bring up to a hard simmer, then turn the heat down low, cover the pan and cook, stirring occasionally, for two and a half hours, until the meat is tender; take off the lid for the last 20 minutes, so the sauce thickens. Leave the curry to sit, uncovered, for 30 minutes, to give the flavours a chance to mingle.</p></li><li><span class="n">4</span><p>Heat the oven to 220C (200C fan)/425F/gas 7. While the oven’s warming up, make the carrot sambal. Put the carrots, onions, vinegar, half a teaspoon of salt, the garlic, ginger, brown sugar and chilli in a bowl, toss to combine, then leave to steep for 30 minutes. Squeeze out the mixture with your hands, to remove as much excess liquid as possible, then mix with the remaining ingredients and the finely chopped coriander stalks.</p></li><li><span class="n">5</span><p>While the carrot mix is pickling, make the curry leaf oil. In a small frying pan, heat the ghee on a medium heat and, once hot, add the curry leaves, fry for about five minutes, until dark green, then take off the heat and set aside.</p></li><li><span class="n">6</span><p>Put the bread rolls on a medium oven tray, brush them all over with some of the curry leaf oil, then warm in the oven for five minutes. Cut off the tops of the rolls, like giving them little hats, then hollow out the rolls. Spoon in a generous amount of the curry, followed by some of the sambal, a spoonful of the ghee and some curry leaves. Pop the tops of the rolls back on and serve hot with the remaining curry leaves, coriander and condiments on the side.</p></li><li><span class="n">7</span><p>Durban leaf masala</p></li><li><span class="n">8</span><p>Leaf masala is a spice blend that’s the base for a variety of South African curries. The choice of protein changes – chicken, fish, prawns all work well – but it’s also lovely just as it is, sprinkled on slices of raw pineapple and eaten, preferably, on the beach. As with all spice mixes, there are all sorts of variations: this is Calvin’s, which he’s based on the very popular Durban spice brand Gorima’s.</p></li><li><span class="n">9</span><p>Prep 10 min</p></li><li><span class="n">10</span><p>Makes 1 small jar</p></li><li><span class="n">11</span><p>3 fresh bay leaves, stems removed</p></li><li><span class="n">12</span><p>1 tbsp dried fenugreek leaves</p></li><li><span class="n">13</span><p>5 tbsp fresh curry leaves (20g)</p></li><li><span class="n">14</span><p>2 tbsp coriander seeds</p></li><li><span class="n">15</span><p>1&#189; tbsp cumin seeds</p></li><li><span class="n">16</span><p>10g cardamom pods, lightly bashed open in a mortar to get 1&#189; tsp seeds</p></li><li><span class="n">17</span><p>1 tbsp fennel seeds</p></li><li><span class="n">18</span><p>1 tsp fenugreek seeds</p></li><li><span class="n">19</span><p>4 whole cloves</p></li><li><span class="n">20</span><p>1 cinnamon stick</p></li><li><span class="n">21</span><p>5 tbsp (50g) Kashmiri chilli powder (or any other mild chilli powder)</p></li><li><span class="n">22</span><p>1 tsp ground ginger</p></li><li><span class="n">23</span><p>1&#189; tsp smoked paprika</p></li><li><span class="n">24</span><p>Method</p></li><li><span class="n">25</span><p>Blitz the bay leaves and fenugreek in the small bowl of a food processor or a spice grinder until finely chopped to the size of confetti. Add the curry leaves, pulse about three times, until coarsely broken, then tip out into a medium bowl.</p></li><li><span class="n">26</span><p>Put all the other spices in the food processor and blitz until very well ground. Add the ground spices to the leaves in the bowl, mix well and transfer to an airtight jar. The spice mix will keep for up to three months.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-durban-bunny-chow-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Durban bunny chow.docx -->
+</body>
+</html>

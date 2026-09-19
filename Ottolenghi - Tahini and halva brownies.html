@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tahini and halva brownies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Tahini and halva brownies</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Makes <b>20 brownies.</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/tahini-and-halva-brownies.jpeg" alt="Tahini and halva brownies" loading="lazy">
+<p class="lede">The cooking time is crucial if you’re to get the desired balance between cakey and gooey, but it can vary depending on both your oven and where you put your brownie tray. The difference between a cooking time of 18 and 22 minutes can be significant, so do stay alert. These keep for up to five days in an airtight container.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="tahini-and-halva-brownies-i1"><label for="tahini-and-halva-brownies-i1">40g unsalted butter, cut into 2cm dice</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i2"><label for="tahini-and-halva-brownies-i2">240g dark chocolate (70% cocoa solids), broken into 3-4cm pieces</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i3"><label for="tahini-and-halva-brownies-i3">4 eggs</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i4"><label for="tahini-and-halva-brownies-i4">330g caster sugar</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i5"><label for="tahini-and-halva-brownies-i5">120g plain flour, sifted</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i6"><label for="tahini-and-halva-brownies-i6">30g cocoa powder, sifted</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i7"><label for="tahini-and-halva-brownies-i7">130g walnuts, lightly roasted and roughly chopped</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i8"><label for="tahini-and-halva-brownies-i8">Salt</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i9"><label for="tahini-and-halva-brownies-i9">150g tahini paste</label></li><li><input type="checkbox" id="tahini-and-halva-brownies-i10"><label for="tahini-and-halva-brownies-i10">130g halva, broken into 2-3cm pieces</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 180C/350F/gas mark 4. Quarter-fill a small saucepan with water and place on a high heat. Bring to a boil, then reduce the heat to medium and sit a heatproof bowl on top of the pan, making sure its base does not come into contact with the water. Put the butter and chocolate in the bowl, leave for about two minutes, to melt, then remove the bowl from the heat and stir until you have a thick, shiny sauce. Set aside to come down to room temperature.</p></li><li><span class="n">2</span><p>In a large bowl, whisk the eggs and sugar until pale and creamy, and the whisk leaves a trail behind it – about three minutes with an electric whisk, longer by hand. Gently fold the chocolate mix into the eggs – don’t overwork the mix – then fold in the flour, cocoa, walnuts and three-quarters of a teaspoon of salt. Pour into a 21cm x 31cm baking tray lined with parchment paper and spread out into an even layer.</p></li><li><span class="n">3</span><p>Use a spoon to insert tahini into the brownie mix in about 12 places, then use the back of a clean spoon to swirl it a little through the mix – not too much: you want it uneven. Dot the halva on the surface, pushing it down a little so that it is well submerged but still visible.</p></li><li><span class="n">4</span><p>Bake for about 20 minutes, until the top is crisp and the middle still has a slight wobble and is gooey inside: check after 18 minutes (see introduction). The brownies may seem a bit undercooked at first, but they will firm up as they cool down. Cut the baked brownie into 20 pieces and serve warm-ish (and gooey!) or at room temperature (and not quite so gooey).</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-tahini-and-halva-brownies-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Tahini and halva brownies.docx -->
+</body>
+</html>

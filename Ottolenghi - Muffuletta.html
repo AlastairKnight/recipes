@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muffuletta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Muffuletta</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>20 min</b></span><span class="chip">Serves <b>8</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/muffuletta.jpeg" alt="Muffuletta" loading="lazy">
+<p class="lede">Go big or go home with this, my version of the epic New Orleans sandwich. If you’re eating it at home (ie, close to an oven) skip the initial toasting stage and instead put the filled loaf in the oven for a perfectly melting sandwich.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="muffuletta-i1"><label for="muffuletta-i1">1 sourdough loaf (600g-700g)</label></li><li><input type="checkbox" id="muffuletta-i2"><label for="muffuletta-i2">95ml olive oil</label></li><li><input type="checkbox" id="muffuletta-i3"><label for="muffuletta-i3">4 garlic cloves, peeled and finely chopped</label></li><li><input type="checkbox" id="muffuletta-i4"><label for="muffuletta-i4">2 tbsp za’atar</label></li><li><input type="checkbox" id="muffuletta-i5"><label for="muffuletta-i5">8 anchovy fillets, drained and finely chopped</label></li><li><input type="checkbox" id="muffuletta-i6"><label for="muffuletta-i6">2 red chillies, seeds and pith removed, flesh finely chopped (30g)</label></li><li><input type="checkbox" id="muffuletta-i7"><label for="muffuletta-i7">2 shallots (80g), peeled and cut into thin rounds</label></li><li><input type="checkbox" id="muffuletta-i8"><label for="muffuletta-i8">200g pitted nocellara olives, drained and roughly chopped</label></li><li><input type="checkbox" id="muffuletta-i9"><label for="muffuletta-i9">450g jarred red peppers, drained, patted dry and cut in half (350g)</label></li><li><input type="checkbox" id="muffuletta-i10"><label for="muffuletta-i10">3 tbsp fine capers, drained (or rinsed, if salted; or regular capers, chopped)</label></li><li><input type="checkbox" id="muffuletta-i11"><label for="muffuletta-i11">10g parsley leaves, roughly chopped (about 2&#189; tbsp)</label></li><li><input type="checkbox" id="muffuletta-i12"><label for="muffuletta-i12">30g basil leaves, roughly chopped (about 5&#190; tbsp)</label></li><li><input type="checkbox" id="muffuletta-i13"><label for="muffuletta-i13">Salt and black pepper</label></li><li><input type="checkbox" id="muffuletta-i14"><label for="muffuletta-i14">1&#189; tbsp English mustard</label></li><li><input type="checkbox" id="muffuletta-i15"><label for="muffuletta-i15">1 tbsp runny honey</label></li><li><input type="checkbox" id="muffuletta-i16"><label for="muffuletta-i16">70g thinly sliced salami</label></li><li><input type="checkbox" id="muffuletta-i17"><label for="muffuletta-i17">100g sliced gouda</label></li><li><input type="checkbox" id="muffuletta-i18"><label for="muffuletta-i18">2 buffalo mozzarella balls, cut into 2 cm-thick slices and patted dry (250g)</label></li><li><input type="checkbox" id="muffuletta-i19"><label for="muffuletta-i19">100g thinly sliced mortadella</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 240C (220C fan)/475F/gas 9. Cut off the top third of the loaf lengthways: this will be the lid later. Using your hands, carefully hollow out the loaf, removing as much of the crumb as possible (save it to make breadcrumbs), while leaving the crust intact. Put the hollowed-out loaf and its lid separately on an oven tray, bake for three to five minutes, until crisp and lightly golden on the inside, then remove and set aside.</p></li><li><span class="n">2</span><p>Meanwhile, make the salsa. Put 50ml oil in a small saucepan on a medium heat and, once hot, add the garlic and cook, stirring often, for three minutes, until softened. Stir in the za’atar and anchovies, then take off the heat. Pour the za’atar mix into a medium bowl, leave to cool, then stir in the chilli, shallots, olives, peppers, capers, parsley, basil, a good grind of pepper and a quarter-teaspoon of salt.</p></li><li><span class="n">3</span><p>Put the mustard and honey in a small bowl with the remaining three tablespoons of oil, and mix until very smooth. Using a pastry brush, spread the mustard mixture evenly over the inside of the loaf and on the underside of the lid.</p></li><li><span class="n">4</span><p>To assemble the muffuletta, spoon two-thirds of the olive salsa into the base of the loaf, and spread it out evenly. Layer the salami on top, followed in turn by the gouda, mozzarella and mortadella, firmly pressing in each new layer as you go. Spoon over the remaining salsa and put the lid on top.</p></li><li><span class="n">5</span><p>Wrap the loaf tightly (in reusable kitchen wrap, ideally) and put it on a tray. Weigh it down with a heavy wooden board (or a tray filled with tins) and leave at room temperature for two to three hours (or refrigerate overnight).</p></li><li><span class="n">6</span><p>Cut the loaf into thick slices and serve at room temperature.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-muffuletta-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Muffuletta.docx -->
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Box</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#c1502e">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card-bg: #ffffff;
+    --text: #2b2420;
+    --muted: #8a7f74;
+    --accent: #c1502e;
+    --border: #ece5db;
+    --shadow: 0 1px 2px rgba(43,36,32,0.06), 0 4px 16px rgba(43,36,32,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1815;
+      --card-bg: #262019;
+      --text: #f2ece3;
+      --muted: #a89a8a;
+      --accent: #e2764a;
+      --border: #38312a;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1815;
+    --card-bg: #262019;
+    --text: #f2ece3;
+    --muted: #a89a8a;
+    --accent: #e2764a;
+    --border: #38312a;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  header {
+    padding: 40px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #search {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 14px;
+  }
+  #search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+  .author-filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  .count {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 4px 0 16px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  a.card {
+    text-decoration: none;
+    color: inherit;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(43,36,32,0.1), 0 8px 24px rgba(43,36,32,0.12);
+  }
+
+  .thumb {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb.placeholder {
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .card-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .card-author {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 60px 20px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Recipe Box</h1>
+  <p class="subtitle" id="subtitle">Loading recipes…</p>
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search recipes…" autocomplete="off">
+    <div class="author-filters" id="authorFilters"></div>
+  </div>
+</header>
+
+<main>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">No recipes match your search.</div>
+</main>
+
+<script>
+  const RECIPES = [
+    {"file":"Diana Henry - Danish roast pork with pickled prunes and sweet cucumber.html","img":"Images/danish-roast-pork-with-pickled-prunes-and-sweet-cucumber.jpeg","author":"Diana Henry","title":"Danish roast pork with pickled prunes and sweet cucumber"},
+    {"file":"Diana Henry - Hot lightning (new potatoes with apples, pears and bacon).html","img":"Images/hot-lightning-new-potatoes-with-apples-pears-and-bacon.jpeg","author":"Diana Henry","title":"Hot lightning (new potatoes with apples, pears and bacon)"},
+    {"file":"Ottolenghi - Adjaruli khachapuri with aleppo chilli and spring onion butter.html","img":"Images/adjaruli-khachapuri-with-aleppo-chilli-and-spring-onion-butter.jpeg","author":"Ottolenghi","title":"Adjaruli khachapuri with aleppo chilli and spring onion butter"},
+    {"file":"Ottolenghi - Aligot with roast winter vegetables and chermoula.html","img":"Images/aligot-with-roast-winter-vegetables-and-chermoula.jpeg","author":"Ottolenghi","title":"Aligot with roast winter vegetables and chermoula"},
+    {"file":"Ottolenghi - Allspice chicken and rice with dill and yoghurt.html","img":"Images/allspice-chicken-and-rice-with-dill-and-yoghurt.jpeg","author":"Ottolenghi","title":"Allspice chicken and rice with dill and yoghurt"},
+    {"file":"Ottolenghi - Aubergine and ricotta dumplings in tomato sauce.html","img":"Images/aubergine-and-ricotta-dumplings-in-tomato-sauce.jpeg","author":"Ottolenghi","title":"Aubergine and ricotta dumplings in tomato sauce"},
+    {"file":"Ottolenghi - Aubergine and tomato salad with feta cream and oregano.html","img":"Images/aubergine-and-tomato-salad-with-feta-cream-and-oregano.jpeg","author":"Ottolenghi","title":"Aubergine and tomato salad with feta cream and oregano"},
+    {"file":"Ottolenghi - Avgolemono soup with fennel and dill oil.html","img":"Images/avgolemono-soup-with-fennel-and-dill-oil.jpeg","author":"Ottolenghi","title":"Avgolemono soup with fennel and dill oil"},
+    {"file":"Ottolenghi - Baked cauliflower with spices, spinach and tomato.html","img":"Images/baked-cauliflower-with-spices-spinach-and-tomato.jpeg","author":"Ottolenghi","title":"Baked cauliflower with spices, spinach and tomato"},
+    {"file":"Ottolenghi - Baked potato with onion and harissa butter.html","img":"Images/baked-potato-with-onion-and-harissa-butter.jpeg","author":"Ottolenghi","title":"Baked potato with onion and harissa butter"},
+    {"file":"Ottolenghi - Bistro-style chicken salad with parmesan dressing and crisp prosciutto.html","img":"Images/bistro-style-chicken-salad-with-parmesan-dressing-and-crisp-prosciutto.jpeg","author":"Ottolenghi","title":"Bistro-style chicken salad with parmesan dressing and crisp prosciutto"},
+    {"file":"Ottolenghi - Braised cod with winter tomatoes, fennel and caperberries.html","img":"Images/braised-cod-with-winter-tomatoes-fennel-and-caperberries.jpeg","author":"Ottolenghi","title":"Braised cod with winter tomatoes, fennel and caperberries"},
+    {"file":"Ottolenghi - Broccolini with chorizo, manchego and caraway seed creme fraiche.html","img":"Images/broccolini-with-chorizo-manchego-and-caraway-seed-creme-fraiche.jpeg","author":"Ottolenghi","title":"Broccolini with chorizo, manchego and caraway seed creme fraiche"},
+    {"file":"Ottolenghi - Butterhead lettuce with apple dressing and black lime crumbs.html","img":"Images/butterhead-lettuce-with-apple-dressing-and-black-lime-crumbs.jpeg","author":"Ottolenghi","title":"Butterhead lettuce with apple dressing and black lime crumbs"},
+    {"file":"Ottolenghi - Chicken pastilla.html","img":"Images/chicken-pastilla.png","author":"Ottolenghi","title":"Chicken pastilla"},
+    {"file":"Ottolenghi - Chilli chicken with cinnamon and spinach.html","img":"Images/chilli-chicken-with-cinnamon-and-spinach.jpeg","author":"Ottolenghi","title":"Chilli chicken with cinnamon and spinach"},
+    {"file":"Ottolenghi - Chipotle-Roasted Chicken with Plum and Tarragon Salad.html","img":"Images/chipotle-roasted-chicken-with-plum-and-tarragon-salad.png","author":"Ottolenghi","title":"Chipotle-Roasted Chicken with Plum and Tarragon Salad"},
+    {"file":"Ottolenghi - Chipotle, celeriac and tomato traybake.html","img":"Images/chipotle-celeriac-and-tomato-traybake.jpeg","author":"Ottolenghi","title":"Chipotle, celeriac and tomato traybake"},
+    {"file":"Ottolenghi - Coconut rice with peanut crunch.html","img":"Images/coconut-rice-with-peanut-crunch.jpeg","author":"Ottolenghi","title":"Coconut rice with peanut crunch"},
+    {"file":"Ottolenghi - Coffee-marinated pork chops with white bean mash and kiwi salsa.html","img":"Images/coffee-marinated-pork-chops-with-white-bean-mash-and-kiwi-salsa.jpeg","author":"Ottolenghi","title":"Coffee-marinated pork chops with white bean mash and kiwi salsa"},
+    {"file":"Ottolenghi - Creamy green peppers with jalapeño salsa.html","img":"Images/creamy-green-peppers-with-jalape-o-salsa.png","author":"Ottolenghi","title":"Creamy green peppers with jalapeño salsa"},
+    {"file":"Ottolenghi - Creamy leeks and butter beans with za’atar breadcrumbs.html","img":"Images/creamy-leeks-and-butter-beans-with-za-atar-breadcrumbs.jpeg","author":"Ottolenghi","title":"Creamy leeks and butter beans with za’atar breadcrumbs"},
+    {"file":"Ottolenghi - Cucumber crunch salad with curried cashews.html","img":"Images/cucumber-crunch-salad-with-curried-cashews.jpeg","author":"Ottolenghi","title":"Cucumber crunch salad with curried cashews"},
+    {"file":"Ottolenghi - Durban bunny chow.html","img":"Images/durban-bunny-chow.jpeg","author":"Ottolenghi","title":"Durban bunny chow"},
+    {"file":"Ottolenghi - Four-allium baked rice.html","img":"Images/four-allium-baked-rice.jpeg","author":"Ottolenghi","title":"Four-allium baked rice"},
+    {"file":"Ottolenghi - Harissa vinegar chicken with chicory.html","img":"Images/harissa-vinegar-chicken-with-chicory.jpeg","author":"Ottolenghi","title":"Harissa vinegar chicken with chicory"},
+    {"file":"Ottolenghi - Herby cabbage and potato gratin with gruyère and ricotta.html","img":"Images/herby-cabbage-and-potato-gratin-with-gruy-re-and-ricotta.jpeg","author":"Ottolenghi","title":"Herby cabbage and potato gratin with gruyère and ricotta"},
+    {"file":"Ottolenghi - Herby cabbage pudding with feta.html","img":"Images/herby-cabbage-pudding-with-feta.jpeg","author":"Ottolenghi","title":"Herby cabbage pudding with feta"},
+    {"file":"Ottolenghi - Hünkar begendi.html","img":"Images/h-nkar-begendi.jpeg","author":"Ottolenghi","title":"Hünkar begendi"},
+    {"file":"Ottolenghi - Imam bayildi.html","img":"Images/imam-bayildi.jpeg","author":"Ottolenghi","title":"Imam bayildi"},
+    {"file":"Ottolenghi - Lamb pilaf with sweet almonds and sour plums.html","img":"Images/lamb-pilaf-with-sweet-almonds-and-sour-plums.jpeg","author":"Ottolenghi","title":"Lamb pilaf with sweet almonds and sour plums"},
+    {"file":"Ottolenghi - Mediterranean-style fried rice with anchovy lemon dressing.html","img":"Images/mediterranean-style-fried-rice-with-anchovy-lemon-dressing.jpeg","author":"Ottolenghi","title":"Mediterranean-style fried rice with anchovy lemon dressing"},
+    {"file":"Ottolenghi - Middle Eastern mac’n’cheese with za’atar pesto.html","img":"Images/middle-eastern-mac-n-cheese-with-za-atar-pesto.jpeg","author":"Ottolenghi","title":"Middle Eastern mac’n’cheese with za’atar pesto"},
+    {"file":"Ottolenghi - Middle Eastern Millionaire’s Shortbread.html","img":"Images/middle-eastern-millionaire-s-shortbread.jpeg","author":"Ottolenghi","title":"Middle Eastern Millionaire’s Shortbread"},
+    {"file":"Ottolenghi - Muffuletta.html","img":"Images/muffuletta.jpeg","author":"Ottolenghi","title":"Muffuletta"},
+    {"file":"Ottolenghi - Nepalese potato salad.html","img":"Images/nepalese-potato-salad.jpeg","author":"Ottolenghi","title":"Nepalese potato salad"},
+    {"file":"Ottolenghi - One-tray pork and mushroom pasta.html","img":"Images/one-tray-pork-and-mushroom-pasta.jpeg","author":"Ottolenghi","title":"One-tray pork and mushroom pasta"},
+    {"file":"Ottolenghi - Parmesan and black pepper roast parsnips.html","img":"Images/parmesan-and-black-pepper-roast-parsnips.jpeg","author":"Ottolenghi","title":"Parmesan and black pepper roast parsnips"},
+    {"file":"Ottolenghi - Portobello steaks and butter bean mash.html","img":"Images/portobello-steaks-and-butter-bean-mash.png","author":"Ottolenghi","title":"Portobello steaks and butter bean mash"},
+    {"file":"Ottolenghi - Potato salad with charred tomato and orange salsa.html","img":"Images/potato-salad-with-charred-tomato-and-orange-salsa.jpeg","author":"Ottolenghi","title":"Potato salad with charred tomato and orange salsa"},
+    {"file":"Ottolenghi - Potato salad.html","img":"Images/potato-salad.jpeg","author":"Ottolenghi","title":"Potato salad"},
+    {"file":"Ottolenghi - Red rice with feta and coriander.html","img":"Images/red-rice-with-feta-and-coriander.jpeg","author":"Ottolenghi","title":"Red rice with feta and coriander"},
+    {"file":"Ottolenghi - Roast aubergine with almond tarator and basil oil.html","img":"","author":"Ottolenghi","title":"Roast aubergine with almond tarator and basil oil"},
+    {"file":"Ottolenghi - Roast cabbage with lemony peas and feta.html","img":"Images/roast-cabbage-with-lemony-peas-and-feta.jpeg","author":"Ottolenghi","title":"Roast cabbage with lemony peas and feta"},
+    {"file":"Ottolenghi - Roast chicken with tomatoes, bread and herbs.html","img":"Images/roast-chicken-with-tomatoes-bread-and-herbs.jpeg","author":"Ottolenghi","title":"Roast chicken with tomatoes, bread and herbs"},
+    {"file":"Ottolenghi - Roast leeks with beetroot tahini and hazelnut salsa.html","img":"Images/roast-leeks-with-beetroot-tahini-and-hazelnut-salsa.jpeg","author":"Ottolenghi","title":"Roast leeks with beetroot tahini and hazelnut salsa"},
+    {"file":"Ottolenghi - Roast pork belly with apple, soy and ginger.html","img":"Images/roast-pork-belly-with-apple-soy-and-ginger.jpeg","author":"Ottolenghi","title":"Roast pork belly with apple, soy and ginger"},
+    {"file":"Ottolenghi - Rum and currant dumplings with speculaas caramel.html","img":"Images/rum-and-currant-dumplings-with-speculaas-caramel.jpeg","author":"Ottolenghi","title":"Rum and currant dumplings with speculaas caramel"},
+    {"file":"Ottolenghi - Sausage ragu lasagne.html","img":"Images/sausage-ragu-lasagne.jpeg","author":"Ottolenghi","title":"Sausage ragu lasagne"},
+    {"file":"Ottolenghi - Slow-Cooked Hake in Cascabel Oil with Corn Tortillas.html","img":"Images/slow-cooked-hake-in-cascabel-oil-with-corn-tortillas.png","author":"Ottolenghi","title":"Slow-Cooked Hake in Cascabel Oil with Corn Tortillas"},
+    {"file":"Ottolenghi - Spicy chipotle chicken with black-eyed bean salsa.html","img":"Images/spicy-chipotle-chicken-with-black-eyed-bean-salsa.png","author":"Ottolenghi","title":"Spicy chipotle chicken with black-eyed bean salsa"},
+    {"file":"Ottolenghi - Spicy lamb and potato enchiladas.html","img":"Images/spicy-lamb-and-potato-enchiladas.jpeg","author":"Ottolenghi","title":"Spicy lamb and potato enchiladas"},
+    {"file":"Ottolenghi - Swede gnocchi with miso butter and morning glory.html","img":"Images/swede-gnocchi-with-miso-butter-and-morning-glory.jpeg","author":"Ottolenghi","title":"Swede gnocchi with miso butter and morning glory"},
+    {"file":"Ottolenghi - Sweet and smoky Mexican inspired chicken.html","img":"Images/sweet-and-smoky-mexican-inspired-chicken.png","author":"Ottolenghi","title":"Sweet and smoky Mexican inspired chicken"},
+    {"file":"Ottolenghi - Tahini and halva brownies.html","img":"Images/tahini-and-halva-brownies.jpeg","author":"Ottolenghi","title":"Tahini and halva brownies"},
+    {"file":"Ottolenghi - Tomato and gruyere soufflé.html","img":"Images/tomato-and-gruyere-souffl.jpeg","author":"Ottolenghi","title":"Tomato and gruyere soufflé"},
+    {"file":"Ottolenghi - Tuna meatloaf.html","img":"Images/tuna-meatloaf.jpeg","author":"Ottolenghi","title":"Tuna meatloaf"},
+    {"file":"Ottolenghi - Zaatar Salmon Baked in Tahini.html","img":"Images/za-atar-salmon-baked-in-tahini.jpeg","author":"Ottolenghi","title":"Zaatar Salmon Baked in Tahini"}
+  ];
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const countEl = document.getElementById('count');
+  const subtitle = document.getElementById('subtitle');
+  const searchInput = document.getElementById('search');
+  const authorFiltersEl = document.getElementById('authorFilters');
+
+  subtitle.textContent = RECIPES.length + ' recipes, ready to cook';
+
+  const authors = Array.from(new Set(RECIPES.map(r => r.author))).sort();
+  let activeAuthor = 'All';
+
+  function encodePath(path) {
+    return path.split('/').map(encodeURIComponent).join('/');
+  }
+
+  function initials(title) {
+    return title
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 3)
+      .map(w => w[0])
+      .join('')
+      .toUpperCase();
+  }
+
+  function render() {
+    const q = searchInput.value.trim().toLowerCase();
+    const filtered = RECIPES.filter(r => {
+      const matchesAuthor = activeAuthor === 'All' || r.author === activeAuthor;
+      const matchesQuery = !q || r.title.toLowerCase().includes(q) || r.author.toLowerCase().includes(q);
+      return matchesAuthor && matchesQuery;
+    });
+
+    countEl.textContent = filtered.length === RECIPES.length
+      ? filtered.length + ' recipes'
+      : filtered.length + ' of ' + RECIPES.length + ' recipes';
+
+    grid.innerHTML = '';
+    empty.style.display = filtered.length ? 'none' : 'block';
+
+    for (const r of filtered) {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = encodePath(r.file);
+
+      const thumb = document.createElement('div');
+      if (r.img) {
+        thumb.className = 'thumb';
+        const img = document.createElement('img');
+        img.src = encodePath(r.img);
+        img.alt = r.title;
+        img.loading = 'lazy';
+        thumb.appendChild(img);
+      } else {
+        thumb.className = 'thumb placeholder';
+        thumb.textContent = initials(r.title);
+      }
+
+      const body = document.createElement('div');
+      body.className = 'card-body';
+      const authorEl = document.createElement('div');
+      authorEl.className = 'card-author';
+      authorEl.textContent = r.author;
+      const titleEl = document.createElement('div');
+      titleEl.className = 'card-title';
+      titleEl.textContent = r.title;
+      body.appendChild(authorEl);
+      body.appendChild(titleEl);
+
+      a.appendChild(thumb);
+      a.appendChild(body);
+      grid.appendChild(a);
+    }
+  }
+
+  function renderFilters() {
+    authorFiltersEl.innerHTML = '';
+    const all = ['All', ...authors];
+    for (const author of all) {
+      const chip = document.createElement('button');
+      chip.className = 'chip' + (author === activeAuthor ? ' active' : '');
+      chip.textContent = author;
+      chip.addEventListener('click', () => {
+        activeAuthor = author;
+        renderFilters();
+        render();
+      });
+      authorFiltersEl.appendChild(chip);
+    }
+  }
+
+  searchInput.addEventListener('input', render);
+
+  renderFilters();
+  render();
+
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+
+</body>
+</html>

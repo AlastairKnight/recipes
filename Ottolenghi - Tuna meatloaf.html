@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuna meatloaf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Tuna meatloaf</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>55 min</b></span><span class="chip">Serves <b>4-6</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/tuna-meatloaf.jpeg" alt="Tuna meatloaf" loading="lazy">
+<p class="lede">Serve slices of this tuna loaf with a salad or, even better, stuff them into sandwiches. For a picnic in the park, fry and cool the slices before transporting, but if you’re serving them at a garden picnic at home, set up a DIY sandwich station with a selection of filings, and let everyone create their own sandwich.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="tuna-meatloaf-i1"><label for="tuna-meatloaf-i1">220g cherry tomatoes</label></li><li><input type="checkbox" id="tuna-meatloaf-i2"><label for="tuna-meatloaf-i2">&#189; onion, peeled and roughly chopped (40g net weight)</label></li><li><input type="checkbox" id="tuna-meatloaf-i3"><label for="tuna-meatloaf-i3">3 garlic cloves, peeled and crushed</label></li><li><input type="checkbox" id="tuna-meatloaf-i4"><label for="tuna-meatloaf-i4">80g parmesan, cut into roughly 2cm chunks</label></li><li><input type="checkbox" id="tuna-meatloaf-i5"><label for="tuna-meatloaf-i5">40g tomato paste</label></li><li><input type="checkbox" id="tuna-meatloaf-i6"><label for="tuna-meatloaf-i6">30g mayonnaise</label></li><li><input type="checkbox" id="tuna-meatloaf-i7"><label for="tuna-meatloaf-i7">1 tbsp dijon mustard</label></li><li><input type="checkbox" id="tuna-meatloaf-i8"><label for="tuna-meatloaf-i8">1&#189; tsp ground cumin</label></li><li><input type="checkbox" id="tuna-meatloaf-i9"><label for="tuna-meatloaf-i9">1 tsp sweet mild paprika</label></li><li><input type="checkbox" id="tuna-meatloaf-i10"><label for="tuna-meatloaf-i10">&#190; tsp chilli flakes</label></li><li><input type="checkbox" id="tuna-meatloaf-i11"><label for="tuna-meatloaf-i11">2 eggs</label></li><li><input type="checkbox" id="tuna-meatloaf-i12"><label for="tuna-meatloaf-i12">150g pita, torn into roughly 2cm chunks</label></li><li><input type="checkbox" id="tuna-meatloaf-i13"><label for="tuna-meatloaf-i13">Salt and black pepper</label></li><li><input type="checkbox" id="tuna-meatloaf-i14"><label for="tuna-meatloaf-i14">3 x 160g tins tuna in olive oil, drained and the oil reserved</label></li><li><input type="checkbox" id="tuna-meatloaf-i15"><label for="tuna-meatloaf-i15">60g baby capers, drained</label></li><li><input type="checkbox" id="tuna-meatloaf-i16"><label for="tuna-meatloaf-i16">25g basil leaves, finely chopped</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 220C (200C fan)/425F/gas 7, and grease and line a standard 9cm x 24cm loaf tin.</p></li><li><span class="n">2</span><p>Put the tomatoes, onion, garlic, parmesan, tomato paste, mayonnaise, mustard, cumin, paprika, chilli flakes, eggs, bread, half a teaspoon of salt and plenty of pepper in a food processor, then pulse to a rough, wet paste.</p></li><li><span class="n">3</span><p>Scrape the mixture into a large bowl, add the tuna, capers, basil and two tablespoons of the reserved tuna oil, then fold to combine. Spoon this into the lined tin, and mould the top into a loaf shape. Brush the top of the loaf with a tablespoon of the reserved tuna oil.</p></li><li><span class="n">4</span><p>Bake for 45 minutes, basting the loaf with a bit more tuna oil after 15 and 30 minutes,then remove and leave to cool for 15 minutes. Unmould the loaf, transfer it to a rack and leave to cool completely for about two and a half hours. Once cooled, carefully cut the loaf into 2&#189;cm-thick slices and brush both sides of each slice with some of the remaining tuna oil.</p></li><li><span class="n">5</span><p>Heat a large, non-stick frying pan on a medium-high heat. Once hot, fry the slices, in batches if need be, for two minutes on each side, or until they have a nice golden crust. Serve with salad or in a sandwich.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-tuna-meatloaf-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Tuna meatloaf.docx -->
+</body>
+</html>

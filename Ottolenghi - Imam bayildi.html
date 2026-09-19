@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imam bayildi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Imam bayildi</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Serves <b>four.</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/imam-bayildi.jpeg" alt="Imam bayildi" loading="lazy">
+<p class="lede">Best eaten the day after it’s made, and served at room temperature. I don’t routinely salt aubergines (modern varieties tend not to be bitter, which is what salting was designed to counter), but in this case I do because it’s a time-honoured way to ensure they’re properly seasoned. Serve with Turkish (or other soft white) bread, to mop up the juices, and Greek yoghurt.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="imam-bayildi-i1"><label for="imam-bayildi-i1">4 aubergines, long, slim ones, ideally</label></li><li><input type="checkbox" id="imam-bayildi-i2"><label for="imam-bayildi-i2">1 lemon, halved</label></li><li><input type="checkbox" id="imam-bayildi-i3"><label for="imam-bayildi-i3">Salt and black pepper</label></li><li><input type="checkbox" id="imam-bayildi-i4"><label for="imam-bayildi-i4">120ml olive oil</label></li><li><input type="checkbox" id="imam-bayildi-i5"><label for="imam-bayildi-i5">1 onion, peeled and thinly sliced</label></li><li><input type="checkbox" id="imam-bayildi-i6"><label for="imam-bayildi-i6">2 red peppers, core and seeds removed, cut into long 1cm-wide strips</label></li><li><input type="checkbox" id="imam-bayildi-i7"><label for="imam-bayildi-i7">2 big garlic cloves, peeled and sliced thin</label></li><li><input type="checkbox" id="imam-bayildi-i8"><label for="imam-bayildi-i8">1&#189; tsp ground cumin</label></li><li><input type="checkbox" id="imam-bayildi-i9"><label for="imam-bayildi-i9">1 tsp paprika</label></li><li><input type="checkbox" id="imam-bayildi-i10"><label for="imam-bayildi-i10">400g tinned tomatoes</label></li><li><input type="checkbox" id="imam-bayildi-i11"><label for="imam-bayildi-i11">&#189; tsp caster sugar</label></li><li><input type="checkbox" id="imam-bayildi-i12"><label for="imam-bayildi-i12">2 sprigs fresh oregano</label></li><li><input type="checkbox" id="imam-bayildi-i13"><label for="imam-bayildi-i13">&#190; tsp dried oregano (Greek, ideally; or fresh oregano, picked and chopped)</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Shave long, alternate strips of peel off the aubergines, top to bottom, so they end up striped, like zebras. Starting 2cm from the top, make an incision halfway into the flesh and cut down to 2cm shy of the bottom.</p></li><li><span class="n">2</span><p>Put the aubergines in a large bowl and cover with two and a half litres of cold water. Squeeze in the lemon, drop in the skins and stir in two teaspoons of salt. Put a plate on top, to keep the aubergines immersed, and leave to soak for 45 minutes. Drain, then dry in a clean tea towel.</p></li><li><span class="n">3</span><p>Heat the oil in a large saute pan on a medium-high flame. Fry the aubergines for eight to 10 minutes (take care, because the oil may spit), turning regularly, until nicely browned on all sides. Remove from the pan, turn down the heat to medium-low, add the onion and peppers, and cook for 10 minutes, stirring often, until soft but not coloured. Add the garlic and spices, cook for a minute, then stir in the tomatoes, two tablespoons of water, the sugar, fresh oregano, half a teaspoon of salt and a good grind of pepper. Turn the heat to low, put the aubergines on top of the veg, cover the pan and cook for 45 minutes, until the aubergines are steamed through.</p></li><li><span class="n">4</span><p>In the meantime, heat the oven to 180C/350F/gas mark 4. Carefully lift out the cooked aubergines and place them cut side up in a 20cm x 30cm ceramic baking dish; they should be nice and snug. Prise open the aubergines, so they look like long canoes, then sprinkle the insides with a generous pinch of salt. Discard the oregano from the sauce, then spoon it into the aubergines, filling them as much as you can; don’t worry if some sauce spills out around them – it’s kind of unavoidable. Cover with foil and bake for 35 minutes. Remove the foil and leave the aubergines to cool to room temperature. Serve topped with a sprinkling of dried oregano.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-imam-bayildi-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Imam bayildi.docx -->
+</body>
+</html>

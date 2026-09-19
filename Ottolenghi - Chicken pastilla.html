@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicken pastilla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Chicken pastilla</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Serves <b>12</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/chicken-pastilla.png" alt="Chicken pastilla" loading="lazy">
+<p class="lede">Time and effort are needed for this dish, but it’s well worth it. The result is a delicious, highly exotic feast with which to feed a huge table of friends. This was first served at NOPI as a rabbit pastilla which we then changed to pheasant over the Christmas season. We’ve changed it to chicken here, for the sake of ease of preparation, but switch back to the rabbit or pheasant if you like. Your butcher can help you prepare the rabbit for cooking if you’re not keen. Those sticking with chicken must not worry about missing out on a gamey quality, though: the depth of flavour in the sauce – heavy in chocolate, smoky chillies, stock and wine – imparts such an unusual richness that people are often surprised that they are eating chicken rather than pheasant in the first place. If you want to get ahead in terms of preparation, you can bring the dish up to the point where the cooked chicken meat has been pulled off the bones and returned to the sauce. Leave the meat in the sauce overnight in the fridge and bring it back to room temperature before continuing the next day. This recipe was a team effort at NOPI. It started with Scully’s need to use up some excess dried chillies which were hanging at the NOPI reception for a while, like garlands to welcome guests as they entered the restaurant. Thanks to Andreu Altamirano, whose recipe for the Catalan spinach came from his father..</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="chicken-pastilla-i1"><label for="chicken-pastilla-i1">1.5kg chicken, divided into 6 (or 2 breasts, skin on, and 2 legs and 2 thighs, skin on and on the bone)</label></li><li><input type="checkbox" id="chicken-pastilla-i2"><label for="chicken-pastilla-i2">2 tbsp sunflower oil</label></li><li><input type="checkbox" id="chicken-pastilla-i3"><label for="chicken-pastilla-i3">2 medium onions, thinly sliced (250g)</label></li><li><input type="checkbox" id="chicken-pastilla-i4"><label for="chicken-pastilla-i4">12 garlic cloves, thinly sliced</label></li><li><input type="checkbox" id="chicken-pastilla-i5"><label for="chicken-pastilla-i5">4 large plum tomatoes, cut lengthways into 8 long wedges (350g)</label></li><li><input type="checkbox" id="chicken-pastilla-i6"><label for="chicken-pastilla-i6">4 long cinnamon sticks</label></li><li><input type="checkbox" id="chicken-pastilla-i7"><label for="chicken-pastilla-i7">1 tsp pink peppercorns</label></li><li><input type="checkbox" id="chicken-pastilla-i8"><label for="chicken-pastilla-i8">2 whole dried chipotle chillies, or1 urfa and 2 dried red chillies, de-seeded</label></li><li><input type="checkbox" id="chicken-pastilla-i9"><label for="chicken-pastilla-i9">100ml brandy</label></li><li><input type="checkbox" id="chicken-pastilla-i10"><label for="chicken-pastilla-i10">500ml white wine</label></li><li><input type="checkbox" id="chicken-pastilla-i11"><label for="chicken-pastilla-i11">500ml chicken stock</label></li><li><input type="checkbox" id="chicken-pastilla-i12"><label for="chicken-pastilla-i12">40g dark chocolate (70% cocoa solids), roughly broken</label></li><li><input type="checkbox" id="chicken-pastilla-i13"><label for="chicken-pastilla-i13">100g ghee, melted</label></li><li><input type="checkbox" id="chicken-pastilla-i14"><label for="chicken-pastilla-i14">250g filo pastry (18-20 sheets)</label></li><li><input type="checkbox" id="chicken-pastilla-i15"><label for="chicken-pastilla-i15">20g icing sugar</label></li><li><input type="checkbox" id="chicken-pastilla-i16"><label for="chicken-pastilla-i16">coarse sea salt and black pepper</label></li></ul><p class="ing-group-heading">Catalan spinach:</p><ul class="ing"><li><input type="checkbox" id="chicken-pastilla-i17"><label for="chicken-pastilla-i17">100ml Valdespino sherry vinegar (or another good-quality sherry vinegar)</label></li><li><input type="checkbox" id="chicken-pastilla-i18"><label for="chicken-pastilla-i18">100ml brandy</label></li><li><input type="checkbox" id="chicken-pastilla-i19"><label for="chicken-pastilla-i19">100g currants</label></li><li><input type="checkbox" id="chicken-pastilla-i20"><label for="chicken-pastilla-i20">150g pine nuts, toasted</label></li><li><input type="checkbox" id="chicken-pastilla-i21"><label for="chicken-pastilla-i21">11/2 tbsp olive oil</label></li><li><input type="checkbox" id="chicken-pastilla-i22"><label for="chicken-pastilla-i22">1 tsp smoked paprika</label></li><li><input type="checkbox" id="chicken-pastilla-i23"><label for="chicken-pastilla-i23">3 small shallots, thinly sliced (100g)</label></li><li><input type="checkbox" id="chicken-pastilla-i24"><label for="chicken-pastilla-i24">2 garlic cloves, thinly sliced</label></li><li><input type="checkbox" id="chicken-pastilla-i25"><label for="chicken-pastilla-i25">200ml double cream</label></li><li><input type="checkbox" id="chicken-pastilla-i26"><label for="chicken-pastilla-i26">300g baby spinach</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Season the chicken pieces with 1&#189; teaspoons of salt and a good grind of black pepper. Heat the sunflower oil in a large saut&#233; pan and place on a high heat. Add half the chicken pieces and sear for 7–8 minutes, turning once halfway through, until deep golden-brown on both sides. Remove from the pan and set aside to cool while you continue with the remaining batch.</p></li><li><span class="n">2</span><p>Keep the pan on the heat and add the onions and garlic. Cook on a medium-high heat for 15–18 minutes, until the onions are soft, dark and caramelized like jam. Keep a close eye on it towards the end and stir constantly, to make sure it does not catch on the bottom of the pan. Add the tomatoes, cinnamon, peppercorns and dried chillies, along with &#189; teaspoon of salt. Continue to cook for another 4–5 minutes, stirring from time to time, then slowly pour over the brandy. Cook for a further 2 minutes, then return the chicken pieces to the pan. Pour over the wine and stock, reduce the heat to low and simmer, covered, for 1 hour. Remove the chicken pieces, increase the heat and let the sauce bubble away for 30–35 minutes, until it has reduced by a quarter and has the consistency of caramel. Remove and discard the cinnamon stick and chillies, add the chocolate and cook for 2 minutes, stirring often. Remove from the heat and set aside to cool: you should have about 500ml in the pan.</p></li><li><span class="n">3</span><p>Once the chicken is cool enough to handle, use your hands to pick all the meat off the bones. Return the meat to the sauce, stir gently and set aside.</p></li><li><span class="n">4</span><p>To make the Catalan spinach, pour the sherry vinegar and brandy into a small saucepan and place on a medium-low heat. Warm through for 5 minutes, then remove from the heat. Stir through the currants and set aside to cool. Mix the pine nuts with 1 teaspoon of oil and the paprika and set aside. Pour the remaining oil into a very large saut&#233; pan, place on a medium-low heat and add the shallots. Cook for about 8 minutes, until soft and lightly coloured. Add the garlic, along with 1 teaspoon of salt, and cook for a further 2 minutes. Add the currant and brandy mix, along with the pine nuts, and cook for 2 more minutes. Pour in the cream, increase the heat and cook for 3 minutes, to reduce the sauce by a quarter. Stir in the spinach and cook for 3–4 minutes, uncovered, for the leaves to wilt and for the liquid to evaporate so that there is about 2 tablespoons left in the pan.</p></li><li><span class="n">5</span><p>Preheat the oven to 200&#176;C/180&#176;C fan/gas mark 6.</p></li><li><span class="n">6</span><p>Brush the base and sides of a large deep ovenproof saut&#233; pan – around 25cm wide and 8cm deep – with about a tablespoon of the melted ghee. Brush the first sheet of filo pastry and line the base of the pan. Continue with the next sheet, generously overlapping as you go, and leaving about an 8cm overhang over the edge of the pan with each sheet. Work quite quickly here, so that the pastry does not dry out, brushing each sheet liberally with the melted ghee. Continue until you have used two-thirds of the pastry sheets, then spoon the spinach mixture into the base of the pan. Spread the chicken on top, then continue with the remaining pastry sheets, tucking these ones into the pan, as though making a bed with fitted sheets.</p></li><li><span class="n">7</span><p>Continue until all the filo has been used before drawing in the overhanging pastry sheets and sealing these on top of the pie with a final brush of the melted ghee.</p></li><li><span class="n">8</span><p>Place in the oven and cook for 1 hour, uncovered. Cover with foil and cook for a final 10 minutes, so that the bottom gets golden brown without the top burning. Remove from the oven and set aside for 10 minutes before inverting the pastilla on to a platter. Sprinkle over the icing sugar, through a fine mesh sieve, and serve warm as is. You can also make a mesh pattern on top of the pastilla by heating up a metal skewer with a blow-torch until red hot. Create parallel lines by burning the sugar in straight lines, spaced 2cm apart and then repeating at a 90&#176; angle.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-chicken-pastilla-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Chicken pastilla.docx -->
+</body>
+</html>

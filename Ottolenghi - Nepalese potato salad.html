@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nepalese potato salad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Nepalese potato salad</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>10 min</b></span><span class="chip">Cook <b>30 min</b></span><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/nepalese-potato-salad.jpeg" alt="Nepalese potato salad" loading="lazy">
+<p class="lede">Everyone who loves potato salad thinks their version is the best, so thanks to&#160;Chaya’s friend Neha for sharing her favourite Nepalese version, which celebrates tangy tamarind and fresh coriander, and letting my team play around with it. If possible, do start off with tamarind from a block, because homemade puree is so much more balanced (tangy, but less acidic) than many ready-made ones. This works really well as a standalone dish, served with some yoghurt, but it also goes with simply grilled meat, fish and even aubergine.</p>
+<h2>Ingredients — tap to check off</h2>
+<p class="ing-group-heading">For the chilli pickle</p><ul class="ing"><li><input type="checkbox" id="nepalese-potato-salad-i1"><label for="nepalese-potato-salad-i1">4 green chillies&#160;(35g), thinly sliced on an angle</label></li><li><input type="checkbox" id="nepalese-potato-salad-i2"><label for="nepalese-potato-salad-i2">3 tbsp cider vinegar</label></li><li><input type="checkbox" id="nepalese-potato-salad-i3"><label for="nepalese-potato-salad-i3">Salt</label></li><li><input type="checkbox" id="nepalese-potato-salad-i4"><label for="nepalese-potato-salad-i4">&#188; tsp caster sugar</label></li></ul><p class="ing-group-heading">For the potatoes</p><ul class="ing"><li><input type="checkbox" id="nepalese-potato-salad-i5"><label for="nepalese-potato-salad-i5">1kg large desiree potatoes,&#160;peeled, cut into quarters lengthways, then each quarter cut in half widthways</label></li><li><input type="checkbox" id="nepalese-potato-salad-i6"><label for="nepalese-potato-salad-i6">200g ghee</label></li><li><input type="checkbox" id="nepalese-potato-salad-i7"><label for="nepalese-potato-salad-i7">1 large onion&#160;(330g), peeled and thinly sliced</label></li><li><input type="checkbox" id="nepalese-potato-salad-i8"><label for="nepalese-potato-salad-i8">7g curry leaves&#160;(about 5 stems)</label></li><li><input type="checkbox" id="nepalese-potato-salad-i9"><label for="nepalese-potato-salad-i9">7 garlic cloves&#160;(40g), peeled and thinly sliced</label></li><li><input type="checkbox" id="nepalese-potato-salad-i10"><label for="nepalese-potato-salad-i10">80g coriander, 2&#189;-3 tbsp (10g) leaves picked and kept aside to garnish, the rest roughly chopped</label></li></ul><p class="ing-group-heading">For the spice mix</p><ul class="ing"><li><input type="checkbox" id="nepalese-potato-salad-i11"><label for="nepalese-potato-salad-i11">1 tbsp black mustard seeds</label></li><li><input type="checkbox" id="nepalese-potato-salad-i12"><label for="nepalese-potato-salad-i12">1 tsp nigella seeds</label></li><li><input type="checkbox" id="nepalese-potato-salad-i13"><label for="nepalese-potato-salad-i13">80g sesame seeds, plus 20g extra, toasted, to serve</label></li><li><input type="checkbox" id="nepalese-potato-salad-i14"><label for="nepalese-potato-salad-i14">1 tsp ground turmeric</label></li><li><input type="checkbox" id="nepalese-potato-salad-i15"><label for="nepalese-potato-salad-i15">80g tamarind from a block, soaked in 100ml boiling water and sieved to collect about 120g puree</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>In a small, non-reactive bowl, mix the chillies with the vinegar, a quarter-teaspoon of salt and the sugar, and set aside to pickle (if you like, do this up to a day ahead).</p></li><li><span class="n">2</span><p>Put two and a half litres of water and three tablespoons of salt in a large saucepan and set on a high heat. Bring to a boil, add the potatoes and cook for 20 minutes, until tender but not broken down, then drain.</p></li><li><span class="n">3</span><p>Meanwhile, melt the ghee in a large saute pan on a medium-high heat, then add the onion, curry leaves, garlic and chopped coriander, and fry, stirring regularly, for 15 minutes, until the onions are soft and starting lightly to caramelise.</p></li><li><span class="n">4</span><p>In the small bowl of a food processor or mortar, coarsely grind the mustard, nigella and sesame seeds, add to the onion pan with the turmeric and fry for a minute. Stir in the tamarind paste, take the pan off the heat, then gently stir in the potatoes until well coated in the spiced onion mixture and set aside for five minutes to absorb the flavours.</p></li><li><span class="n">5</span><p>Transfer the potatoes to a large platter, or individual plates, scatter the pickled chillies, toasted sesame seeds and reserved coriander on top and serve warm or at room temperature.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-nepalese-potato-salad-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Ottolenghi - Nepalese potato salad.docx -->
+</body>
+</html>
