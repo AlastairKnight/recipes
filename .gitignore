@@ -2,3 +2,4 @@ Original files/
 *.xlsx
 ~$*
 desktop.ini
+.claude/
