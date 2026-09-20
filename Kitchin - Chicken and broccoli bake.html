@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicken and broccoli bake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Chicken and broccoli bake</p>
+<p class="byline">Tom Kitchin</p>
+<div class="chips"><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/chicken-and-broccoli-bake.jpeg" alt="Chicken and broccoli bake" loading="lazy">
+<p class="lede">This simple midweek supper takes me back to my childhood as it’s an adaptation of one of my mother’s recipes. If I have time I’ll poach a whole chicken rather than chicken breasts, as it gives a tastier stock.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="chicken-and-broccoli-bake-i1"><label for="chicken-and-broccoli-bake-i1">4 free-range boneless chicken breasts, skinned, about 150g each</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i2"><label for="chicken-and-broccoli-bake-i2">700ml water</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i3"><label for="chicken-and-broccoli-bake-i3">1 onion, peeled and quartered</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i4"><label for="chicken-and-broccoli-bake-i4">1 carrot, peeled and sliced</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i5"><label for="chicken-and-broccoli-bake-i5">Bouquet garni</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i6"><label for="chicken-and-broccoli-bake-i6">5 black peppercorns</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i7"><label for="chicken-and-broccoli-bake-i7">sea salt</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i8"><label for="chicken-and-broccoli-bake-i8">freshly ground black pepper</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i9"><label for="chicken-and-broccoli-bake-i9">1 head broccoli, cut into florets</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i10"><label for="chicken-and-broccoli-bake-i10">50g butter</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i11"><label for="chicken-and-broccoli-bake-i11">50g plain flour</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i12"><label for="chicken-and-broccoli-bake-i12">1 teaspoon ground cumin</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i13"><label for="chicken-and-broccoli-bake-i13">1 tablespoon curry powder</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i14"><label for="chicken-and-broccoli-bake-i14">1 tablespoon creme fraiche</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i15"><label for="chicken-and-broccoli-bake-i15">100g cheddar, grated</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i16"><label for="chicken-and-broccoli-bake-i16">squeeze lemon juice, to taste</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i17"><label for="chicken-and-broccoli-bake-i17">50g fresh white breadcrumbs</label></li><li><input type="checkbox" id="chicken-and-broccoli-bake-i18"><label for="chicken-and-broccoli-bake-i18">1-2 tablespoons flat-leaf parsley, roughly chopped, to finish</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 180°C. Have the chicken breasts ready at room temperature.</p></li><li><span class="n">2</span><p>Bring the water to the boil in a wide pan. Add the onion, carrot, bouquet garni and peppercorns and simmer for 10 minutes. Add the chicken breasts, making sure there is enough water to cover them. Lower the heat and poach gently for 10–12 minutes. Remove from the heat.</p></li><li><span class="n">3</span><p>Using a slotted spoon, lift out the chicken and vegetables onto a plate and set aside. Measure 600 ml stock and reserve.</p></li><li><span class="n">4</span><p>In another pan of boiling salted water, blanch the broccoli for 3–4 minutes. Drain and set aside.</p></li><li><span class="n">5</span><p>Meanwhile, heat the butter in a heavy-based saucepan, stir in the flour and cook for 1–2 minutes. Now add the cumin and curry powder and cook, stirring frequently, for another 2 minutes. Gradually stir in the reserved stock and bring to the boil, stirring.</p></li><li><span class="n">6</span><p>Let the sauce simmer, stirring often, for 4 minutes, then remove from the heat. Stir in the crème fraîche and grated Cheddar. Add a squeeze of lemon juice and season with salt and pepper to taste.</p></li><li><span class="n">7</span><p>Tear or cut the chicken into pieces. Scatter the reserved onion and carrot into a buttered, shallow ovenproof dish. Add the chicken and broccoli florets.</p></li><li><span class="n">8</span><p>Pour the cheese sauce over the chicken and vegetables to cover. Sprinkle with the breadcrumbs and bake for 20–25 minutes until the topping is golden brown and crunchy. Scatter the chopped parsley over the bake and serve.</p></li></ol>
+<div class="notes">From Kitchin Suppers</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-chicken-and-broccoli-bake-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Kitchin - Chicken and broccoli bake.docx -->
+</body>
+</html>

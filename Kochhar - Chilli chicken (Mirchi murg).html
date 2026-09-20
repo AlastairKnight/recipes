@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chilli chicken (Mirchi murg)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Chilli chicken (Mirchi murg)</p>
+<p class="byline">Atul Kochhar</p>
+<div class="chips"><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/chilli-chicken-mirchi-murg.jpeg" alt="Chilli chicken (Mirchi murg)" loading="lazy">
+<p class="lede">Whenever you think of chilli chicken, I’m betting it is the red-coloured Chinese preparation that comes to mind. Even for an Indian, this dish can conjure up a different mental picture to what we serve at Benares. I have played on those emotions and have converted this dish into a totally different recipe – mind games! This is a starter recipe on the Benares menu, but the quantities can be doubled as here for a main course.</p>
+<h2>Ingredients — tap to check off</h2>
+<p class="ing-group-heading">For the chicken tikka</p><ul class="ing"><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i1"><label for="chilli-chicken-mirchi-murg-i1">1 1/2 teaspoons see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i2"><label for="chilli-chicken-mirchi-murg-i2">1 teaspoon see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i3"><label for="chilli-chicken-mirchi-murg-i3">100ml see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i4"><label for="chilli-chicken-mirchi-murg-i4">4 x 180g boneless, skinless chicken supremes, each cut into 5 pieces</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i5"><label for="chilli-chicken-mirchi-murg-i5">15g butter</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i6"><label for="chilli-chicken-mirchi-murg-i6">1 tablespoon sunflower oil</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i7"><label for="chilli-chicken-mirchi-murg-i7">sea salt</label></li></ul><p class="ing-group-heading">For the chicken-stuffed peppers</p><ul class="ing"><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i8"><label for="chilli-chicken-mirchi-murg-i8">4 large long, sweet red peppers</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i9"><label for="chilli-chicken-mirchi-murg-i9">400g minced chicken breast</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i10"><label for="chilli-chicken-mirchi-murg-i10">2 tablespoons single cream</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i11"><label for="chilli-chicken-mirchi-murg-i11">1 tablespoon chopped coriander leaves</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i12"><label for="chilli-chicken-mirchi-murg-i12">2 teaspoons peeled and finely chopped fresh ginger</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i13"><label for="chilli-chicken-mirchi-murg-i13">1 teaspoon sunflower oil, plus extra for basting</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i14"><label for="chilli-chicken-mirchi-murg-i14">1/2 teaspoon finely chopped green chilli</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i15"><label for="chilli-chicken-mirchi-murg-i15">1/2 teaspoon see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i16"><label for="chilli-chicken-mirchi-murg-i16">1/2 teaspoon coarsely crushed black peppercorns</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i17"><label for="chilli-chicken-mirchi-murg-i17">sea salt</label></li></ul><p class="ing-group-heading">For the green paste</p><ul class="ing"><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i18"><label for="chilli-chicken-mirchi-murg-i18">100g coriander leaves and stalks</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i19"><label for="chilli-chicken-mirchi-murg-i19">100g spinach leaves, rinsed and shaken dry</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i20"><label for="chilli-chicken-mirchi-murg-i20">50g fresh mint leaves</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i21"><label for="chilli-chicken-mirchi-murg-i21">4 tablespoons water</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i22"><label for="chilli-chicken-mirchi-murg-i22">2 tablespoons see method for ingredients</label></li></ul><p class="ing-group-heading">For the korma gravy</p><ul class="ing"><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i23"><label for="chilli-chicken-mirchi-murg-i23">15g butter</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i24"><label for="chilli-chicken-mirchi-murg-i24">1 teaspoon sunflower oil</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i25"><label for="chilli-chicken-mirchi-murg-i25">250ml see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i26"><label for="chilli-chicken-mirchi-murg-i26">1/2 teaspoon crushed black peppercorns</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i27"><label for="chilli-chicken-mirchi-murg-i27">1/4 teaspoon see method for ingredients</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i28"><label for="chilli-chicken-mirchi-murg-i28">1 tablespoon lemon juice</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i29"><label for="chilli-chicken-mirchi-murg-i29">A pinch sugar</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i30"><label for="chilli-chicken-mirchi-murg-i30">sea salt</label></li></ul><p class="ing-group-heading">To garnish</p><ul class="ing"><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i31"><label for="chilli-chicken-mirchi-murg-i31">12 pimiento de pedras</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i32"><label for="chilli-chicken-mirchi-murg-i32">4 tablespoons olive oil</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i33"><label for="chilli-chicken-mirchi-murg-i33">1 teaspoon chaat masala</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i34"><label for="chilli-chicken-mirchi-murg-i34">a few edible flowers</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i35"><label for="chilli-chicken-mirchi-murg-i35">carrot top sprigs</label></li><li><input type="checkbox" id="chilli-chicken-mirchi-murg-i36"><label for="chilli-chicken-mirchi-murg-i36">purple cress</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>To make the chicken tikka, mix the garlic and chilli pastes with the marinade, then rub all over the chicken supreme pieces and leave to marinate for 2 hours in the fridge.</p></li><li><span class="n">2</span><p>For the chicken-stuffed peppers, preheat the oven to 200°C and line a roasting tray with a non-stick oven mat. Slit the red peppers lengthways, without cutting all the way through, but make a large enough slit to be able to stuff with the chicken mixture. Remove all the seeds and the membranes with a small spoon and discard. Place the chicken mince in a bowl with the remaining ingredients with salt to taste and mix together well. Fill each pepper with a one-quarter of the chicken filling. Brush with a little sunflower oil.</p></li><li><span class="n">3</span><p>Place the stuffed peppers, slit sides up, in the roasting tray and roast for 10–12 minutes, basting once or twice with oil, until the chicken mince is cooked through and no longer pink. Remove from the roasting tin, set aside and keep hot until ready to serve. Turn the oven temperature down to 180°C.</p></li><li><span class="n">4</span><p>Melt the butter with the oil in a small pan. Place the chicken supreme pieces in the roasting tray and roast for 10 minutes, or until cooked through and the juices run clear when pierced with a knife. Baste with the butter and oil mixture, then leave to rest for 5 minutes, covered with foil. (You can also cook these chicken pieces on a barbecue or in a tandoori oven if you are lucky enough to have one at home.)</p></li><li><span class="n">5</span><p>Meanwhile, make the green paste for the gravy. Put the green leaves and coriander stalks in a blender or food processor with the water and blitz. Add the green chilli paste and blitz again until a fine paste forms.</p></li><li><span class="n">6</span><p>To make the gravy, melt the butter with the oil in a wok or large pan. Add the green paste and sauté over a medium heat for 1 minute. Stir in the shahi gravy and simmer for 2–3 minutes to blend the flavours. Stir in the black pepper and garam masala, then add the lemon juice, sugar and salt to taste to balance the flavours. Transfer to a squeezy bottle and keep hot until ready to serve.</p></li><li><span class="n">7</span><p>Just before serving, fry the pimiento de pedras for the garnish. Heat the olive oil in a frying pan over a high heat, add the pimientos and stir-fry for 3–4 minutes until they are tender and blistered. Sprinkle with salt to taste.</p></li><li><span class="n">8</span><p>To serve, slice the stuffed peppers and arrange with the chicken tikka on plates, then go to town and add swirls of the sauce and the other garnishes. Use your imagination!</p></li></ol>
+<div class="notes">From Benares</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-chilli-chicken-mirchi-murg-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Kochhar - Chilli chicken.docx -->
+</body>
+</html>
