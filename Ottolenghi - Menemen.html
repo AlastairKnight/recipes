@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menemen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Menemen</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>5 mins</b></span><span class="chip">Cook <b>15 mins</b></span><span class="chip">Serves <b>2</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/menemen.jpeg" alt="Menemen" loading="lazy">
+<p class="lede">Menemen is a Turkish breakfast dish: scrambled eggs, spices, tomatoes. Simple! It’s the most comforting of all ways to start – or end – the day. The key is to add the eggs off the heat, so that they cook gently in the residual warmth of the pan. Serve with buttered toast or a leafy salad with slices of avocado.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="menemen-i1"><label for="menemen-i1">4 eggs</label></li><li><input type="checkbox" id="menemen-i2"><label for="menemen-i2">3 tbsp olive oil</label></li><li><input type="checkbox" id="menemen-i3"><label for="menemen-i3">1 onion, finely chopped (160g)</label></li><li><input type="checkbox" id="menemen-i4"><label for="menemen-i4">3 garlic cloves, crushed</label></li><li><input type="checkbox" id="menemen-i5"><label for="menemen-i5">1 tsp cumin seeds</label></li><li><input type="checkbox" id="menemen-i6"><label for="menemen-i6">½ tsp Aleppo chilli flakes</label></li><li><input type="checkbox" id="menemen-i7"><label for="menemen-i7">½ tsp ground cinnamon</label></li><li><input type="checkbox" id="menemen-i8"><label for="menemen-i8">½ tbsp tomato paste</label></li><li><input type="checkbox" id="menemen-i9"><label for="menemen-i9">300g cherry tomatoes, halved</label></li><li><input type="checkbox" id="menemen-i10"><label for="menemen-i10">1 tbsp double cream</label></li><li><input type="checkbox" id="menemen-i11"><label for="menemen-i11">5g coriander leaves, roughly chopped</label></li><li><input type="checkbox" id="menemen-i12"><label for="menemen-i12">Fine sea salt</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put the eggs into a bowl with half a teaspoon of salt. Lightly beat, just to break up the yolks, and set aside.</p></li><li><span class="n">2</span><p>Put the oil into a medium frying pan on a medium-high heat. Add the onion and garlic and cook for five minutes, stirring a few times, until softened and starting to colour. Add the spices, tomato paste and an eighth of a teaspoon of salt and cook for two minutes, until fragrant. Add the tomatoes and 60ml of water, then cook, uncovered, for 10 minutes until the tomatoes have broken down. Squish them with the back of a spoon if they need a bit of help.</p></li><li><span class="n">3</span><p>Remove from the heat and swirl in the eggs, using a wooden spoon or spatula and moving the pan gently until just set. Spoon over the cream, sprinkle over the coriander and serve straight from the pan.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-menemen-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2026/aug/29/yotam-ottolenghi-simple-breakfasts-recipes?CMP=Share_AndroidApp_Other -->
+</body>
+</html>
