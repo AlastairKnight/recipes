@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grilled lettuce with orange, almond and feta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Grilled lettuce with orange, almond and feta</p>
+<p class="byline">Yotam Ottolenghi</p>
+<div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>20 min</b></span><span class="chip">Serves <b>4 as a side</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/grilled-lettuce-with-orange-almond-and-feta.jpeg" alt="Grilled lettuce with orange, almond and feta" loading="lazy">
+<p class="lede">A bit of heat transforms crunchy lettuce leaves into a smoky, flavour-bomb. I use orzo in the base of this salad to absorb the dressing, but feel free to swap it with giant couscous or a similar small-shaped pasta. The dressing also works beautifully with raw salad leaves or spooned over roast chicken.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i1"><label for="grilled-lettuce-with-orange-almond-and-feta-i1">1 banana shallot (40g), peeled and cut into thin rounds</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i2"><label for="grilled-lettuce-with-orange-almond-and-feta-i2">1 lemon, zest finely grated, to get 1 tsp, and juiced, to get 2 tbsp</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i3"><label for="grilled-lettuce-with-orange-almond-and-feta-i3">Fine sea salt and black pepper</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i4"><label for="grilled-lettuce-with-orange-almond-and-feta-i4">100g orzo</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i5"><label for="grilled-lettuce-with-orange-almond-and-feta-i5">60g pitted kalamata olives</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i6"><label for="grilled-lettuce-with-orange-almond-and-feta-i6">4 baby gem lettuce, cut lengthways into quarters</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i7"><label for="grilled-lettuce-with-orange-almond-and-feta-i7">50g feta, crumbled</label></li></ul><p class="ing-group-heading">For the orange and almond dressing</p><ul class="ing"><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i8"><label for="grilled-lettuce-with-orange-almond-and-feta-i8">80ml olive oil</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i9"><label for="grilled-lettuce-with-orange-almond-and-feta-i9">1 tsp runny honey</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i10"><label for="grilled-lettuce-with-orange-almond-and-feta-i10">½ tsp nigella seeds</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i11"><label for="grilled-lettuce-with-orange-almond-and-feta-i11">¼ tsp aleppo chilli flakes</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i12"><label for="grilled-lettuce-with-orange-almond-and-feta-i12">Salt</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i13"><label for="grilled-lettuce-with-orange-almond-and-feta-i13">1 large orange</label></li><li><input type="checkbox" id="grilled-lettuce-with-orange-almond-and-feta-i14"><label for="grilled-lettuce-with-orange-almond-and-feta-i14">50g skin-on almonds, toasted and roughly chopped</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put the shallots, lemon juice, an eighth of a teaspoon of salt and a good grind of black pepper in a medium bowl and mix well.</p></li><li><span class="n">2</span><p>In a dry, medium saucepan on a medium-high heat, toast the orzo, stirring frequently, for seven minutes, until golden, then pour in just-boiled salted water to cover and leave to cook for seven to nine minutes, until softened but still with a bite. Drain well, then stir the pasta into the shallot bowl and set aside.</p></li><li><span class="n">3</span><p>Meanwhile, put a griddle plan on a high heat and ventilate the kitchen. Once the pan is hot, grill the olives for seven minutes, until lightly charred all over, then tip on to a board, slice thinly and stir into the orzo bowl.</p></li><li><span class="n">4</span><p>Working in two batches, grill the lettuce quarters, turning them as necessary, for six minutes, until nicely charred on all sides, then transfer to a large plate or tray.</p></li><li><span class="n">5</span><p>Whisk the first four dressing ingredients in a small bowl with a quarter-teaspoon of salt. Using a small, serrated knife, top and tail the orange, then cut away and discard the skin and white pith. Cut the orange into ½cm-thick rounds, then tear these into half-moons and gently toss in the dressing with the almonds.</p></li><li><span class="n">6</span><p>Scatter the still-warm orzo mix over a large platter, arrange the grilled lettuce quarters on top and sprinkle over the feta. Spoon over the dressing and serve.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-grilled-lettuce-with-orange-almond-and-feta-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2023/may/20/oranges-feta-tofu-shiitake-salads-yotam-ottolenghi-lettuce-recipes?CMP=Share_AndroidApp_Other -->
+</body>
+</html>
