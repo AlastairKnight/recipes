@@ -2,13 +2,14 @@
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
  "generated": "2026-09-21",
- "count": 133,
+ "count": 136,
  "authors": [
   "Andrèa Fedder",
   "Asma Khan",
   "Atul Kochhar",
   "Brian Danclair",
   "Diana Henry",
+  "Donna Hay",
   "Elizabeth David",
   "Felicity Cloake",
   "Ferran Adrià",
@@ -948,6 +949,114 @@
    ],
    "notes": [],
    "source": "Diana Henry - Hot lightning (new potatoes with apples, pears and bacon).docx"
+  },
+  {
+   "title": "Burnt vanilla creams",
+   "author": "Donna Hay",
+   "byline": "Donna Hay",
+   "url": "https://alastairknight.github.io/recipes/Donna%20Hay%20-%20Burnt%20vanilla%20creams.html",
+   "file": "Donna Hay - Burnt vanilla creams.html",
+   "image": "https://alastairknight.github.io/recipes/Images/burnt-vanilla-creams.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "2 cups (16 fl oz) cream",
+      "1½ tablespoons cornflour (cornstarch)",
+      "5 egg yolks",
+      "1 teaspoon vanilla extract",
+      "⅓ cup brown sugar",
+      "caster (superfine) sugar to top"
+     ]
+    }
+   ],
+   "method": [
+    "Place the cream in a saucepan over low heat and allow to become hot but not boil.",
+    "Whisk together the cornflour, egg yolks, vanilla and brown sugar until smooth.",
+    "Whisk the egg yolk mixture into the hot cream. Stir over low heat until the mixture thickens.",
+    "Pour into 1 cup capacity dishes and chill for 3 hours or until firm.",
+    "Top with a little caster sugar and either grill (broil) under a very hot grill (broiler) or brûlée with a hot spoon."
+   ],
+   "notes": [],
+   "source": "Marie Claire - Burnt Vanilla Creams.pdf"
+  },
+  {
+   "title": "Chicken simmered with juniper berries",
+   "author": "Donna Hay",
+   "byline": "Donna Hay",
+   "url": "https://alastairknight.github.io/recipes/Donna%20Hay%20-%20Chicken%20simmered%20with%20juniper%20berries.html",
+   "file": "Donna Hay - Chicken simmered with juniper berries.html",
+   "image": "https://alastairknight.github.io/recipes/Images/chicken-simmered-with-juniper-berries.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "2 cups (16 fl oz) chicken stock",
+      "1 tablespoon juniper berries, lightly crushed",
+      "½ cup (4 fl oz) verjuice",
+      "3 sprigs fresh thyme",
+      "4 chicken breast fillets"
+     ]
+    }
+   ],
+   "method": [
+    "Place the chicken stock, juniper berries, verjuice and thyme in a deep frying pan over low heat and allow to simmer for 3 minutes.",
+    "Add the chicken fillets to the pan and simmer for 6–7 minutes each side or until tender.",
+    "Remove the chicken from the pan and keep warm.",
+    "Increase the temperature to high and boil the pan liquid for 2 minutes or until it has thickened slightly.",
+    "To serve, place the chicken on serving plates and top with the pan sauce. Serve with creamy mashed potato."
+   ],
+   "notes": [],
+   "source": "Marie Claire - ChickenJuniper.pdf"
+  },
+  {
+   "title": "Rocket, blue cheese and fried pear salad",
+   "author": "Donna Hay",
+   "byline": "Donna Hay",
+   "url": "https://alastairknight.github.io/recipes/Donna%20Hay%20-%20Rocket%2C%20blue%20cheese%20and%20fried%20pear%20salad.html",
+   "file": "Donna Hay - Rocket, blue cheese and fried pear salad.html",
+   "image": "https://alastairknight.github.io/recipes/Images/rocket-blue-cheese-and-fried-pear-salad.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "8 long, thin slices bread",
+      "olive oil",
+      "⅓ cup grated parmesan cheese",
+      "2 tablespoons butter",
+      "1 tablespoon brown sugar",
+      "½ teaspoon cracked black pepper",
+      "1 tablespoon coriander leaves",
+      "2 pears, peeled and sliced",
+      "200g (6½ oz) rocket (arugula) leaves",
+      "1 cucumber, sliced",
+      "1 red onion, sliced",
+      "200g (6½ oz) soft blue cheese",
+      "cracked black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Brush bread with a little olive oil and sprinkle with parmesan. Place bread on a baking tray and cook in a preheated 180°C (350°F) oven for 15 minutes or until golden and crisp. Set aside to cool.",
+    "Heat butter in a frypan over medium heat. Add brown sugar, pepper and coriander to pan and cook for 1 minute.",
+    "Add pears to pan and cook for 2 minutes on each side or until golden.",
+    "To serve, arrange crisp bread, rocket (arugula), cucumber, red onion and blue cheese on serving plates.",
+    "Top with pears and pour pan juices from pears over salad. Sprinkle with cracked black pepper and serve immediately, while bread is crisp."
+   ],
+   "notes": [],
+   "source": "Marie Claire - Rocket Blue Cheese Fried Pear Salad.pdf"
   },
   {
    "title": "Boeuf à la bourguignonne",
