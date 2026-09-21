@@ -1,0 +1,19 @@
+# Recipe Box is a personal collection and should not appear in search results.
+#
+# NOTE: crawlers only read robots.txt at a DOMAIN root. This site lives at
+# alastairknight.github.io/recipes/, so this file is currently ignored: the
+# file that would govern it is alastairknight.github.io/robots.txt, which
+# belongs to a user-site repo that does not exist. It is kept here because it
+# documents the intent and becomes effective if the site ever moves to its own
+# domain.
+#
+# The working mechanism is <meta name="robots" content="noindex, nofollow">
+# in every page, which is also the better one: a crawler has to fetch a page
+# to see the noindex, so blocking the crawl would actually prevent de-indexing.
+
+User-agent: *
+Disallow: /
+
+# recipes.json is the data file Claude reads on my phone. Allowed so that
+# fetchers honouring robots.txt can still retrieve it. Nothing links to it.
+Allow: /recipes.json
