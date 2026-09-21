@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asparagus, anchovy, parmesan and egg spaghetti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Asparagus, anchovy, parmesan and egg spaghetti</p>
+<p class="byline">Joe Trivelli</p>
+<div class="chips"><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/asparagus-anchovy-parmesan-and-egg-spaghetti.jpeg" alt="Asparagus, anchovy, parmesan and egg spaghetti" loading="lazy">
+<p class="lede">Cooking the asparagus with the pasta adds a lighter touch to an otherwise massively rich celebratory pasta.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i1"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i1">asparagus 500g</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i2"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i2">onion 1 small</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i3"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i3">olive oil</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i4"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i4">anchovy fillets 8</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i5"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i5">sea salt</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i6"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i6">spaghetti, linguini or bucatini 360g</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i7"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i7">egg yolks 2 large</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i8"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i8">parmesan 50g, grated</label></li><li><input type="checkbox" id="asparagus-anchovy-parmesan-and-egg-spaghetti-i9"><label for="asparagus-anchovy-parmesan-and-egg-spaghetti-i9">black pepper</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Trim the ends of the asparagus, cut each spear in half and then into long strips.</p></li><li><span class="n">2</span><p>Slice the onion as finely as possible. In 3 tablespoons of olive oil, sweat the onion over a medium-low heat for 15 minutes, until translucent. Use a tablespoon of water to help if they start to fry. Add the anchovy fillets, stirring until they melt, then turn the heat off.</p></li><li><span class="n">3</span><p>Bring a large pot of salted water to the boil. Cook the spaghetti for half the time stated on the packet, then add the asparagus to the water.</p></li><li><span class="n">4</span><p>Whisk the yolks well with the grated cheese, add a ladle of pasta-asparagus water and a generous grind of black pepper.</p></li><li><span class="n">5</span><p>Drain the pasta, reserving still more pasta water, then toss well with the anchovy sauce in the still warm pan but off the heat. When mixed, add the egg and continue to mix well. Use extra cooking water if you like it looser. Serve right away on hot plates.</p></li></ol>
+<div class="notes">Joe Trivelli is co-head chef of River Cafe, London</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-asparagus-anchovy-parmesan-and-egg-spaghetti-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/apr/07/mussel-soup-asparagus-spaghetti-and-slow-roast-lamb-joe-trivelli-italian-easter-recipes?CMP=Share_AndroidApp_Other -->
+</body>
+</html>

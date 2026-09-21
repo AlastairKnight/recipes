@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curry goat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Curry goat</p>
+<p class="byline">Brian Danclair</p>
+<div class="chips"><span class="chip">Prep <b>10 min</b></span><span class="chip">Cook <b>2 hr 30 min</b></span><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/curry-goat.jpeg" alt="Curry goat" loading="lazy">
+
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="curry-goat-i1"><label for="curry-goat-i1">1kg goat, leg for preference, boned and chopped into 3-4cm chunks (ask the butcher to do this for you); mutton or lamb would also work</label></li><li><input type="checkbox" id="curry-goat-i2"><label for="curry-goat-i2">5 garlic cloves, peeled and chopped</label></li><li><input type="checkbox" id="curry-goat-i3"><label for="curry-goat-i3">Juice of 1 lime</label></li><li><input type="checkbox" id="curry-goat-i4"><label for="curry-goat-i4">1 tsp ground cumin</label></li><li><input type="checkbox" id="curry-goat-i5"><label for="curry-goat-i5">1 tbsp madras curry powder, mild or hot, depending on taste</label></li><li><input type="checkbox" id="curry-goat-i6"><label for="curry-goat-i6">1 scotch bonnet chilli</label></li><li><input type="checkbox" id="curry-goat-i7"><label for="curry-goat-i7">2 tbsp vegetable oil</label></li><li><input type="checkbox" id="curry-goat-i8"><label for="curry-goat-i8">1 large onion, peeled and chopped</label></li><li><input type="checkbox" id="curry-goat-i9"><label for="curry-goat-i9">1 litre chicken stock</label></li><li><input type="checkbox" id="curry-goat-i10"><label for="curry-goat-i10">Salt and black pepper</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put the goat in a large bowl, add the garlic, lime juice, cumin and curry powder, cover and marinate for 24 hours. If you want a bit of extra heat, finely chop the scotch bonnet and add that, too; otherwise, leave it whole and add it later, when the stock goes in.</p></li><li><span class="n">2</span><p>When you’re ready to cook the curry, put the oil in a large casserole or similar set over a medium heat, then soften the onion, stirring often, for about 10 minutes. Add the marinated goat and cook, stirring, for about 15 minutes, to brown the meat all over and intensify the flavours. (Depending on the age of the goat, it may at this stage give off some liquid.)</p></li><li><span class="n">3</span><p>Pour the stock over the meat, season to taste, then bring to a boil. Turn the heat down low, cover the pan and leave to simmer for about two hours, until the meat is soft and tender; if at any stage the sauce looks like drying out, top up with water as required. Serve hot with rice and peas.</p></li></ol>
+<div class="notes">Brian Danclair is chef/owner of Fish, Wings &amp; Tings and Danclair’s Kitchen, both in Brixton Village, London SW9</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-curry-goat-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/apr/02/brian-danclair-caribbean-recipes-codfish-fritters-curry-goat-and-rice-peas?CMP=Share_AndroidApp_Other -->
+</body>
+</html>

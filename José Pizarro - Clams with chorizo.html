@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clams with chorizo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Clams with chorizo</p>
+<p class="byline">José Pizarro</p>
+<div class="chips"><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/clams-with-chorizo.jpeg" alt="Clams with chorizo" loading="lazy">
+<p class="lede">I love clams, whether served with jamon or just on their own with a splash of sherry or white wine. I always thought that chorizo would overpower the delicate sweetness of the clams, but to my delight, I was wrong – this is a must-try. The crispy chorizo adds a lovely texture and the smoky flavour from the pimenton de la vera is a perfect match for fino sherry.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="clams-with-chorizo-i1"><label for="clams-with-chorizo-i1">clams 1kg</label></li><li><input type="checkbox" id="clams-with-chorizo-i2"><label for="clams-with-chorizo-i2">chorizo picante 75g, chopped into 1cm cubes</label></li><li><input type="checkbox" id="clams-with-chorizo-i3"><label for="clams-with-chorizo-i3">extra-virgin olive oil 1 tbsp</label></li><li><input type="checkbox" id="clams-with-chorizo-i4"><label for="clams-with-chorizo-i4">onion 1 small, finely chopped</label></li><li><input type="checkbox" id="clams-with-chorizo-i5"><label for="clams-with-chorizo-i5">garlic 1 clove, finely chopped</label></li><li><input type="checkbox" id="clams-with-chorizo-i6"><label for="clams-with-chorizo-i6">thyme a large sprig</label></li><li><input type="checkbox" id="clams-with-chorizo-i7"><label for="clams-with-chorizo-i7">fino sherry 100ml</label></li><li><input type="checkbox" id="clams-with-chorizo-i8"><label for="clams-with-chorizo-i8">crusty bread to serve</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Place the clams in a bowl under cold running water for 5 minutes. Discard any that won’t close.</p></li><li><span class="n">2</span><p>In a lidded saucepan over a high heat, cook the chorizo in a little olive oil for 6 minutes, until caramelised. Using a slotted spoon, remove the chorizo from the pan and place in a bowl.</p></li><li><span class="n">3</span><p>Add the onion, garlic and thyme sprig to the chorizo fat in the pan and fry for 10 minutes, or until softened. Increase the heat, add the clams and chorizo back to the pan, pour in the sherry, then cover with a lid. Cook for 3 minutes, or until all the clams have steamed open, discarding any clams that haven’t.</p></li><li><span class="n">4</span><p>Tip into a large bowl and serve with crusty bread to mop up the juices.</p></li></ol>
+<div class="notes">From Andalusia by José Pizarro (Hardie Grant, £26)</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-clams-with-chorizo-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/jan/24/clams-with-chorizo-recipe-by-jose-pizarro?CMP=Share_AndroidApp_Other -->
+</body>
+</html>

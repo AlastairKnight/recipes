@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masala omelette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Masala omelette</p>
+<p class="byline">Asma Khan</p>
+<div class="chips"><span class="chip">Serves <b>2</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/masala-omelette.jpeg" alt="Masala omelette" loading="lazy">
+<p class="lede">A quick and easy meal, this dish requires minimum preparation and can be served with paratha or even toast. If you are cooking for one, still make two omelettes – one to enjoy straight away and the second to make into a sandwich the next day. Call me old-fashioned, but I strongly believe a masala omelette sandwich must be made with white bread and salted butter. Tomato ketchup is equally important.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="masala-omelette-i1"><label for="masala-omelette-i1">eggs 4 medium</label></li><li><input type="checkbox" id="masala-omelette-i2"><label for="masala-omelette-i2">green chillies 2</label></li><li><input type="checkbox" id="masala-omelette-i3"><label for="masala-omelette-i3">spring onions 2, finely chopped</label></li><li><input type="checkbox" id="masala-omelette-i4"><label for="masala-omelette-i4">tomatoes 4 tbsp, finely chopped</label></li><li><input type="checkbox" id="masala-omelette-i5"><label for="masala-omelette-i5">coriander leaves 4 tbsp, chopped (or any other herb)</label></li><li><input type="checkbox" id="masala-omelette-i6"><label for="masala-omelette-i6">freshly ground black pepper ¼ tsp</label></li><li><input type="checkbox" id="masala-omelette-i7"><label for="masala-omelette-i7">salt ½ tsp (adjust to taste)</label></li><li><input type="checkbox" id="masala-omelette-i8"><label for="masala-omelette-i8">butter or oil 2 tbsp, melted</label></li></ul><p class="ing-group-heading">For an omelette sandwich</p><ul class="ing"><li><input type="checkbox" id="masala-omelette-i9"><label for="masala-omelette-i9">white bread a couple of slices</label></li><li><input type="checkbox" id="masala-omelette-i10"><label for="masala-omelette-i10">salted butter plenty of it</label></li><li><input type="checkbox" id="masala-omelette-i11"><label for="masala-omelette-i11">tomato ketchup a good squeeze</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>In a bowl, beat the eggs. If you prefer not to eat the green chillies, chop them into pieces large enough to see so that you can remove them later. If you enjoy eating chillies, finely chop them. Add the chopped chillies to the beaten eggs in the bowl along with all the other ingredients, except the butter or oil.</p></li><li><span class="n">2</span><p>In a small non-stick frying pan, heat 1 tablespoon of the butter or oil over a medium heat.</p></li><li><span class="n">3</span><p>Add half the egg mixture to the pan and leave to “set” before gently folding the omelette over to cook through.</p></li><li><span class="n">4</span><p>Slide the omelette from the pan on to a plate and keep warm. Repeat for the second omelette.</p></li><li><span class="n">5</span><p>To make the omelette sandwich, butter 2 slices of white bread with a generous amount of salted butter. Place the folded omelette on top of 1 slice of buttered bread. Squeeze a generous amount of tomato ketchup over the omelette filling before covering with the second slice of buttered bread.</p></li></ol>
+<div class="notes">From Asma’s Indian Kitchen by Asma Khan (Pavilion, £20)</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-masala-omelette-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/jan/24/asma-khans-recipe-for-masala-omelette?CMP=Share_AndroidApp_Other -->
+</body>
+</html>

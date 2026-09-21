@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pork and artichokes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Pork and artichokes</p>
+<p class="byline">Joe Trivelli</p>
+<div class="chips"><span class="chip">Serves <b>5</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/pork-and-artichokes.jpeg" alt="Pork and artichokes" loading="lazy">
+<p class="lede">The lavender is pungent, strong and very much an optional extra. I’ve only recently rediscovered this flavour having had a bad early experience with lavender ice-cream. I love it, but if I didn’t have gnarled dry lavender in the front garden, I wouldn’t bother at this time of year.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="pork-and-artichokes-i1"><label for="pork-and-artichokes-i1">garlic 6 cloves</label></li><li><input type="checkbox" id="pork-and-artichokes-i2"><label for="pork-and-artichokes-i2">juniper berries 8</label></li><li><input type="checkbox" id="pork-and-artichokes-i3"><label for="pork-and-artichokes-i3">fennel seeds 1 tsp</label></li><li><input type="checkbox" id="pork-and-artichokes-i4"><label for="pork-and-artichokes-i4">lavender a sprig</label></li><li><input type="checkbox" id="pork-and-artichokes-i5"><label for="pork-and-artichokes-i5">rosemary leaves 1 tbsp</label></li><li><input type="checkbox" id="pork-and-artichokes-i6"><label for="pork-and-artichokes-i6">thyme leaves 2 tbsp</label></li><li><input type="checkbox" id="pork-and-artichokes-i7"><label for="pork-and-artichokes-i7">sea salt 1½ tbsp</label></li><li><input type="checkbox" id="pork-and-artichokes-i8"><label for="pork-and-artichokes-i8">sugar ½ tbsp</label></li><li><input type="checkbox" id="pork-and-artichokes-i9"><label for="pork-and-artichokes-i9">pork neck 1.2kg, skin removed</label></li><li><input type="checkbox" id="pork-and-artichokes-i10"><label for="pork-and-artichokes-i10">artichokes 10 medium</label></li><li><input type="checkbox" id="pork-and-artichokes-i11"><label for="pork-and-artichokes-i11">lemons 2</label></li><li><input type="checkbox" id="pork-and-artichokes-i12"><label for="pork-and-artichokes-i12">parsley 4 sprigs, leaves picked</label></li><li><input type="checkbox" id="pork-and-artichokes-i13"><label for="pork-and-artichokes-i13">breadcrumbs 50g</label></li><li><input type="checkbox" id="pork-and-artichokes-i14"><label for="pork-and-artichokes-i14">celery 6 sticks</label></li><li><input type="checkbox" id="pork-and-artichokes-i15"><label for="pork-and-artichokes-i15">onion 1 medium, sliced</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>A day ahead, crush 2 of the garlic cloves in a pestle and mortar with the juniper and fennel seeds. Finely chop the lavender, rosemary and thyme, and add to the garlic with the sea salt and sugar. Mix, then rub it all over the pork and set aside, covered, in the fridge.</p></li><li><span class="n">2</span><p>The next day, tie the pork up with a piece of string in the middle and at the ends to hold it in a rounded joint shape. Bring to room temperature while you heat the oven to 200C fan/gas mark 7 and prepare the artichokes.</p></li><li><span class="n">3</span><p>Remove the toughest outer leaves of the artichokes, snapping or cutting them down with scissors. Trim around the base and stem with a small knife. Trim the stalk and the tips to remove the darkest part of the leaves.</p></li><li><span class="n">4</span><p>Rotate the artichokes upside down and press to open up the leaves a bit and carefully stretch them further with your fingers. Use a teaspoon to scoop out the choke. Rub each one all over with 1 of the lemons, cut in half, to stop them discolouring before you move on to the next.</p></li><li><span class="n">5</span><p>When all prepped, finely slice a garlic clove and stuff it between leaves of an artichoke with some parsley leaves, breadcrumbs, salt and pepper. Repeat with each one.</p></li><li><span class="n">6</span><p>Place a casserole on a medium-high heat with a tablespoon of olive oil and sear the pork all over, positioning its best-looking side up when you’re done. Turn the heat off, then surround the meat with the celery, any remaining garlic, the stuffed artichokes, onion, the juice of the remaining lemon and a splash of water.</p></li><li><span class="n">7</span><p>Cover with a piece of crumpled baking paper and bake for 1¼ hours, or until the pork is hot (above 64C) in the centre.</p></li><li><span class="n">8</span><p>Leave to rest somewhere warm before slicing and serving.</p></li></ol>
+<div class="notes">Joe Trivelli is co-head chef of River Cafe, London</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-pork-and-artichokes-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/apr/07/mussel-soup-asparagus-spaghetti-and-slow-roast-lamb-joe-trivelli-italian-easter-recipes?CMP=Share_AndroidApp_Other -->
+</body>
+</html>

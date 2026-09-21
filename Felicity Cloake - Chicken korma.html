@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicken korma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Chicken korma</p>
+<p class="byline">Felicity Cloake</p>
+<div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>1 hr</b></span><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/chicken-korma.jpeg" alt="Chicken korma" loading="lazy">
+<p class="lede">This elegant, Mughal dish, rich with cream and nuts and perfumed spices, has, in Britain, been largely relegated to the status of generic “mild curry”; suitable for children and those not “up to” the chilli in a tikka masala, say. But if you habitually skip over it on menus, do give the sophisticated korma another try – it’s far too good for the kids to keep to themselves.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="chicken-korma-i1"><label for="chicken-korma-i1">8 skinless, boneless chicken thighs</label></li><li><input type="checkbox" id="chicken-korma-i2"><label for="chicken-korma-i2">250ml plain, full-fat yoghurt</label></li><li><input type="checkbox" id="chicken-korma-i3"><label for="chicken-korma-i3">1 onion</label></li><li><input type="checkbox" id="chicken-korma-i4"><label for="chicken-korma-i4">6 garlic cloves</label></li><li><input type="checkbox" id="chicken-korma-i5"><label for="chicken-korma-i5">1 large thumb fresh ginger (or enough for 2 tbsp grated)</label></li><li><input type="checkbox" id="chicken-korma-i6"><label for="chicken-korma-i6">4 tbsp double cream</label></li><li><input type="checkbox" id="chicken-korma-i7"><label for="chicken-korma-i7">1 tsp saffron threads</label></li><li><input type="checkbox" id="chicken-korma-i8"><label for="chicken-korma-i8">1 tbsp rose water</label></li><li><input type="checkbox" id="chicken-korma-i9"><label for="chicken-korma-i9">50g unsalted cashew nuts</label></li><li><input type="checkbox" id="chicken-korma-i10"><label for="chicken-korma-i10">60ml vegetable oil or 4 tbsp ghee</label></li><li><input type="checkbox" id="chicken-korma-i11"><label for="chicken-korma-i11">4 cinnamon sticks</label></li><li><input type="checkbox" id="chicken-korma-i12"><label for="chicken-korma-i12">10 green cardamom pods, lightly crushed</label></li><li><input type="checkbox" id="chicken-korma-i13"><label for="chicken-korma-i13">25g sultanas or chopped dried apricots (optional)</label></li><li><input type="checkbox" id="chicken-korma-i14"><label for="chicken-korma-i14">¼ tsp freshly grated nutmeg</label></li><li><input type="checkbox" id="chicken-korma-i15"><label for="chicken-korma-i15">1 tsp salt</label></li><li><input type="checkbox" id="chicken-korma-i16"><label for="chicken-korma-i16">1 black cardamom pod</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Cut the meat into large, bite-sized chunks and put in a bowl with half the yoghurt. Stir, cover and leave to marinate at room temperature for at least three hours, or up to 12 hours in the fridge. (If using tofu or vegetables, a half-hour marination at room temperature should be sufficient.) Half an hour before you start cooking, take it out of the fridge, along with the remaining yoghurt.</p></li><li><span class="n">2</span><p>Peel and finely chop the onion. Peel and crush the garlic, and peel and finely grate or chop the ginger (you want two tablespoons of ginger for this), then set those last two aside for now. Heat the cream just to warm it through, take off the heat and stir in the saffron and half the rose water. Put the cashews in a small bowl with five tablespoons of warm water and leave to soak.</p></li><li><span class="n">3</span><p>Put the fat in a wide, heavy-based pan for which you have a lid and set it over a medium-high heat. Once hot, add the cinnamon and green cardamom, and saute until you hear the cardamom start to pop. Add the chicken, in batches, if necessary, brown on all sides, then lift the meat out of the pan and set aside.</p></li><li><span class="n">4</span><p>Turn down the heat to medium-low, add the onion and fry, stirring often so it doesn’t catch, until soft and browned; there should be enough fat left in the pan, but if the onion threatens to stick, add a little more. Meanwhile, blend the cashews and their soaking water into a smooth paste.</p></li><li><span class="n">5</span><p>Stir the garlic, ginger, sultanas and grated nutmeg into the onion mix, cook for a couple of minutes, then stir in the cashew paste. Take off the heat, leave to cool for a couple of minutes, then stir in the remaining yoghurt and the salt. (Note that lower-fat yoghurts tend to split when heated, so avoid using them for this.)</p></li><li><span class="n">6</span><p>Add the chicken to the pan, along with any juices and as much of its marinade as possible, then bring to a very gentle simmer. Cover the pan tightly, turn the heat down as low as possible and leave to stew for about 30 minutes, until the meat is cooked through (cut into a piece to check).</p></li><li><span class="n">7</span><p>Stir the infused cream into the pan and cook very gently for another five minutes. Meanwhile, extract the seeds from the black cardamom pod – this smoky-flavoured spice is well worth seeking out in south Asian food specialists or online – crush them in a mortar and add to the korma pan.</p></li><li><span class="n">8</span><p>Taste the gravy and adjust the seasoning as necessary. Add the remaining rose water, if you think it’s needed (rose waters vary hugely in strength, so you may decide you have enough in there already). Serve the korma with steamed rice and/or parathas or other flatbreads. If you’re out to impress, sprinkle a few extra chopped cashews, dried fruit and/or finely chopped coriander on top, too.</p></li></ol>
+<div class="notes">A note on the chicken: it’s common to use a whole chicken, jointed, in this dish, but the relatively short cooking time means you don’t get much flavour from the bones, so I prefer to use boneless thighs, which stay juicier than breast. Feel free to substitute them as suits your taste; lamb shoulder or leg, mixed vegetables or firm tofu will also work well.</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-chicken-korma-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: https://www.theguardian.com/food/2022/nov/23/how-to-make-chicken-korma-recipe-felicity-cloake?CMP=Share_AndroidApp_Other -->
+</body>
+</html>
