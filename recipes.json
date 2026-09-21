@@ -2,7 +2,7 @@
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
  "generated": "2026-09-21",
- "count": 136,
+ "count": 139,
  "authors": [
   "Andrèa Fedder",
   "Asma Khan",
@@ -18,6 +18,7 @@
   "Ixta Belfrage",
   "Joe Trivelli",
   "José Pizarro",
+  "Ottolenghi",
   "Rachel Roddy",
   "Ravinder Bhogal",
   "Sami Tamimi",
@@ -1936,6 +1937,133 @@
    ],
    "notes": [],
    "source": "https://www.theguardian.com/food/2025/may/10/slow-roast-pork-belly-with-spring-onion-mojo-verde-recipe-jose-pizarro?CMP=Share_AndroidApp_Other"
+  },
+  {
+   "title": "Caramelized garlic tart",
+   "author": "Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Ottolenghi%20-%20Caramelized%20garlic%20tart.html",
+   "file": "Ottolenghi - Caramelized garlic tart.html",
+   "image": "https://alastairknight.github.io/recipes/Images/caramelized-garlic-tart.png",
+   "chips": {
+    "Serves": "8"
+   },
+   "lede": "'I think this is the most delicious recipe in the world!' wrote Claudine after trying it out for me. What else can I add?",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "375g all-butter puff pastry",
+      "3 medium heads of garlic, cloves separated and peeled",
+      "1 tbsp olive oil",
+      "1 tsp balsamic vinegar",
+      "220ml water",
+      "¾ tbsp caster sugar",
+      "1 tsp chopped rosemary",
+      "1 tsp chopped thyme, plus a few whole sprigs to finish",
+      "120g soft, creamy goat's cheese (such as Rosary)",
+      "120g hard, mature goat's cheese (such as one from Woolsery Cheese)",
+      "2 free-range eggs",
+      "100ml double cream",
+      "100ml crème fraîche",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Have ready a shallow, loose-bottomed, 28cm fluted tart tin. Roll out the puff pastry into a circle that will line the bottom and sides of the tin, plus a little extra. Line the tin with the pastry. Place a large circle of greaseproof paper on the bottom and fill up with baking beans. Leave to rest in the fridge for about 20 minutes.",
+    "Preheat the oven to 180°C/Gas Mark 4. Place the tart case in the oven and bake blind for 20 minutes. Remove the beans and paper, then bake for a further 5–10 minutes, or until the pastry is golden. Set aside. Leave the oven on.",
+    "While the tart case is baking, make the caramelized garlic. Put the cloves in a small saucepan and cover with plenty of water. Bring to a simmer and blanch for 3 minutes, then drain well. Dry the saucepan, return the cloves to it and add the olive oil. Fry the garlic cloves on a high heat for 2 minutes. Add the balsamic vinegar and water and bring to the boil, then simmer gently for 10 minutes. Add the sugar, rosemary, chopped thyme and ¼ teaspoon salt. Continue simmering on a medium flame for 10 minutes, or until most of the liquid has evaporated and the garlic cloves are coated in a dark caramel syrup. Set aside.",
+    "To assemble the tart, break both types of goat's cheese into pieces and scatter in the pastry case. Spoon the garlic cloves and syrup evenly over the cheese. In a jug whisk together the eggs, creams, ½ teaspoon salt and some black pepper. Pour this custard over the tart filling to fill the gaps, making sure that you can still see the garlic and cheese over the surface.",
+    "Reduce the oven temperature to 160°C/Gas Mark 3 and place the tart inside. Bake for 35–45 minutes, or until the tart filling has set and the top is golden brown. Remove from the oven and leave to cool a little. Then take out of tin, trim the pastry edge if needed, lay a few sprigs of thyme on top and serve warm (it reheats well!) with a crisp salad."
+   ],
+   "notes": [],
+   "source": "Ottolenghi - Caramelized Garlic Tart.pdf"
+  },
+  {
+   "title": "Cucumber salad with smashed garlic and ginger",
+   "author": "Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Ottolenghi%20-%20Cucumber%20salad%20with%20smashed%20garlic%20and%20ginger.html",
+   "file": "Ottolenghi - Cucumber salad with smashed garlic and ginger.html",
+   "image": "https://alastairknight.github.io/recipes/Images/cucumber-salad-with-smashed-garlic-and-ginger.png",
+   "chips": {
+    "Serves": "4–6"
+   },
+   "lede": "I have a terrible habit of adding yoghurt or soured cream to almost anything that's been cooking for a long time, has got a lot of heat, is slightly greasy or just seems a bit heavy to me. Terrible – because I know not everyone is keen on adding dairy products left, right and centre, particularly not to a perfectly nice dish of pulses, a spicy vegetable stew or a roasted cut of lean meat. So here's a perfect alternative, a dish shouting freshness that would go well with plenty of hearty dishes. Try it with Sweet potato cakes or with Coconut rice with sambal and okra.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "1 small red onion, very thinly sliced",
+      "15g fresh root ginger, peeled and sliced",
+      "1 tsp Maldon sea salt",
+      "2 large garlic cloves, peeled",
+      "4 small (or 8 mini) cucumbers (600g in total), peeled",
+      "1 tbsp toasted sesame seeds",
+      "3 tbsp chopped coriander"
+     ]
+    },
+    {
+     "heading": "Dressing:",
+     "items": [
+      "3 tbsp rice wine vinegar",
+      "2 tsp caster sugar",
+      "2 tbsp sunflower oil",
+      "2 tsp toasted sesame oil"
+     ]
+    }
+   ],
+   "method": [
+    "Whisk together all the dressing ingredients in a medium mixing bowl. Add the sliced red onion, mix well and leave aside to marinate for about an hour.",
+    "Place the ginger and salt in a mortar and pound well with a pestle. Add the garlic and continue pounding until it is also well crushed and broken into pieces (stop pounding before it disintegrates into a purée). Use a spatula to scrape the contents of the mortar into the bowl with the onion and dressing. Stir together.",
+    "Cut the cucumbers lengthways in half, then cut each half on an angle into 5mm thick slices. Add the cucumber to the bowl, followed by the sesame seeds and coriander. Stir well and leave to sit for 10 minutes.",
+    "Before serving, stir the salad again, tip out some of the liquid that has accumulated at the bottom of the bowl and adjust the seasoning."
+   ],
+   "notes": [],
+   "source": "Ottolenghi - Cucumber Salad.pdf"
+  },
+  {
+   "title": "Roasted parsnips and sweet potatoes with caper vinaigrette",
+   "author": "Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Ottolenghi%20-%20Roasted%20parsnips%20and%20sweet%20potatoes%20with%20caper%20vinaigrette.html",
+   "file": "Ottolenghi - Roasted parsnips and sweet potatoes with caper vinaigrette.html",
+   "image": "https://alastairknight.github.io/recipes/Images/roasted-parsnips-and-sweet-potatoes-with-caper-vinaigrette.png",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "Treat this recipe as a blueprint for an infinite number of roast vegetable dishes. The point here is to lighten up long-cooked veggies with something crisp and fresh. You can use any of your favourite vegetables – swede, potato, carrot, salsify, beetroot, cauliflower – and many other refreshing combinations at the end: chopped herbs such as basil or mint, grated lemon zest, harissa paste, crushed garlic or a mellow vinegar.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "4 parsnips (700g in total)",
+      "4 medium red onions",
+      "150ml olive oil",
+      "4 thyme sprigs",
+      "2 rosemary sprigs",
+      "1 head garlic, halved horizontally",
+      "2 medium sweet potatoes (600g in total)",
+      "30 cherry tomatoes, halved",
+      "2 tbsp lemon juice",
+      "4 tbsp small capers (roughly chopped if large)",
+      "½ tbsp maple syrup",
+      "½ tsp Dijon mustard",
+      "1 tbsp toasted sesame seeds (optional)",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 190°C/Gas Mark 5. Peel the parsnips and cut into two or three segments, depending on their lengths. Then cut each piece lengthways into two or four. You want pieces roughly 5cm long and 1.5cm wide. Peel the onions and cut each into six wedges.",
+    "Place the parsnips and onions in a large mixing bowl and add 120ml of the olive oil, the thyme, rosemary, garlic, 1 teaspoon of salt and some pepper. Mix well and spread out in a large roasting tin. Roast for 20 minutes.",
+    "While the parsnips are cooking, top and tail the sweet potatoes. Cut them (with their skins) widthways in half, then each half into six wedges. Add the potatoes to the tin with the parsnips and onion and stir well. Return to the oven to roast for a further 40–50 minutes.",
+    "When all the vegetables are cooked through and have taken on a golden colour, stir in the halved tomatoes. Roast for 10 more minutes. Meanwhile, whisk together the lemon juice, capers, maple syrup, mustard, remaining 2 tablespoons oil and ½ teaspoon salt.",
+    "Pour the dressing over the roasted vegetables as soon as you take them out of the oven. Stir well, then taste and adjust the seasoning. Scatter the sesame seeds over the vegetables if using and serve at the table in the roasting tin."
+   ],
+   "notes": [],
+   "source": "Ottolenghi - Roast Parsnips and Sweet Potatoes with Caper Vinaigrette.pdf"
   },
   {
    "title": "Anna del Conte and Vincenzo Corrado’s fennel with pistachio, lemon and anchovy sauce",
