@@ -746,7 +746,7 @@
    "byline": "Atul Kochhar",
    "url": "https://alastairknight.github.io/recipes/Atul%20Kochhar%20-%20Meen%20molee%20%28coconut%20fish%20curry%29.html",
    "file": "Atul Kochhar - Meen molee (coconut fish curry).html",
-   "image": null,
+   "image": "https://alastairknight.github.io/recipes/Images/meen-molee-coconut-fish-curry.jpeg",
    "chips": {
     "Serves": "4"
    },
@@ -781,7 +781,7 @@
    "byline": "Atul Kochhar",
    "url": "https://alastairknight.github.io/recipes/Atul%20Kochhar%20-%20Pickled%20onions.html",
    "file": "Atul Kochhar - Pickled onions.html",
-   "image": null,
+   "image": "https://alastairknight.github.io/recipes/Images/pickled-onions.jpeg",
    "chips": {
     "Makes": "250 g"
    },
@@ -5656,7 +5656,7 @@
    "byline": "Yotam Ottolenghi",
    "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Roast%20aubergine%20with%20almond%20tarator%20and%20basil%20oil.html",
    "file": "Yotam Ottolenghi - Roast aubergine with almond tarator and basil oil.html",
-   "image": null,
+   "image": "https://alastairknight.github.io/recipes/Images/roast-aubergine-with-almond-tarator-and-basil-oil.jpeg",
    "chips": {
     "Serves": "six to eight."
    },
@@ -5673,8 +5673,12 @@
       "100g blanched almonds, toasted",
       "5 anchovies, rinsed and patted dry",
       "1 tbsp good sherry vinegar",
-      "3 plum tomatoes",
-      "For the herb oil",
+      "3 plum tomatoes"
+     ]
+    },
+    {
+     "heading": "For the herb oil",
+     "items": [
       "10g basil leaves, plus 5g extra small leaves to serve",
       "10g parsley leaves",
       "1 green chilli, deseeded",
