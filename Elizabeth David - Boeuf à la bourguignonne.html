@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boeuf à la bourguignonne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Boeuf à la bourguignonne</p>
+<p class="byline">Elizabeth David</p>
+<div class="chips"><span class="chip">Serves <b>4 to 6</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/boeuf-la-bourguignonne.jpeg" alt="Boeuf à la bourguignonne" loading="lazy">
+<p class="lede">This is a favourite among those carefully composed, slowly cooked dishes which are the domain of French housewives and owner-cooks of modest restaurants rather than of professional chefs. Generally supposed to be of Burgundian origin (although Alfred Contour’s Cuisinier Bourguignon gives no recipe for it) boeuf à la bourguignonne has long been a nationally popular French dish, and it is often referred to, or written down on menus, simply as “bourguignon”. Such dishes do not, of course, have a rigid formula, each cook interpreting it according to her taste, and the following recipe is just one version. Incidentally, when I helped in a soup kitchen in France many years ago, this was the dish for feast-days and holidays.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="boeuf-la-bourguignonne-i1"><label for="boeuf-la-bourguignonne-i1">2 lb of topside of beef</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i2"><label for="boeuf-la-bourguignonne-i2">4 oz of salt pork or streaky bacon (unsmoked for preference)</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i3"><label for="boeuf-la-bourguignonne-i3">a large onion</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i4"><label for="boeuf-la-bourguignonne-i4">thyme</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i5"><label for="boeuf-la-bourguignonne-i5">parsley</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i6"><label for="boeuf-la-bourguignonne-i6">bay leaves</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i7"><label for="boeuf-la-bourguignonne-i7">¼ pint of red wine</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i8"><label for="boeuf-la-bourguignonne-i8">2 tablespoons of olive oil</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i9"><label for="boeuf-la-bourguignonne-i9">½ pint of meat stock, preferably veal</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i10"><label for="boeuf-la-bourguignonne-i10">a clove of garlic</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i11"><label for="boeuf-la-bourguignonne-i11">1 tablespoon flour</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i12"><label for="boeuf-la-bourguignonne-i12">meat dripping</label></li></ul><p class="ing-group-heading">For the garnish</p><ul class="ing"><li><input type="checkbox" id="boeuf-la-bourguignonne-i13"><label for="boeuf-la-bourguignonne-i13">½ lb of small mushrooms</label></li><li><input type="checkbox" id="boeuf-la-bourguignonne-i14"><label for="boeuf-la-bourguignonne-i14">a dozen or so small whole onions</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Cut the meat into slices about 2½ inches square and ¼ inch thick. Put them into a china or earthenware dish, seasoned with salt and pepper, covered with the large sliced onion, herbs, olive oil and red wine. Leave to marinate from 3 to 6 hours.</p></li><li><span class="n">2</span><p>Put a good tablespoon of beef dripping into a heavy stewing-pan of about 4 pints capacity. In this melt the salt pork or bacon, cut into ¼ inch thick match-length strips. Add the whole peeled small onions, and let them brown, turning them over frequently and keeping the heat low. Take out the bacon when its fat becomes transparent, and remove the onions when they are nicely coloured. Set them aside with the bacon. Now put into the fat the drained and dried pieces of meat and brown them quickly on each side. Sprinkle them with the flour, shaking the pan so that the flour amalgamates with the fat and absorbs it. Pour over the strained marinade. Let it bubble half a minute; add the stock. Put in a clove of garlic and a bouquet of thyme, parsley and bay leaf tied with a thread. Cover the pan with a close-fitting lid and let it barely simmer on top of the stove for about 2 hours.</p></li><li><span class="n">3</span><p>Now add the bacon and onions, and the whole mushrooms washed but not peeled and already cooked in butter or dripping for a minute or so to rid them of some of their moisture. Cook the stew another half-hour. Remove the bouquet and garlic before serving.</p></li></ol>
+<div class="notes">If more convenient, the first two hours’ cooking can be done in advance, the stew left to cool and the fat removed; it can then be reheated gently with the bacon, mushrooms and onions added. There are those who maintain that the dish is improved by being heated up a second time; the meat has time to mature, as it were, in the sauce.</div>
+<div class="notes">To make a cheaper dish, chuck (shoulder) beef may be used instead of topside, and an extra 45 minutes’ cooking time allowed. And when really small onions are not available it is best simply to cook a chopped onion or two with the stew, and to leave onions out of the garnish, because large ones are not suitable for the purpose.</div>
+<div class="notes">For formal occasions a boned joint of beef may be cooked whole and served with a similar sauce and garnish, and then becomes pièce de boeuf à la bourguignonne.</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-boeuf-la-bourguignonne-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Elizabeth David - Boeuf à la bourguignonne.docx -->
+</body>
+</html>

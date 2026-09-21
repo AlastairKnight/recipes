@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spanakopita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Spanakopita</p>
+<p class="byline">Felicity Cloake</p>
+<div class="chips"><span class="chip">Prep <b>20 min</b></span><span class="chip">Cook <b>30 min</b></span><span class="chip">Makes <b>6-8 pieces</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/spanakopita.jpeg" alt="Spanakopita" loading="lazy">
+<p class="lede">A pie for midsummer, when greens and cheese in crackly filo have the edge on steak and kidney wrapped in suet. Spanakopita is a Greek classic: equally good warm from the oven or cold the next day, vegetarian-friendly (so long as you use a feta made without animal rennet) and utterly delicious, it’s perfect picnic fare, even if you’re not going any farther than your own garden.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="spanakopita-i1"><label for="spanakopita-i1">1kg adult spinach, or frozen whole-leaf spinach, defrosted (see step 1)</label></li><li><input type="checkbox" id="spanakopita-i2"><label for="spanakopita-i2">Salt</label></li><li><input type="checkbox" id="spanakopita-i3"><label for="spanakopita-i3">1 red onion or leek</label></li><li><input type="checkbox" id="spanakopita-i4"><label for="spanakopita-i4">4 spring onions</label></li><li><input type="checkbox" id="spanakopita-i5"><label for="spanakopita-i5">2 tbsp olive oil, plus extra for brushing</label></li><li><input type="checkbox" id="spanakopita-i6"><label for="spanakopita-i6">300g vegetarian feta, crumbled</label></li><li><input type="checkbox" id="spanakopita-i7"><label for="spanakopita-i7">25g dill, chopped</label></li><li><input type="checkbox" id="spanakopita-i8"><label for="spanakopita-i8">20g mint leaves, chopped</label></li><li><input type="checkbox" id="spanakopita-i9"><label for="spanakopita-i9">3 sprigs fresh oregano, leaves picked and chopped</label></li><li><input type="checkbox" id="spanakopita-i10"><label for="spanakopita-i10">50g bulgur wheat (optional)</label></li><li><input type="checkbox" id="spanakopita-i11"><label for="spanakopita-i11">2 eggs, beaten</label></li><li><input type="checkbox" id="spanakopita-i12"><label for="spanakopita-i12">Zest of 1 unwaxed lemon</label></li><li><input type="checkbox" id="spanakopita-i13"><label for="spanakopita-i13">Nutmeg</label></li><li><input type="checkbox" id="spanakopita-i14"><label for="spanakopita-i14">250g filo pastry</label></li><li><input type="checkbox" id="spanakopita-i15"><label for="spanakopita-i15">Olive oil, for brushing</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Prepare the greens — To prepare the fresh spinach, trim the bottom off the stalks, then roughly chop the leaves and finely chop the stems. Put in a colander with a generous sprinkle of salt, stand in a sink and massage the leaves with your hands until they wilt into a tractable mess (if you’re using frozen, defrosted stuff, just roughly chop it), then leave to drain.</p></li><li><span class="n">2</span><p>Soften the alliums — Meanwhile, peel and finely chop the red onion (or trim and finely chop the leek) and slice the spring onions. Heat the oil in a wide frying pan over a medium-low heat, and fry the onion (or leek) until softened but not browned. Take off the heat, immediately stir in the spring onions, then tip into a large bowl.</p></li><li><span class="n">3</span><p>Add the cheese, mint and bulgur — Crumble the feta into the bowl. Roughly chop the herbs, discarding the woody stems from the mint, then add to the bowl with the bulgur wheat, if using; it’s not a common ingredient in spanakopita, but it does help soak up the liquid from the spinach, and it gives the pie a more interesting texture. Rice will do much the same job.</p></li><li><span class="n">4</span><p>Squeeze dry the greens and add to the mix — Wring out the spinach with your hands until no more water comes out (it should look thoroughly wilted by this point), then stir into the cheese bowl. Crack in the eggs and add the lemon zest, a glug of olive oil and a good grating of nutmeg, and mix again (again, hands are the best tool for this). Season lightly: feta is quite salty as it is.</p></li><li><span class="n">5</span><p>Line the tin with filo — Heat the oven to 200C (180C fan)/390F/gas 6. Brush a 30cm x 25cm baking tin with olive oil, then line with half the filo, brushing each sheet with oil as you go (a spray is useful here, if you have one); take care not to press the sheets down too hard, otherwise they’ll compact. Leave any excess pastry hanging over the sides.</p></li><li><span class="n">6</span><p>Add the filling, then cover with more filo — Spoon in the filling, level out the top, then repeat the layering process with the remaining pastry to make a lid. Fold the overhang inwards to create an edible rim, drizzle with more oil and cut into the desired portion sizes. Bake for about 30-40 minutes, until golden. Leave to cool slightly, or completely, before serving.</p></li></ol>
+<div class="notes">Mix and match your greens: though Greek cuisine boasts a number of similar pies using a variety of greens, particularly the wild ones they’re so keen on, spanakopita traditionally contains spinach. That said, if you have chard, watercress, rocket or even young kale or nettles, substitute those instead (with the usual caveat about handling the nettles with gloves and care).</div>
+<div class="notes">Baby spinach won’t cut it here: if you stick with spinach, seek out the adult leaves for this dish; baby spinach has a tendency to melt into an unsatisfactory green mush. It’s frustratingly hard to find in British supermarkets, but is usually available in greengrocers or markets – or in the freezer section, though make sure you get whole leaf, and defrost and squeeze it dry first.</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-spanakopita-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Felicity Cloake - Spanakopita.docx -->
+</body>
+</html>
