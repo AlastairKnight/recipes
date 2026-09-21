@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarragon chicken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Tarragon chicken</p>
+<p class="byline">Hélène Darroze</p>
+<div class="chips"><span class="chip">Serves <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/tarragon-chicken.jpeg" alt="Tarragon chicken" loading="lazy">
+<p class="lede">Chicken is comfort food to me, it smells of home, of family, and can be enjoyed any time of the year. It is one of the most satisfying meals I know. This tarragon chicken was inspired by my grandmother’s recipe, tarragon being one of my favourite ingredients. Another thing I love about this dish is how versatile it is and can be adapted with the seasons. For example, over the summer, I use girolles mushrooms instead of morels.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="tarragon-chicken-i1"><label for="tarragon-chicken-i1">30ml olive oil</label></li><li><input type="checkbox" id="tarragon-chicken-i2"><label for="tarragon-chicken-i2">Salt and pepper</label></li><li><input type="checkbox" id="tarragon-chicken-i3"><label for="tarragon-chicken-i3">1 free-range chicken, jointed into six pieces</label></li><li><input type="checkbox" id="tarragon-chicken-i4"><label for="tarragon-chicken-i4">12 baby white onions</label></li><li><input type="checkbox" id="tarragon-chicken-i5"><label for="tarragon-chicken-i5">160g smoked bacon, diced</label></li><li><input type="checkbox" id="tarragon-chicken-i6"><label for="tarragon-chicken-i6">16 mushrooms, ideally morels</label></li><li><input type="checkbox" id="tarragon-chicken-i7"><label for="tarragon-chicken-i7">200ml white wine</label></li><li><input type="checkbox" id="tarragon-chicken-i8"><label for="tarragon-chicken-i8">900ml chicken stock</label></li><li><input type="checkbox" id="tarragon-chicken-i9"><label for="tarragon-chicken-i9">180g double cream</label></li><li><input type="checkbox" id="tarragon-chicken-i10"><label for="tarragon-chicken-i10">1 tbsp thyme leaves</label></li><li><input type="checkbox" id="tarragon-chicken-i11"><label for="tarragon-chicken-i11">100g creme fraiche</label></li><li><input type="checkbox" id="tarragon-chicken-i12"><label for="tarragon-chicken-i12">½ a bunch tarragon, finely chopped</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>In a large ovenproof pan, heat the olive oil over a medium heat. Season the chicken and cook, skin-side down, until golden. Set aside. Add the onions and bacon and cook slowly until lightly golden. Set aside. Brown the mushrooms and set aside.</p></li><li><span class="n">2</span><p>Drain most of the fat from the pan. Pour in the wine and reduce by half. Add the stock and reduce by half again. Add the cream and bring back to a simmer.</p></li><li><span class="n">3</span><p>Add the thighs and drumsticks and simmer for 30 minutes. Add the bacon, onions, mushrooms and thyme and cook for 5 minutes, then add the chicken breasts. Simmer gently for 8-10 minutes, depending on their size. Remove the breasts and legs and keep warm.</p></li><li><span class="n">4</span><p>Add the creme fraiche to the sauce. Simmer until thick enough to coat the back of a spoon.</p></li><li><span class="n">5</span><p>Check the seasoning and return the chicken to the sauce with the tarragon. Serve with rice.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-tarragon-chicken-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Hélène Darroze - Tarragon chicken.docx -->
+</body>
+</html>

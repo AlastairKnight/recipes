@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cauliflower Hummus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Cauliflower Hummus</p>
+<p class="byline">Unknown</p>
+<div class="chips"><span class="chip">Serves <b>6 as a dip</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/cauliflower-hummus.jpeg" alt="Cauliflower Hummus" loading="lazy">
+<p class="lede">This creamy, yet light cauliflower tahini dip is like a hummus, except it uses cauliflower instead of chickpeas! I spice the dip with some ground cumin, coriander and lemon juice and then garnish it with a big sprinkling of chopped cilantro. This is a great, healthy dip to enjoy with vegetables and some bread or crackers. I like to steam the cauliflower, but you can also toss it in olive oil and roast the cauliflower before making this dip. Serve this hummus-style healthy cauliflower dip with vegetable crudités (carrot, celery, bell peppers etc) and warmed pita bread or crackers.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="cauliflower-hummus-i1"><label for="cauliflower-hummus-i1">1 lb cauliflower florets (about 1 small head of cauliflower)</label></li><li><input type="checkbox" id="cauliflower-hummus-i2"><label for="cauliflower-hummus-i2">1 tablespoon lemon juice</label></li><li><input type="checkbox" id="cauliflower-hummus-i3"><label for="cauliflower-hummus-i3">1 teaspoon coriander seeds. Substitute with ground coriander.</label></li><li><input type="checkbox" id="cauliflower-hummus-i4"><label for="cauliflower-hummus-i4">1 teaspoon cumin seeds. Substitute with ground cumin.</label></li><li><input type="checkbox" id="cauliflower-hummus-i5"><label for="cauliflower-hummus-i5">1/4 cup tahini</label></li><li><input type="checkbox" id="cauliflower-hummus-i6"><label for="cauliflower-hummus-i6">1-2 cloves of garlic, peeled</label></li><li><input type="checkbox" id="cauliflower-hummus-i7"><label for="cauliflower-hummus-i7">2 tablespoons olive oil</label></li><li><input type="checkbox" id="cauliflower-hummus-i8"><label for="cauliflower-hummus-i8">salt</label></li><li><input type="checkbox" id="cauliflower-hummus-i9"><label for="cauliflower-hummus-i9">2 tablespoon finely chopped cilantro or parsley</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Place the cauliflower florets in a steamer apparatus, cover and steam until the florets are very soft, about 15 minutes. If you don’t have a steamer, place the cauliflower florets, along with 1/2 cup water in a saucepan. Bring to a boil. Then reduce heat to low, cover and simmer the cauliflower until it is very soft, about 10 minutes. If all the water evaporates before the cauliflower is soft, add 1/4 cup water at a time. If there is any water remaining in the pan at the end, remove the lid, crank up the heat to medium-high and let it boil away. Make sure the cauliflower is not water logged or too wet before proceeding.</p></li><li><span class="n">2</span><p>While the cauliflower is steaming, work on the spices. Place the coriander and cumin seeds in a small skillet. Toast on medium-low heat, shaking often until the spices are lightly golden and fragrant, about 5 minutes. Let the spices cool a little, then powder them in a food processor or mortar and pestle. If you are using ground coriander and cumin, skip this step and go to step 3.</p></li><li><span class="n">3</span><p>Place the steamed, cooled cauliflower, and all other ingredients except the cilantro or parsley in a food processor, and blend into a smooth puree. If the dip is too thick, add water a few tablespoons at a time until your desired consistency is reached. If you want the hummus more creamy add more tahini at this point. Garnish with chopped cilantro or parsley.</p></li></ol>
+
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-cauliflower-hummus-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: Cauliflower Hummus.docx -->
+</body>
+</html>

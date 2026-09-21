@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chocolate fondant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg4:#14171C; --surf:#1E2229; --ink4:#F2F0E9; --sub4:#8D93A0; --accent4:#E4A93A; --line4:#2B303A; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{max-width:560px;margin:0 auto;background:var(--bg4); color:var(--ink4); font-family:'Inter',sans-serif; padding-bottom:60px;}
+img{max-width:100%;}
+.head{position:sticky;top:0;background:var(--bg4);z-index:5;padding:20px 18px 14px;border-bottom:1px solid var(--line4);}
+.title{font-size:22px;font-weight:700;line-height:1.2;margin:0 0 4px;text-wrap:balance;}
+.byline{font-size:12.5px;color:var(--sub4);margin:0 0 12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:var(--surf);border:1px solid var(--line4);border-radius:20px;padding:5px 11px; font-size:11px;color:var(--sub4);font-variant-numeric:tabular-nums;}
+.chip b{color:var(--accent4);font-weight:600;}
+.body{padding:18px;}
+.photo{width:100%;border-radius:14px;margin:0 0 18px;display:block;border:1px solid var(--line4);}
+.lede{font-size:13.5px;color:var(--sub4);line-height:1.6;margin:0 0 22px;}
+h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent4);margin:0 0 10px;}
+.ing-group-heading{font-size:12.5px;font-weight:600;color:var(--ink4);margin:16px 0 4px;}
+.ing-group-heading:first-child{margin-top:0;}
+.ing{list-style:none;margin:0 0 26px;padding:0;}
+.ing li{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line4); min-height:44px;}
+.ing input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent4);}
+.ing label{font-size:14.5px;line-height:1.4;}
+.ing input:checked + label{color:var(--sub4);text-decoration:line-through;}
+.method{list-style:none;margin:0;padding:0;}
+.method li{display:flex;gap:12px;background:var(--surf);border:1px solid var(--line4);border-radius:12px; padding:14px;margin:0 0 12px;}
+.method .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent4);color:#14171C; font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
+.notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
+.notes b{color:var(--ink4);}
+</style>
+</head>
+<body>
+<div class="head">
+<p class="title">Chocolate fondant</p>
+<p class="byline">Andrèa Fedder</p>
+<div class="chips"><span class="chip">Makes <b>4</b></span></div>
+</div>
+<div class="body">
+<img class="photo" src="Images/chocolate-fondant.jpeg" alt="Chocolate fondant" loading="lazy">
+<p class="lede">In case you were pondering the name of this pudding, fondant is the French word for ‘melting’. What you are looking for is the melting, gooey chocolaty centre. Bake on.</p>
+<h2>Ingredients — tap to check off</h2>
+<ul class="ing"><li><input type="checkbox" id="chocolate-fondant-i1"><label for="chocolate-fondant-i1">80g dark chocolate, like this Guanaja 70% Valrhona dark chocolate</label></li><li><input type="checkbox" id="chocolate-fondant-i2"><label for="chocolate-fondant-i2">80g butter, plus extra for greasing</label></li><li><input type="checkbox" id="chocolate-fondant-i3"><label for="chocolate-fondant-i3">1 extra large egg</label></li><li><input type="checkbox" id="chocolate-fondant-i4"><label for="chocolate-fondant-i4">2 egg yolks from extra large eggs</label></li><li><input type="checkbox" id="chocolate-fondant-i5"><label for="chocolate-fondant-i5">70g castor sugar</label></li><li><input type="checkbox" id="chocolate-fondant-i6"><label for="chocolate-fondant-i6">1 vanilla pod</label></li><li><input type="checkbox" id="chocolate-fondant-i7"><label for="chocolate-fondant-i7">40g cake flour, plus extra for dusting</label></li></ul>
+<h2>Method</h2>
+<ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Melt the chocolate and butter in a double boiler. Once melted, set aside and let it cool.</p></li><li><span class="n">2</span><p>Whisk the egg, egg yolks and sugar together until creamy. Scrape the seeds out of the vanilla pod and add them to the egg mixture.</p></li><li><span class="n">3</span><p>Fold the flour into the egg mixture and then add the melted chocolate and butter, mixing it together well.</p></li><li><span class="n">4</span><p>Brush the dariol moulds with melted butter and dust lightly with flour.</p></li><li><span class="n">5</span><p>Pour the fondant mixture into the moulds and refrigerate for an hour before baking.</p></li><li><span class="n">6</span><p>Heat your oven to 200°C and bake the fondants for 10–12 minutes. Make sure not to overbake as you still want them to be runny on the inside.</p></li><li><span class="n">7</span><p>Remove from the oven, cool for 2 minutes and then turn the fondants out gently.</p></li><li><span class="n">8</span><p>Serve with cream, ice cream, berries or macerated cherries.</p></li></ol>
+<div class="notes">Once you’ve perfected the art of chocolate fondant you’ll understand why it has a turn away rate of about, umm zero. So, if you’re looking for a dessert that’s dressed to impress, this decadent little guy is it.</div>
+</div>
+<script>
+try {
+  document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
+    var key = 'recipe-chocolate-fondant-' + box.id;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function(){ localStorage.setItem(key, box.checked ? '1' : '0'); });
+  });
+} catch (e) {}
+</script>
+<!-- source: chocolate fondant.docx -->
+</body>
+</html>
