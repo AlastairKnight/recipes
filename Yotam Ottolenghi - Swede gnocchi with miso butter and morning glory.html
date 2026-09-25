@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Swede gnocchi with miso butter and morning glory</p>
 <p class="byline">YotamOttolenghi</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>1 hr 45 min</b></span><span class="chip">Chill <b>1 hr 20 min</b></span><span class="chip">Serves <b>6</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 240C (220C fan)/465F/gas 9. Wrap each potato in foil and bake for an hour, or until cooked through. Peel the potatoes while they’re still warm (discard the skins), then mash into a bowl with a potato ricer or masher – you should end up with 230g of smooth mash.</p></li><li><span class="n">2</span><p>When the potatoes are in the oven, put the diced swede on an oven tray lined with baking paper. Toss in half a tablespoon of olive oil, cover with foil and bake alongside the potatoes for 30 minutes, or until cooked through. Transfer to a food processor, add two tablespoons of oil and blitz smooth, scraping down the sides of the bowl as you go – you should end up with 320g of mashed swede. Put the swedes in the same bowl as the potatoes, then mix in the egg yolk and a quarter-teaspoon of salt. Fold in the flour until there are no lumps, then transfer to a piping bag and refrigerate for an hour.</p></li><li><span class="n">3</span><p>Snip the end of the bag to make a 2cm-wide opening. Bring a litre and a half of water to a boil in a medium pan, add two teaspoons of salt, then turn down to a simmer. Cook the gnocchi in about five batches, so as not to overcrowd the pan. Pipe 3cm pieces of the gnocchi mix into the water, using a small, sharp knife quickly to release them into the water. Cook for two to three minutes, or until they float to the top, then lift out with a slotted spoon and transfer to an oven tray lined with baking paper, spacing the gnocchi well apart.</p></li><li><span class="n">4</span><p>Once all the gnocchi are cooked, drizzle over two teaspoons of oil and refrigerate for 20 minutes, until slightly chilled; this will help them keep their shape when they’re fried.</p></li><li><span class="n">5</span><p>Bring the stock to a boil in a large saute pan, and cook down for 10-12 minutes, until reduced to 200ml. Blanch the morning glory in the hot stock for two minutes, until tender, then lift out with a slotted spoon and roughly cut into halves (skip this step if using spinach; add that raw to the pan later). Return the pan to a medium heat and whisk in the miso, lime juice, ginger and butter, and cook, whisking, for three minutes, until the butter melts and the sauce is smooth and slightly thickened. Do not let it boil or it will split.</p></li><li><span class="n">6</span><p>Heat the remaining tablespoon and a half of oil in a large frying pan on a medium-high heat. Once very hot, add half the gnocchi and fry for a minute or two on each side, until nicely browned. Transfer to a plate and repeat with the remaining gnocchi.</p></li><li><span class="n">7</span><p>Put the gnocchi and morning glory (or raw spinach) in the pan with the miso sauce and gently heat through for a minute (if using spinach, until it has wilted). Divide between four plates, sprinkle with the lime zest, spring onions and sesame seeds, and serve at once.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

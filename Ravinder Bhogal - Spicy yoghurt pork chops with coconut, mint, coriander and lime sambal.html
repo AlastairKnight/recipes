@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Spicy yoghurt pork chops with coconut, mint, coriander and lime sambal</p>
 <p class="byline">Ravinder Bhogal</p>
 <div class="chips"><span class="chip">Prep <b>20 min</b></span><span class="chip">Cook <b>10 min</b></span><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>To make the sambal, simply blend all the ingredients together in a food processor to make a smooth paste, adding a little water if necessary. Refrigerate until needed.</p></li><li><span class="n">2</span><p>Make the marinade by blending the coriander, mint, garlic, ginger and chilli together in a food processor till you have a smooth paste. Put the yoghurt and tomato puree into a bowl and fold in the blended paste. Add the spices, season with salt and pour in the lime juice and mix till well combined. Slather all over the chops and leave to marinade for at least 5 hours but preferably overnight.</p></li><li><span class="n">3</span><p>Heat the oven to 220C (200C fan)/425F/gas 7 and put a griddle pan on a high heat. Once the pan is hot, grill the chops for 90 seconds on each side, until they have good char lines, then transfer to a baking tray and roast for about five – seven minutes, depending on thickness, until the meat is just cooked. Leave to rest for five minutes before serving with the sambal.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Roast chicken salad with chicken-fat croutons and green tahini dressing</p>
 <p class="byline">Ravinder Bhogal</p>
 <div class="chips"><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 170C fan/gas mark 5.</p></li><li><span class="n">2</span><p>Season the chicken generously with salt and pepper. Heat 1 tablespoon of the olive oil in a large ovenproof cast-iron frying pan over medium heat. Add the chicken, skin side down, and cook without moving for 8 minutes or until golden brown and crisp. Turn the chicken and cook for another 8 minutes until it is browned on the other side. Remove the chicken with tongs and put on a plate. Add the harissa to the chicken fat and juices in the pan, along with another 2 tablespoons of the olive oil, and swirl around so the harissa amalgamates with the oil.</p></li><li><span class="n">3</span><p>Toss the flatbread into the pan, tossing it through the juices. Put the chicken back in the pan and roast in the oven for 15 minutes until it is cooked through and the flatbread croutons are golden brown and crisp.</p></li><li><span class="n">4</span><p>Meanwhile, make the dressing. Place the parsley and coriander in a blender, along with the garlic, lemon juice and tahini, and whiz to a smooth paste. With the blender running, drizzle in the extra virgin olive oil. Transfer to a bowl and then fold in the yoghurt. Season to taste with salt and pepper.</p></li><li><span class="n">5</span><p>Place the lettuce, herbs and preserved lemon on a platter and dress with some of the green tahini dressing. Crumble over the feta and scatter with the olives. Drizzle over the remaining 3 tablespoons of olive oil.</p></li><li><span class="n">6</span><p>Remove the chicken from the oven and let it rest for a few minutes, then slice it off the bone and place on top of the salad, along with the croutons. Serve with more dressing on the side.</p></li></ol>
 <div class="notes">From Jikoni by Ravinder Bhogal (Bloomsbury, £26)</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

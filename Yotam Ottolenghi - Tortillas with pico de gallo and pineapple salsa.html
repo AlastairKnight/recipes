@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Tortillas with pico de gallo and pineapple salsa</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>18 min</b></span><span class="chip">Cook <b>40 min</b></span><span class="chip">Serves <b>2</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>To make the tortillas, put the flour, baking powder, soured cream, 125ml room-temperature water and half a teaspoon of salt in the bowl of a stand mixer fitted with the dough hook. Knead on medium speed for six minutes, scraping the sides as you go, until fully incorporated. After this time, when the dough has started to come together, add a third of the butter and knead for a minute to incorporate. Repeat twice more, adding a third of the butter at a time and kneading for a minute after each addition, then increase the speed to medium-high and knead for three more minutes. The dough should by now be smooth, bouncy, slightly tacky to the touch but not sticking to your fingers and it will feel almost too soft to handle.</p></li><li><span class="n">2</span><p>Pour the oil into a medium bowl. Lightly flour your hands, gently form the dough into a ball, then put in the bowl and roll in the oil just to coat. Cover with a plate and leave to rest for an hour.</p></li><li><span class="n">3</span><p>While the dough proves, make the salsa. Put the chilli and a quarter-teaspoon of salt in a mortar and crush until it’s broken down but still slightly chunky. Stir in the ginger and pineapple. Put the vinegar, sugar and a tablespoon and a half of water in a small saucepan on a high heat. Once it’s boiling, stir in all the pineapple mixture, then take off the heat and leave to cool.</p></li><li><span class="n">4</span><p>Once the dough has rested, tip it out on to a lightly floured worktop. Divide into eight equal-sized pieces weighing about 50g each and roll into golf ball-sized balls.</p></li><li><span class="n">5</span><p>Put a large cast-iron pan on a medium-high heat. Using a rolling pin, roll one of the balls into a 2mm-thick x 15cm circle, using extra flour sparingly and only if necessary – don’t worry if it’s not a perfect circle. Carefully lift the tortilla, lay it in the hot pan and cook for 45-60 seconds on each side, until brown spots start to appear. Lift out, wrap in a lightly damp tea towel, then repeat with the remaining dough balls. Once they’re all cooked and wrapped in the towel, the tortillas will keep warm for about 30 minutes; otherwise, they’ll need reheating, either in a low oven or gently in the pan.</p></li><li><span class="n">6</span><p>Just before serving, put all the ingredients for the pico de gallo in a medium bowl, add a quarter-teaspoon of salt and toss gently to combine. Stir the crushed peppercorns and chopped coriander into the salsa, then decant into a second medium bowl.</p></li><li><span class="n">7</span><p>Serve the tortillas warm with the two condiments alongside, either with the braised mushrooms or your alternative filling of choice.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

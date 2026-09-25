@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Baked cauliflower with spices, spinach and tomato</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>75 min</b></span><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 180C/350F/gas 4. Coarsely grate the tomatoes on a box grater, discarding the skin: you should end up with about 600g grated tomato.</p></li><li><span class="n">2</span><p>Mix all the spices in a small bowl, then add a third of this mixture to a large bowl. Add the cauliflower, two tablespoons of oil and a half-teaspoon of salt to the large bowl, then toss to coat.</p></li><li><span class="n">3</span><p>Put the ginger, garlic and a quarter-teaspoon of salt in a mortar and crush to a rough paste.</p></li><li><span class="n">4</span><p>Heat two tablespoons of oil in a frying pan on a medium flame and, once hot, fry the onion until soft and browned – about seven minutes. Add the ginger and garlic paste, green chilli and mustard seeds, stir-fry for a minute more, then stir in the tomato paste and remaining spice mixture, and cook for another 30 seconds. Add the grated tomato and a teaspoon of salt, leave to simmer for five minutes, then stir in the coriander and spinach, and cook for another three minutes, until the sauce has reduced a little.</p></li><li><span class="n">5</span><p>Transfer the sauce to a 20cm x 30cm baking dish and top with the cauliflower mix and cherry tomato halves. Cover tightly with foil, bake for 40 minutes, then remove the foil, drizzle with a tablespoon of oil and bake uncovered for 10 minutes more. Remove from the oven, drizzle with the remaining tablespoon of oil, top with a little coriander and serve.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

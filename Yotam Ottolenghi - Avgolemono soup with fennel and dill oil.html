@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Avgolemono soup with fennel and dill oil</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>25 min</b></span><span class="chip">Cook <b>1 hr 20 min</b></span><span class="chip">Serves <b>6-8</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put the chicken, onion, peppercorns, white parts of the celery, fennel stems, bay leaves, garlic, thyme and one and three-quarter teaspoons of salt in a large saucepan for which you have a lid. Cover with two and a half litres of cold water and bring to a simmer. Once it starts to bubble, turn down the heat to medium, and leave to simmer gently for 45-50 minutes, until the vegetables are soft and the meat is tender, skimming off any froth as needed.</p></li><li><span class="n">2</span><p>When ready, remove the chicken pieces from the stock and set aside on a tray to cool. Once cool enough to handle, break into bite-sized chunks, and discard the skin and bones. Line a large sieve set over a large bowl with a clean tea towel and carefully pour in the stock; discard the solids. Ladle 500ml of the stock into a small saucepan and keep warm on a low heat. Measure out the remaining stock to get 1.2 litres (top up with water if you don’t have enough).</p></li><li><span class="n">3</span><p>Wipe clean the saucepan and put it back on a medium-high heat with three tablespoons of the oil. Once hot, add the carrots and cook, stirring occasionally, for five minutes, until slightly softened. Add the celery greens, fennel wedges and half a teaspoon of salt, stir and cook for another five minutes, until slightly softened. Pour in the stock and the orzo, bring to a simmer and cook, stirring once or twice to stop the pasta from sticking to the bottom, for seven minutes, until the orzo is al dente. Add the cooked chicken to the pot, stir well and turn the heat to low.</p></li><li><span class="n">4</span><p>Meanwhile, whisk the eggs and egg yolks in a large bowl until completely smooth and bubbles appear. Put the bowl on a tea towel to prevent it from sliding around and, whisking constantly, slowly pour in the lemon juice and whisk until smooth. Pour in the reserved warm stock, whisking until smooth.</p></li><li><span class="n">5</span><p>Stirring constantly, slowly pour the egg mixture into the soup and once fully mixed in, cook gently, still on a low heat, for another three to five minutes, until slightly thickened. Take off the heat and cover with a lid to keep warm.</p></li><li><span class="n">6</span><p>Put the remaining 75ml oil in the small bowl of a food processor with the dill, blitz until almost smooth, then transfer to a small bowl.</p></li><li><span class="n">7</span><p>Top and tail the whole lemon, use a small, sharp knife to remove the skin and pith, then slice between the membranes to release the segments. Chop each segment into three or four pieces, then transfer to the dill oil. Add the fennel seeds and a pinch of salt and stir to combine.</p></li><li><span class="n">8</span><p>Ladle the soup into six bowls, top with the fennel fronds, a spoonful of the dill oil and a good grind of pepper and serve hot.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

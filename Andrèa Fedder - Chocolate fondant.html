@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Chocolate fondant</p>
 <p class="byline">Andrèa Fedder</p>
 <div class="chips"><span class="chip">Makes <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Melt the chocolate and butter in a double boiler. Once melted, set aside and let it cool.</p></li><li><span class="n">2</span><p>Whisk the egg, egg yolks and sugar together until creamy. Scrape the seeds out of the vanilla pod and add them to the egg mixture.</p></li><li><span class="n">3</span><p>Fold the flour into the egg mixture and then add the melted chocolate and butter, mixing it together well.</p></li><li><span class="n">4</span><p>Brush the dariol moulds with melted butter and dust lightly with flour.</p></li><li><span class="n">5</span><p>Pour the fondant mixture into the moulds and refrigerate for an hour before baking.</p></li><li><span class="n">6</span><p>Heat your oven to 200°C and bake the fondants for 10–12 minutes. Make sure not to overbake as you still want them to be runny on the inside.</p></li><li><span class="n">7</span><p>Remove from the oven, cool for 2 minutes and then turn the fondants out gently.</p></li><li><span class="n">8</span><p>Serve with cream, ice cream, berries or macerated cherries.</p></li></ol>
 <div class="notes">Once you’ve perfected the art of chocolate fondant you’ll understand why it has a turn away rate of about, umm zero. So, if you’re looking for a dessert that’s dressed to impress, this decadent little guy is it.</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

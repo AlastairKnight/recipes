@@ -17,6 +17,7 @@
     --accent: #c1502e;
     --border: #ece5db;
     --shadow: 0 1px 2px rgba(43,36,32,0.06), 0 4px 16px rgba(43,36,32,0.06);
+    --star: #E4A93A;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -132,9 +133,60 @@
     flex-direction: column;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  a.card:hover {
-    transform: translateY(-3px);
+  .card-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease;
+  }
+  .card-wrap > a.card { flex: 1; }
+  .card-wrap:hover { transform: translateY(-3px); }
+  .card-wrap:hover > a.card {
     box-shadow: 0 2px 4px rgba(43,36,32,0.1), 0 8px 24px rgba(43,36,32,0.12);
+  }
+
+  .fav {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .fav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+  .fav[aria-pressed="true"] { color: var(--star); }
+  .fav[aria-pressed="true"] svg { fill: currentColor; }
+
+  .fav-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card-bg);
+    padding: 2px;
+    flex: 0 0 auto;
+  }
+  .fav-toggle button {
+    border: none;
+    background: none;
+    color: var(--text);
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .fav-toggle button.active {
+    background: var(--accent);
+    color: #fff;
   }
 
   .thumb {
@@ -194,6 +246,10 @@
   <p class="subtitle" id="subtitle">Loading recipes…</p>
   <div class="controls">
     <input type="text" id="search" placeholder="Search recipes…" autocomplete="off">
+    <div class="fav-toggle" id="favToggle">
+      <button type="button" data-fav="0">All</button>
+      <button type="button" data-fav="1">★ Favourites <span id="favCount"></span></button>
+    </div>
     <div class="author-filters" id="authorFilters"></div>
   </div>
 </header>
@@ -359,6 +415,44 @@
   const authors = Array.from(new Set(RECIPES.map(r => r.author))).sort();
   let activeAuthor = 'All';
 
+  // Favourites: shared with the recipe pages via one localStorage key of file names.
+  const FAV_KEY = 'recipe-favourites';
+  const FAV_ONLY_KEY = 'recipe-fav-only';
+  const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg>';
+  const favToggleEl = document.getElementById('favToggle');
+  const favCountEl = document.getElementById('favCount');
+  let favs = loadFavs();
+  let favOnly = false;
+  try { favOnly = localStorage.getItem(FAV_ONLY_KEY) === '1'; } catch (e) {}
+
+  function loadFavs() {
+    try {
+      const list = JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
+      return new Set(list.map(f => f.normalize('NFC')));
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveFavs() {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify([...favs])); } catch (e) {}
+  }
+
+  function isFav(r) { return favs.has(r.file.normalize('NFC')); }
+
+  function setFavButton(btn, on, title) {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.setAttribute('aria-label', (on ? 'Remove ' : 'Add ') + title + (on ? ' from' : ' to') + ' favourites');
+  }
+
+  function renderFavToggle() {
+    for (const b of favToggleEl.querySelectorAll('button')) {
+      b.classList.toggle('active', (b.dataset.fav === '1') === favOnly);
+    }
+    const n = RECIPES.filter(isFav).length;
+    favCountEl.textContent = n ? '(' + n + ')' : '';
+  }
+
   function encodePath(path) {
     return path.split('/').map(encodeURIComponent).join('/');
   }
@@ -378,7 +472,8 @@
     const filtered = RECIPES.filter(r => {
       const matchesAuthor = activeAuthor === 'All' || r.author === activeAuthor;
       const matchesQuery = !q || r.title.toLowerCase().includes(q) || r.author.toLowerCase().includes(q);
-      return matchesAuthor && matchesQuery;
+      const matchesFav = !favOnly || isFav(r);
+      return matchesAuthor && matchesQuery && matchesFav;
     });
 
     countEl.textContent = filtered.length === RECIPES.length
@@ -387,8 +482,15 @@
 
     grid.innerHTML = '';
     empty.style.display = filtered.length ? 'none' : 'block';
+    empty.textContent = favOnly && !RECIPES.some(isFav)
+      ? 'No favourites yet. Tap the ☆ on a recipe to add it.'
+      : 'No recipes match your search.';
+    renderFavToggle();
 
     for (const r of filtered) {
+      const wrap = document.createElement('div');
+      wrap.className = 'card-wrap';
+
       const a = document.createElement('a');
       a.className = 'card';
       a.href = encodePath(r.file);
@@ -419,7 +521,23 @@
 
       a.appendChild(thumb);
       a.appendChild(body);
-      grid.appendChild(a);
+
+      const fav = document.createElement('button');
+      fav.type = 'button';
+      fav.className = 'fav';
+      fav.innerHTML = STAR;
+      setFavButton(fav, isFav(r), r.title);
+      fav.addEventListener('click', () => {
+        const key = r.file.normalize('NFC');
+        if (favs.has(key)) favs.delete(key); else favs.add(key);
+        saveFavs();
+        if (favOnly) render();
+        else { setFavButton(fav, favs.has(key), r.title); renderFavToggle(); }
+      });
+
+      wrap.appendChild(a);
+      wrap.appendChild(fav);
+      grid.appendChild(wrap);
     }
   }
 
@@ -440,6 +558,19 @@
   }
 
   searchInput.addEventListener('input', render);
+
+  favToggleEl.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    favOnly = b.dataset.fav === '1';
+    try { localStorage.setItem(FAV_ONLY_KEY, favOnly ? '1' : '0'); } catch (e) {}
+    render();
+  });
+
+  // Pick up changes made on a recipe page (back button, or another tab).
+  function refreshFavs() { favs = loadFavs(); render(); }
+  window.addEventListener('pageshow', e => { if (e.persisted) refreshFavs(); });
+  window.addEventListener('storage', e => { if (e.key === FAV_KEY) refreshFavs(); });
 
   renderFilters();
   render();

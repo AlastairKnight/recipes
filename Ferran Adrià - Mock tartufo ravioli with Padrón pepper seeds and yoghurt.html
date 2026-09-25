@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Mock tartufo ravioli with Padrón pepper seeds and yoghurt</p>
 <p class="byline">Ferran Adrià</p>
 <div class="chips"><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Mock tartufo ravioli — Clean the truffle with a brush under running water.</p></li><li><span class="n">2</span><p>Peel the truffle and keep the skin.</p></li><li><span class="n">3</span><p>Trim one of the truffles so that it is 2 cm in diameter and cut it into 12 slices that are 0.1 cm thick.</p></li><li><span class="n">4</span><p>Trim the other truffle so that it is 2.5 cm in diameter and cut it into 12 slices that are 1.5 mm thick.</p></li><li><span class="n">5</span><p>Spread with truffle oil.</p></li><li><span class="n">6</span><p>Truffle skin — Bring the truffle peel and the water to the boil over a low heat. When it has reached the boil, continue boiling for 5 min.</p></li><li><span class="n">7</span><p>Remove from the heat, cover and leave to infuse for 30 min.</p></li><li><span class="n">8</span><p>Strain and sieve. Season with salt.</p></li><li><span class="n">9</span><p>Hot summer truffle jelly — Mix the truffle stock and the powdered agar-agar together.</p></li><li><span class="n">10</span><p>Stirring continuously, bring to the boil over a medium heat, remove from the heat and whisk.</p></li><li><span class="n">11</span><p>Pour a 1.5 cm thick layer in a dish and leave to set in the fridge for at least 3 hours.</p></li><li><span class="n">12</span><p>Padrón pepper seeds — Fry the peppers in piping hot olive oil for 20 seconds.</p></li><li><span class="n">13</span><p>Use a slotted spoon to remove them and drain on kitchen paper.</p></li><li><span class="n">14</span><p>Use a pair of scissors to cut the base of the stem and remove the seed pods and keep on one side.</p></li><li><span class="n">15</span><p>Yoghurt — Place the yoghurt in a baster and beat.</p></li><li><span class="n">16</span><p>To finish — Place 3 slices of truffle, which should be 2 cm each in diameter. Place a hot truffle jelly cylinder on top of them.</p></li><li><span class="n">17</span><p>Arrange 5 Padrón pepper seeds between the truffle slices.</p></li><li><span class="n">18</span><p>Heat the dish in the salamandra for 25 sec.</p></li><li><span class="n">19</span><p>Arrange 3 of the 2.5 cm diameter truffle slices on top of the jelly. Heat for 10 seconds.</p></li><li><span class="n">20</span><p>Drizzle a zigzag of Greek yoghurt in a ring around the ingredients. Repeat with the tartufo oil.</p></li><li><span class="n">21</span><p>Sprinkle Maldon over the truffle raviolis and the seeds.</p></li></ol>
 <div class="notes">elBulli catalogue no. 487 · 1998 · Tapas · Hot</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

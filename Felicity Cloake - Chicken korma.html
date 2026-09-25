@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Chicken korma</p>
 <p class="byline">Felicity Cloake</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>1 hr</b></span><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Cut the meat into large, bite-sized chunks and put in a bowl with half the yoghurt. Stir, cover and leave to marinate at room temperature for at least three hours, or up to 12 hours in the fridge. (If using tofu or vegetables, a half-hour marination at room temperature should be sufficient.) Half an hour before you start cooking, take it out of the fridge, along with the remaining yoghurt.</p></li><li><span class="n">2</span><p>Peel and finely chop the onion. Peel and crush the garlic, and peel and finely grate or chop the ginger (you want two tablespoons of ginger for this), then set those last two aside for now. Heat the cream just to warm it through, take off the heat and stir in the saffron and half the rose water. Put the cashews in a small bowl with five tablespoons of warm water and leave to soak.</p></li><li><span class="n">3</span><p>Put the fat in a wide, heavy-based pan for which you have a lid and set it over a medium-high heat. Once hot, add the cinnamon and green cardamom, and saute until you hear the cardamom start to pop. Add the chicken, in batches, if necessary, brown on all sides, then lift the meat out of the pan and set aside.</p></li><li><span class="n">4</span><p>Turn down the heat to medium-low, add the onion and fry, stirring often so it doesn’t catch, until soft and browned; there should be enough fat left in the pan, but if the onion threatens to stick, add a little more. Meanwhile, blend the cashews and their soaking water into a smooth paste.</p></li><li><span class="n">5</span><p>Stir the garlic, ginger, sultanas and grated nutmeg into the onion mix, cook for a couple of minutes, then stir in the cashew paste. Take off the heat, leave to cool for a couple of minutes, then stir in the remaining yoghurt and the salt. (Note that lower-fat yoghurts tend to split when heated, so avoid using them for this.)</p></li><li><span class="n">6</span><p>Add the chicken to the pan, along with any juices and as much of its marinade as possible, then bring to a very gentle simmer. Cover the pan tightly, turn the heat down as low as possible and leave to stew for about 30 minutes, until the meat is cooked through (cut into a piece to check).</p></li><li><span class="n">7</span><p>Stir the infused cream into the pan and cook very gently for another five minutes. Meanwhile, extract the seeds from the black cardamom pod – this smoky-flavoured spice is well worth seeking out in south Asian food specialists or online – crush them in a mortar and add to the korma pan.</p></li><li><span class="n">8</span><p>Taste the gravy and adjust the seasoning as necessary. Add the remaining rose water, if you think it’s needed (rose waters vary hugely in strength, so you may decide you have enough in there already). Serve the korma with steamed rice and/or parathas or other flatbreads. If you’re out to impress, sprinkle a few extra chopped cashews, dried fruit and/or finely chopped coriander on top, too.</p></li></ol>
 <div class="notes">A note on the chicken: it’s common to use a whole chicken, jointed, in this dish, but the relatively short cooking time means you don’t get much flavour from the bones, so I prefer to use boneless thighs, which stay juicier than breast. Feel free to substitute them as suits your taste; lamb shoulder or leg, mixed vegetables or firm tofu will also work well.</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

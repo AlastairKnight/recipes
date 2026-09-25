@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Coffee-marinated pork chops with white bean mash and kiwi salsa</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>20 min</b></span><span class="chip">Marinate <b>1 hr +</b></span><span class="chip">Cook <b>20 min</b></span><span class="chip">Serves <b>4, as a main</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>First, marinate the pork. Put all the marinade ingredients in a spice grinder with a teaspoon of salt and blitz finely. Take a tablespoon of this mix, put in a small bowl with the zest and a teaspoon of flaked salt, crush with your fingers to make a spice salt. Crush the mixture between your fingertips to make the spice salt. Rub the remaining mixture evenly on to the chops. Leave to marinate at room temperature for at least one hour or, if getting ahead, store in the fridge for up to 24 hours. Just make sure to bring to room temperature at least 30 minutes before cooking.</p></li><li><span class="n">2</span><p>Heat the oven to 200C (180C fan)/390F/gas 6. Add all the mash ingredients to a food processor along with two tablespoons of water and half a teaspoon of salt. Blitz for 30 seconds until almost smooth and transfer to a bowl. Cover and set aside for later.</p></li><li><span class="n">3</span><p>Sprinkle three quarters of a teaspoon of fine salt over the chops. Put them fat-side down in a large, cold, cast-iron pan with half a teaspoon of oil. Turn the heat to medium-high and cook for two to four minutes, until the fat is rendered and crisp.</p></li><li><span class="n">4</span><p>Add half a teaspoon of oil, turn the chops on their side and sear on each side for 45 seconds, and repeat once more (if your pan isn’t big enough, put on a tray to one side and sear one by one). Arrange the chops, skin side down and transfer the pan to the oven. Cook for nine minutes, remove from the oven and set aside to rest for five minutes. The chops should be slightly firm and bounce back when pressed in the centre.</p></li><li><span class="n">5</span><p>For the kiwi salsa, put all the ingredients in a medium-sized bowl and mix well.</p></li><li><span class="n">6</span><p>Put the chops on to a chopping board and slice along the bone to separate the meat, then cut the meat at an angle into &#189;cm strips.</p></li><li><span class="n">7</span><p>Spoon the bean mash on to each plate and arrange the pork slices on top. Sprinkle over the spiced salt generously and serve with the salsa on the side.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

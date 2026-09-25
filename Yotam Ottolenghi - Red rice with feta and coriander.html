@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Red rice with feta and coriander</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>40 min</b></span><span class="chip">Serves <b>6</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Put a large saute pan for which you have a lid on a high heat. Once very hot, add the cherry tomatoes and sear for five minutes, shaking the pan occasionally, until they are nicely charred. Transfer the tomatoes to a bowl and set the pan aside to cool down a little.</p></li><li><span class="n">2</span><p>Return the saute pan to a medium-high heat, add 75ml oil, followed by the peppers, onions, a teaspoon and three-quarters of salt and a good grind of pepper. Cook for seven minutes, stirring occasionally, until softened, then add the garlic and cook for three minutes more, until the vegetables have taken on some colour. Add the tomato paste, sugar and spices, cook, stirring, for 90 seconds, then add the rice and charred tomatoes and stir everything together. Pour in 750ml boiling water, cover the pan and put on the lowest heat for 15 minutes. Turn off the heat and leave the pan to one side, still covered, for 10 minutes.</p></li><li><span class="n">3</span><p>Top and tail the lemon, then use a small knife to remove the skin and white pith. Holding the lemon above a bowl to catch the juices, cut between the membranes to release the segments, then cut each segment into three. Put the lemon flesh in the bowl with the juice, then mix in the feta, the remaining oil, coriander and chilli flakes (if using). Spoon half the lemon and feta mix over the rice, and serve the rest alongside.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

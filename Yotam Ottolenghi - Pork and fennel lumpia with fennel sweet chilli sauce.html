@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Pork and fennel lumpia with fennel sweet chilli sauce</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>40 min</b></span><span class="chip">Cook <b>55 min</b></span><span class="chip">Makes <b>28</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>For the chilli sauce, put the chillies, vinegar, sugar, fish sauce, garlic, fennel seeds, a half-teaspoon of salt and 150ml water in a small saucepan. Put on a medium-high heat and cook, stirring occasionally, for 20 minutes, until the chillies have softened and the liquid has reduced by three-quarters. In a small bowl, whisk the cornflour with two teaspoons of cold water, to dissolve, then stir into the pan and cook for a minute or two, until the sauce thickens slightly. Take off the heat and leave to cool.</p></li><li><span class="n">2</span><p>Now for the filling. Heat the olive oil in a large saute pan on a medium-high heat, then add the ginger and garlic, and cook, stirring, for a minute or two, until lightly coloured and fragrant. Stir in the mince, using the spoon to break it up, and cook for 15 minutes, until lightly golden. Stir in the carrot, sliced fennel and fennel seeds, and cook, stirring occasionally, for 10 minutes, until the vegetables have softened.</p></li><li><span class="n">3</span><p>In a small bowl, mix the soy sauce, oyster sauce and cornflour with a tablespoon of water, stir this into the pork mix and cook for two minutes, until glossy. Stir in the coriander and spring onions, and leave to cool. You should have about 830g of filling.</p></li><li><span class="n">4</span><p>To assemble the lumpias, put two spring roll wrappers on top of each other on a work surface with one pointed end facing you (so it looks a bit like a diamond). Have ready a small bowl of water. Use a pastry brush lightly to wet the edges of the top wrapper with water, then spoon 30g (or about one and three-quarter tablespoons) of the filling into the middle. Fold over the right and left pointed ends into the middle (they shouldn’t meet), then roll up the pointed end nearest you over the folded-in ends, to cover the filling. Tightly tuck and roll up the spring roll wrappers to encase the filling, then cover with a damp tea towel and repeat with the remaining wrappers and filling, to make 28 lumpia in total.</p></li><li><span class="n">5</span><p>Put the sunflower oil in a saute pan set over a medium-high heat. Once it’s hot, fry the lumpia four or five at a time for three to five minutes per batch, until golden and crisp. Use a slotted spoon to transfer to a tray lined with absorbent paper and repeat with the rest.</p></li><li><span class="n">6</span><p>Serve hot with the sweet chilli sauce in a bowl for dipping.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

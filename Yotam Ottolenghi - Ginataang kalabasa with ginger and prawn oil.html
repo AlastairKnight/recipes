@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Ginataang kalabasa with ginger and prawn oil</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>35 min</b></span><span class="chip">Cook <b>50 min</b></span><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 240C (220C fan)/475F/gas 9. Put the squash, shallot quarters, a tablespoon of olive oil, half a teaspoon of salt and a good grind of pepper on a large baking tray, toss to coat, then roast for 10 minutes. Remove the shallots and set aside (they’ll have softened, but not darkened), then return the tray to the oven and roast the squash for 10 minutes more, until soft and lightly coloured at the edges.</p></li><li><span class="n">2</span><p>Meanwhile, make the prawn oil. Put the prawn shells (not the heads) and sunflower oil in a medium saucepan on a medium-low heat and simmer, stirring occasionally, for 15 minutes, until the shells are pink and the oil fragrant. Pass through a sieve set over a small bowl, then discard the spent shells. Set aside two tablespoons of the prawn oil, pour the rest back into the saucepan and stir in the ginger, aleppo chilli and a quarter-teaspoon of salt. On a low heat, bring to a simmer, cook gently for 15 minutes, then set aside.</p></li><li><span class="n">3</span><p>Meanwhile, make the prawn stock. Put a large saute pan for which you have a lid on a medium-high heat. Once hot, add the remaining two tablespoons of olive oil and the prawn heads, and fry for five minutes, until pink and fragrant. Add 500ml water, cover and simmer for 10 minutes. Strain into a large bowl, use the back of a spoon to squeeze out as much liquid from the heads as possible, then discard the heads.</p></li><li><span class="n">4</span><p>Now make the stew. Wipe dry the saute pan, set it on a medium-high heat and add the two reserved tablespoons of prawn oil and the sliced garlic. Cook, stirring frequently, for a minute, until fragrant and starting to colour, then pour in the prawn stock, coconut milk and the roast shallots and squash. Cover, cook for five minutes, then stir in the green beans, lower the heat to medium, replace the lid and cook for 15 minutes, until the beans are tender. Stir in the prawns, cover again and cook for two or three minutes more, until the prawns are cooked and pink. Off the heat, stir in the fish sauce, lime juice and coriander.</p></li><li><span class="n">5</span><p>Drizzle over the extra coconut milk, spoon over half the prawn oil and serve the rest with the lime wedges alongside.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

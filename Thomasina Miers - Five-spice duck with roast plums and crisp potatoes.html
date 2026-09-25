@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Five-spice duck with roast plums and crisp potatoes</p>
 <p class="byline">Thomasina Miers</p>
 <div class="chips"><span class="chip">Prep <b>30 min</b></span><span class="chip">Cook <b>1 hr 30 min</b></span><span class="chip">Serves <b>4-6</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Score the duck skin in a crisscross pattern. Toast the spices in a dry frying pan until aromatic, then grind to a fairly fine powder in a mortar or spice grinder. Rub two teaspoons of the five-spice powder and a teaspoon of salt all over the duck, then marinate in the fridge for a few hours, or overnight.</p></li><li><span class="n">2</span><p>About 90 minutes before you want to eat, heat the oven to 200C (180C fan)/390F/gas 6. Steam the potatoes whole for 12 minutes, then cut into 1-2cm coins. Put the duck or goose fat in a baking tray in the oven and, once it’s smoking hot, add the potato slices, scatter over a teaspoon of sea salt and roast for 60-75 minutes, basting three or four times while they cook, until golden. Forty minutes into the cooking time, pour off the excess fat and scatter over half the rosemary, if using; at the same time, take the duck out of the fridge to come up to room temperature.</p></li><li><span class="n">3</span><p>Line a baking sheet with foil and lay the plums cut side up on top. Sprinkle with the sugar and a teaspoon of five-spice mix, then pour on the vinegar and soy sauce. Scatter over the remaining rosemary, then roast alongside the potatoes for 35-40 minutes, until caramelised and jammy.</p></li><li><span class="n">4</span><p>About 20 minutes before you want to eat, put a frying pan on a medium-high heat. Add a teaspoon of the duck fat, then lay in the breasts skin side down and leave to fry for three or four minutes, until the skin is golden and crisp. Flip the breasts over, sear on the flesh side for just a minute, then transfer to an oven dish and put in the oven and turn it off. The residual heat should cook it through in four to five minutes.</p></li><li><span class="n">5</span><p>Remove and rest the duck while you tip the plums and their juices to a jug or bowl; taste and, if need be, adjust the seasoning with more soy or sugar. Cut the duck into wafer-thin slices and serve with the potatoes and plums.</p></li></ol>
 <div class="notes">The simple flex: these plums go beautifully with grilled goat’s cheese or halloumi, too. And cook the potatoes in vegetable oil instead of duck fat, if you prefer.</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

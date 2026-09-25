@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Chicken and ginger (Murg adraki)</p>
 <p class="byline">Atul Kochhar</p>
 <div class="chips"><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Mix together the chicken mince, spring onion, ginger, garam masala and salt to taste, then divide into 4 equal portions and set aside. One at a time, place the chicken supremes between 2 layers of cling film and flatten them using a meat mallet or rolling pin. As each supreme is flattened, place it on a fresh piece of cling film, skin side down. Place one portion of the chicken mixture on top and roll the flesh around the chicken mince, wrapping tightly in the cling film. Knot each end to hold the shape.</p></li><li><span class="n">2</span><p>Clip a sugar thermometer to a saucepan filled with water and heat the water to 90°C. Add the chicken roulades, still wrapped in clingfilm, and poach for 12–15 minutes until they feel firm. Remove them from the water and set aside to rest for 10 minutes before unwrapping.</p></li><li><span class="n">3</span><p>To serve, heat the sunflower oil in a large frying pan over a medium heat. Unwrap the chicken roulades and pat them dry. Sear them in the pan for 1–2 minutes until they are lightly coloured all round and heated through – a metal skewer should go into the stuffing and come out hot. Cut the ends off to get neat, even cylinders, then cut each roulade into thick slices.</p></li><li><span class="n">4</span><p>Divide the chicken slices among 4 plates and add the ginger chutney, tomato chutney and mint and coriander chutney. Garnish and serve.</p></li></ol>
 <div class="notes">From Benares</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

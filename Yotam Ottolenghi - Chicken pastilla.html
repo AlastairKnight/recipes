@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Chicken pastilla</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Serves <b>12</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Season the chicken pieces with 1½ teaspoons of salt and a good grind of black pepper. Heat the sunflower oil in a large sauté pan and place on a high heat. Add half the chicken pieces and sear for 7–8 minutes, turning once halfway through, until deep golden-brown on both sides. Remove from the pan and set aside to cool while you continue with the remaining batch.</p></li><li><span class="n">2</span><p>Keep the pan on the heat and add the onions and garlic. Cook on a medium-high heat for 15–18 minutes, until the onions are soft, dark and caramelized like jam. Keep a close eye on it towards the end and stir constantly, to make sure it does not catch on the bottom of the pan. Add the tomatoes, cinnamon, peppercorns and dried chillies, along with ½ teaspoon of salt. Continue to cook for another 4–5 minutes, stirring from time to time, then slowly pour over the brandy. Cook for a further 2 minutes, then return the chicken pieces to the pan. Pour over the wine and stock, reduce the heat to low and simmer, covered, for 1 hour. Remove the chicken pieces, increase the heat and let the sauce bubble away for 30–35 minutes, until it has reduced by a quarter and has the consistency of caramel. Remove and discard the cinnamon stick and chillies, add the chocolate and cook for 2 minutes, stirring often. Remove from the heat and set aside to cool: you should have about 500ml in the pan.</p></li><li><span class="n">3</span><p>Once the chicken is cool enough to handle, use your hands to pick all the meat off the bones. Return the meat to the sauce, stir gently and set aside.</p></li><li><span class="n">4</span><p>To make the Catalan spinach, pour the sherry vinegar and brandy into a small saucepan and place on a medium-low heat. Warm through for 5 minutes, then remove from the heat. Stir through the currants and set aside to cool. Mix the pine nuts with 1 teaspoon of oil and the paprika and set aside. Pour the remaining oil into a very large sauté pan, place on a medium-low heat and add the shallots. Cook for about 8 minutes, until soft and lightly coloured. Add the garlic, along with 1 teaspoon of salt, and cook for a further 2 minutes. Add the currant and brandy mix, along with the pine nuts, and cook for 2 more minutes. Pour in the cream, increase the heat and cook for 3 minutes, to reduce the sauce by a quarter. Stir in the spinach and cook for 3–4 minutes, uncovered, for the leaves to wilt and for the liquid to evaporate so that there is about 2 tablespoons left in the pan.</p></li><li><span class="n">5</span><p>Preheat the oven to 200°C/180°C fan/gas mark 6.</p></li><li><span class="n">6</span><p>Brush the base and sides of a large deep ovenproof sauté pan – around 25cm wide and 8cm deep – with about a tablespoon of the melted ghee. Brush the first sheet of filo pastry and line the base of the pan. Continue with the next sheet, generously overlapping as you go, and leaving about an 8cm overhang over the edge of the pan with each sheet. Work quite quickly here, so that the pastry does not dry out, brushing each sheet liberally with the melted ghee. Continue until you have used two-thirds of the pastry sheets, then spoon the spinach mixture into the base of the pan. Spread the chicken on top, then continue with the remaining pastry sheets, tucking these ones into the pan, as though making a bed with fitted sheets.</p></li><li><span class="n">7</span><p>Continue until all the filo has been used before drawing in the overhanging pastry sheets and sealing these on top of the pie with a final brush of the melted ghee.</p></li><li><span class="n">8</span><p>Place in the oven and cook for 1 hour, uncovered. Cover with foil and cook for a final 10 minutes, so that the bottom gets golden brown without the top burning. Remove from the oven and set aside for 10 minutes before inverting the pastilla on to a platter. Sprinkle over the icing sugar, through a fine mesh sieve, and serve warm as is. You can also make a mesh pattern on top of the pastilla by heating up a metal skewer with a blow-torch until red hot. Create parallel lines by burning the sugar in straight lines, spaced 2cm apart and then repeating at a 90° angle.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

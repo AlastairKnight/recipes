@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Cranberry-glazed spatchcocked duck</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Cook <b>3 hr</b></span><span class="chip">Serves <b>4 generously</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>First spatchcock the duck, then cut off the wingtips. Put the backbone, wingtips and giblets on an oven tray that will fit in your fridge later, and put a rack on top. Prick the duck skin all over, then put it on the rack breast side up. Sprinkle with the five-spice, two teaspoons of fine salt and a few twists of black pepper, then rub evenly all over the duck and put in the fridge uncovered for at least 30 minutes, and ideally overnight.</p></li><li><span class="n">2</span><p>Meanwhile, put all the ingredients for the glaze in a small saucepan, bring to a boil, then turn down to a simmer and leave to cook for about eight minutes, until the mixure has reduced and thickened to the consistency of runny honey. Take off the heat and leave to cool.</p></li><li><span class="n">3</span><p>Heat the oven to 160C (140C fan)/325F/gas 3. Take the duck tray out of the fridge, pat the skin dry with kitchen paper, then put it in the oven and roast for two hours. When the two hours is up, brush the duck all over with half the glaze, then roast for another 15 minutes.</p></li><li><span class="n">4</span><p>Turn up the oven to 200C (180C fan)/390F/gas 6 and brush the remaining glaze all over the duck. Cook for a final 10 minutes, then transfer the duck to a platter and cover with a foil tent to rest while you make the gravy.</p></li><li><span class="n">5</span><p>Turn up the oven to 240C (220C fan)/475F/gas 9. Take the rack out of the oven tray and discard the duck offcuts underneath. Whisk the flour into the juices in the tray until it’s fully incorporated, then return the tray to the oven for five minutes. Slowly whisk in the chicken stock, then add the thyme sprigs, pink peppercorns and frozen cranberries, and return to the oven for about 15 minutes, until the sauce has thickened. Take the gravy tray out of the oven and whisk again.</p></li><li><span class="n">6</span><p>Sprinkle some flaky sea salt all over the duck, then carve and serve with the gravy and some roast spuds.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Rum and currant dumplings with speculaas caramel</p>
 <p class="byline">YotamOttolenghi</p>
 <div class="chips"><span class="chip">Prep <b>10 min</b></span><span class="chip">Cook <b>1 hr 45 min</b></span><span class="chip">Serves <b>4-6</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Mix all the speculaas spice mix ingredients and store in a small jar.</p></li><li><span class="n">2</span><p>On a medium heat, warm the sugar, water and a teaspoon of speculaas mix in a 20cm saucepan for which you have a lid, until the sugar dissolves.</p></li><li><span class="n">3</span><p>Put the currants and rum in a small saucepan on a medium-high heat. Bring to a boil, simmer for a minute, then tip into a bowl and leave to plump up for 20 minutes. Return the pan to the heat, add the butter and golden syrup, cook just until the butter has melted, then set aside. In a small bowl, whisk the milk and bicarb. In a medium bowl, mix the flour, half a teaspoon of flaked salt, the milk mix, syrup mixture, currants, rum and lemon zest into a smooth batter.</p></li><li><span class="n">4</span><p>Bring the sugar syrup to a boil on a medium-high heat. Use two dessertspoons to form the batter into 12 walnut-sized balls (they won’t be perfect) and carefully lower them one by one into the bubbling syrup – they will start to puff up quickly. Turn the heat to low, cover and leave to simmer very gently for 70 minutes, resisting the urge to lift the lid. The dumplings will double in size and the syrup will turn to a thick, dark caramel.</p></li><li><span class="n">5</span><p>Stir in the lemon juice, then divide the dumplings and caramel between four (or six) bowls. Sprinkle with sea salt, top with a spoon of ice-cream or cr&#232;me fraiche, sprinkle over the almonds and serve at once.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

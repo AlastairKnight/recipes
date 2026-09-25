@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Chilli chicken with cinnamon and spinach</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Serves <b>four.</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Season the chicken legs with three-quarters of a teaspoon of salt and a good grind of pepper. On a high flame, heat the sunflower oil in a large saute pan for which you have a lid. Add half the chicken and sear for six to seven minutes, turning once halfway through, until deep golden-brown on both sides. Remove from the pan and set aside while you repeat with the remaining chicken.</p></li><li><span class="n">2</span><p>Add the onions and garlic to the empty pan, and cook on a medium-high heat for 12-15 minutes, stirring often, until the onions are soft, dark and caramelised. Add the tomato wedges, cinnamon, peppercorns, dried chillies and a quarter-teaspoon of salt, cook for four to five minutes, stirring from time to time, then pour the brandy over everything. Cook for two minutes, then return the chicken to the pan with the wine, stock and 300ml water, turn down the heat to low, cover and simmer for an hour.</p></li><li><span class="n">3</span><p>Lift out the chicken pieces, turn up the heat and leave the sauce to bubble away for 20-25 minutes, until thick and reduced to a quarter of its original volume (ie, you should have about 500ml left in the pan at the end). Remove and discard the cinnamon and chillies, stir in the chocolate and spinach, and cook for two minutes, stirring. Remove from the heat and set aside.</p></li><li><span class="n">4</span><p>Once the chicken is cool enough to handle, pick all the meat off the bones in 5cm pieces (like so many cooking jobs, your hands are by far the best tool for doing this). Gently stir the meat and pine nuts into the sauce, and serve at once with a generous spoonful of soured cream on each portion.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

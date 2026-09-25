@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Cauliflower Hummus</p>
 <p class="byline">Unknown</p>
 <div class="chips"><span class="chip">Serves <b>6 as a dip</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Place the cauliflower florets in a steamer apparatus, cover and steam until the florets are very soft, about 15 minutes. If you don’t have a steamer, place the cauliflower florets, along with 1/2 cup water in a saucepan. Bring to a boil. Then reduce heat to low, cover and simmer the cauliflower until it is very soft, about 10 minutes. If all the water evaporates before the cauliflower is soft, add 1/4 cup water at a time. If there is any water remaining in the pan at the end, remove the lid, crank up the heat to medium-high and let it boil away. Make sure the cauliflower is not water logged or too wet before proceeding.</p></li><li><span class="n">2</span><p>While the cauliflower is steaming, work on the spices. Place the coriander and cumin seeds in a small skillet. Toast on medium-low heat, shaking often until the spices are lightly golden and fragrant, about 5 minutes. Let the spices cool a little, then powder them in a food processor or mortar and pestle. If you are using ground coriander and cumin, skip this step and go to step 3.</p></li><li><span class="n">3</span><p>Place the steamed, cooled cauliflower, and all other ingredients except the cilantro or parsley in a food processor, and blend into a smooth puree. If the dip is too thick, add water a few tablespoons at a time until your desired consistency is reached. If you want the hummus more creamy add more tahini at this point. Garnish with chopped cilantro or parsley.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

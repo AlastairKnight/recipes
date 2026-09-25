@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Slow-cooked pork belly with chipotle and tamarind</p>
 <p class="byline">Thomasina Miers</p>
 <div class="chips"><span class="chip">Prep <b>10 min</b></span><span class="chip">Cook <b>3 hr 30 min+</b></span><span class="chip">Serves <b>6-8</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>An hour or two before cooking, take both the belly and skin out of the fridge to come to room temperature.</p></li><li><span class="n">2</span><p>To make the rub, put a small frying pan on a medium heat for a few minutes, then gently toast the coriander seeds, peppercorns, star anise, fennel seeds and cinnamon for a few minutes, until fragrant. Stir in the ancho flakes and toast for 20-30 seconds, then tip the spices into a grinder, add two teaspoons of salt and grind to a powder.</p></li><li><span class="n">3</span><p>Rub both the pork belly and skin with a tablespoon of olive oil, then rub in half the spice mix.</p></li><li><span class="n">4</span><p>Heat the oven to 240C (220C fan)/475F/gas 9. Dice the onion, carrots, celery and white part of the leek (save the green part for stock). Put the pork belly in a deep roasting dish just big enough to hold it snugly, then cover with foil. Put the skin on a separate baking sheet. Roast both the pork belly and skin for half an hour.</p></li><li><span class="n">5</span><p>Heat the remaining oil and the butter in a large casserole on a medium heat, add the diced vegetables and the rest of the rub, and sweat, stirring often, for 15 minutes. Stir in the garlic and ginger, saute for another few minutes, then stir in the tamarind, chipotle, sherry, pineapple juice, bay leaves and 150ml water. Bring to a simmer, then take off the heat.</p></li><li><span class="n">6</span><p>Once the pork and skin have had half an hour, turn down the oven to 160C (140C fan)/325F/gas 3. Gently lift the pork belly out of its roasting dish, pour in the vegetables, then set the meat back on top. Cover again and roast for another two to two and a half hours, until completely tender.</p></li><li><span class="n">7</span><p>Transfer the pork belly and crisp skin to a warm plate to rest. Tip the contents of the roasting tray into a blender, blitz to a thick puree, then taste and adjust with a pinch more salt, a dash more pineapple juice or a slosh more sherry.</p></li><li><span class="n">8</span><p>Serve the pork with its delicious sauce and the smacked cucumbers on the side.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

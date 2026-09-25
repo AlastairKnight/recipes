@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Pork and artichokes</p>
 <p class="byline">Joe Trivelli</p>
 <div class="chips"><span class="chip">Serves <b>5</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>A day ahead, crush 2 of the garlic cloves in a pestle and mortar with the juniper and fennel seeds. Finely chop the lavender, rosemary and thyme, and add to the garlic with the sea salt and sugar. Mix, then rub it all over the pork and set aside, covered, in the fridge.</p></li><li><span class="n">2</span><p>The next day, tie the pork up with a piece of string in the middle and at the ends to hold it in a rounded joint shape. Bring to room temperature while you heat the oven to 200C fan/gas mark 7 and prepare the artichokes.</p></li><li><span class="n">3</span><p>Remove the toughest outer leaves of the artichokes, snapping or cutting them down with scissors. Trim around the base and stem with a small knife. Trim the stalk and the tips to remove the darkest part of the leaves.</p></li><li><span class="n">4</span><p>Rotate the artichokes upside down and press to open up the leaves a bit and carefully stretch them further with your fingers. Use a teaspoon to scoop out the choke. Rub each one all over with 1 of the lemons, cut in half, to stop them discolouring before you move on to the next.</p></li><li><span class="n">5</span><p>When all prepped, finely slice a garlic clove and stuff it between leaves of an artichoke with some parsley leaves, breadcrumbs, salt and pepper. Repeat with each one.</p></li><li><span class="n">6</span><p>Place a casserole on a medium-high heat with a tablespoon of olive oil and sear the pork all over, positioning its best-looking side up when you’re done. Turn the heat off, then surround the meat with the celery, any remaining garlic, the stuffed artichokes, onion, the juice of the remaining lemon and a splash of water.</p></li><li><span class="n">7</span><p>Cover with a piece of crumpled baking paper and bake for 1¼ hours, or until the pork is hot (above 64C) in the centre.</p></li><li><span class="n">8</span><p>Leave to rest somewhere warm before slicing and serving.</p></li></ol>
 <div class="notes">Joe Trivelli is co-head chef of River Cafe, London</div>
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

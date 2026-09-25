@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Roast chicken with tomatoes, bread and herbs</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Prep <b>10 min</b></span><span class="chip">Cook <b>1 hr 40 min</b></span><span class="chip">Serves <b>4</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 200C (180C fan)/390F/gas 6. Put the chicken in a large bowl and rub with the dry herbs and three quarters of a teaspoon of salt. Put a large, high-sided, ovenproof saute pan for which you have a lid over a high heat. Add a tablespoon of the oil to the pan, along with both varieties of tomatoes, and a quarter of a teaspoon of salt, then fry for five minutes, stirring occasionally, until the tomatoes begin to break down and release their juices. Put the chicken skin-side up on the tomatoes, pour in the vinegar, cover with the lid and put in the oven for 40 minutes.</p></li><li><span class="n">2</span><p>Turn the oven up to 220C (200C fan)/425F/gas 7, remove the lid and bake for a further 20 minutes. Remove from the oven and transfer the chicken to a tray. Return the pan to the oven for five to 10 minutes, until the tomato mixture has thickened and slightly charred.</p></li><li><span class="n">3</span><p>Meanwhile, make the herb salsa. Put the sesame, dry and fresh herbs (apart from the mint) in a small heatproof bowl and set aside. Put a small frying pan on medium heat and add the oil and garlic. Cook for three to five minutes, until golden and fragrant. Quickly and carefully, pour the oil into the herb bowl and stir to coat. Leave to cool, then stir in the olives, mint, lemon zest and juice with a quarter teaspoon of salt and a good grind of pepper.</p></li><li><span class="n">4</span><p>Stir the bread into the tomato mixture and put the chicken on top. Spoon some of the tomato juices over the chicken with a good grind of pepper. Serve with the salsa on top.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Spicy lamb and potato enchiladas</p>
 
 <div class="chips"><span class="chip">Prep <b>25 min</b></span><span class="chip">Cook <b>1 hr 20 min</b></span><span class="chip">Makes <b>6, to serve 2</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Heat the oven to 240C (220C fan)/475F/gas 9.</p></li><li><span class="n">2</span><p>Put all the chilli sauce ingredients in a spice grinder or the small bowl of a food processor with two and three-quarter teaspoons of salt and blitz to a smooth paste, scraping down the sides a couple of times as you go. Transfer half the paste to a 30cm x 20cm oven tray, add the tomatoes to the rest and blitz again to a smooth salsa, to make the salsa roja.</p></li><li><span class="n">3</span><p>Add the potatoes and lamb mince to the chilli paste tray and toss with your (gloved) hands until everything is well coated, breaking apart the mince into small chunks as you go. Transfer to the oven and bake for 35 minutes, stirring once halfway through and breaking the mince apart again, this time with a fork. Scrape the lamb and potato mix into a medium bowl and keep the tray unwashed, because you’ll be using it again later.</p></li><li><span class="n">4</span><p>Turn down the oven to 210C (190C fan)/410F/gas 6&#189;. Pile up the tortillas on a piece of foil, wrap them up and put in the oven for six minutes, just to warm through and to make them easier to roll.</p></li><li><span class="n">5</span><p>To build the enchiladas, put a sixth of the lamb mix in the middle of each warm tortilla, then roll up tightly and place seam side down on the reserved tray. Brush the tortillas with a little oil, then spoon the salsa roja on top and bake for 25 minutes.</p></li><li><span class="n">6</span><p>Spoon the soured cream over the enchiladas, drizzle with some more oil, then top with the spring onions, avocado and jalape&#241;os, and serve with the lime wedges to squeeze on top.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

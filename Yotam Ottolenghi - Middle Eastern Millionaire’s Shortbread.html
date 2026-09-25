@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Middle Eastern Millionaire’s Shortbread</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Preheat the oven to 400°F/200°C degrees. Line an 8-inch/20-cm square pan (or equivalent) with parchment paper, making sure the paper rises over the edge of the pan.</p></li><li><span class="n">2</span><p>To make the shortbread: Sift the confectioners' sugar and cornstarch into the bowl of an electric mixer with the paddle attachment in place, then add the granulated sugar and mix on medium speed. With the machine still running, slowly pour in the melted butter and beat until combined. Add the vanilla extract and turn the speed to low, then sift in the flour and salt and continue to beat until the dough comes together. Transfer the mixture into the pan and use your hands to even out the surface. Prick all over with the tines of a fork. Bake for 25 minutes, or until golden brown. Remove from the oven and cool completely; this will take an hour or so, so don't start making the tahini caramel too soon or it will have set by the time the shortbread is cool.</p></li><li><span class="n">3</span><p>To make the halvah: Place the halvah and tahini in a small bowl and mix with a wooden spoon to combine. Spread the mix over the cooled shortbread, and use the back of the spoon to smooth it into an even layer.</p></li><li><span class="n">4</span><p>To make the tahini caramel: Place the sugar and water in a small saucepan over medium-low heat. Stir occasionally, until the sugar has dissolved, then increase the heat to medium-high. Bring to a boil and cook --still at a boil-- for about 12 minutes, until the sugar is a deep golden brown (for me this was close to 300°F on the candy thermometer). Remove from the heat and add the butter and cream; take care here, as the mixture will sputter. Whisk to combine and, once the butter has melted, add the tahini and salt. Whisk to combine and, then pour evenly over the halvah layer in the pan, so the all the halvah is covered.</p></li><li><span class="n">5</span><p>Place in the fridge for 4 hours until set, before cutting into 16 equal bars. Sprinkle a pinch of the flaky sea salt over the middle of each bar and serve.</p></li><li><span class="n">6</span><p>To serve, tip out the potatoes on to a platter and spoon the grilled salsa on top. Scatter over the spring onions and some of the pumpkin seeds (you won’t need them all, so keep any leftovers for snacking on), finish with a drizzle of olive oil and a sprinkle of sea salt, and serve warm.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

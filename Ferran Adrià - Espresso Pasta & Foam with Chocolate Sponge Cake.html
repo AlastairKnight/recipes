@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Espresso Pasta &amp; Foam with Chocolate Sponge Cake</p>
 <p class="byline">Ferran Adrià</p>
 <div class="chips"></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Espresso pasta — Add 30 g muscovado sugar and coffee liqueur to 500 ml espresso to taste.</p></li><li><span class="n">2</span><p>Mix in the gellan gum and bring to a boil.</p></li><li><span class="n">3</span><p>Immediately pour onto a tray in a thin layer, then leave to cool. Tilt the tray to get rid of any excess of liquid to obtain a very thin even film of about 1 mm. Do it fast or the liquid will gel before you get rid of the excess. This may require some practice but worst case scenario you may obtain a thicker film which is not so terrible.</p></li><li><span class="n">4</span><p>Allow to gel completely in the flat tray for a few minutes.</p></li><li><span class="n">5</span><p>Cut into 0.5 cm thick strips with a pasta cutter (roller type) to make tagliatelle. If you have patience you can also use a knife and a long ruler to help you get straight cuts.</p></li><li><span class="n">6</span><p>Chocolate sponge cake — Melt the dark couverture chocolate over a water bath or in the microwave and allow to cool a little.</p></li><li><span class="n">7</span><p>Mix the eggs and egg yolks together with the confectioner’s sugar and salt.</p></li><li><span class="n">8</span><p>Stir in the wheat flour and melted couverture chocolate. Stir to form a smooth mixture.</p></li><li><span class="n">9</span><p>Pass the mixture through the iSi funnel &amp; sieve directly into a 0.5 L iSi Whipper.</p></li><li><span class="n">10</span><p>Screw on 2 iSi cream chargers and shake vigorously each time.</p></li><li><span class="n">11</span><p>Let it rest in the fridge for at least 2 to 4 hours.</p></li><li><span class="n">12</span><p>Baking the sponge cake — Prepare the paper cups by cutting 3 small slits on the base of the cups using scissors. This will allow the vapor generated while heating to escape.</p></li><li><span class="n">13</span><p>Spray the cups with a light coat of non-stick spray to make it easier to release the delicate sponge cake once cooked.</p></li><li><span class="n">14</span><p>Using the iSi Whip siphon, fill about 1/3 of the paper cup with the chocolate foam. Foam will expand significantly when cooked so don’t fill the cup!</p></li><li><span class="n">15</span><p>Place the filled cup in the microwave and cook for 40 seconds at maximum power. You can cook 2 or 3 sponge cakes at a time.</p></li><li><span class="n">16</span><p>Remove from microwave and let it cool at room temperature.</p></li><li><span class="n">17</span><p>With the help of a small spatula, carefully release the sponge cake from the paper cup. Flip the cup and tap the top to release the sponge cake.</p></li><li><span class="n">18</span><p>Espresso espuma — Soak the gelatin in cold water.</p></li><li><span class="n">19</span><p>Heat 100 ml (3.4 fl.oz) of espresso (to 60 °C or 140 °F).</p></li><li><span class="n">20</span><p>Add 75 g sugar and dissolve.</p></li><li><span class="n">21</span><p>Squeeze out the gelatin and dissolve in the warm espresso.</p></li><li><span class="n">22</span><p>Mix 225 ml of cold espresso together with the heavy cream.</p></li><li><span class="n">23</span><p>Add to the espresso-sugar-gelatin-mixture.</p></li><li><span class="n">24</span><p>Pass through the iSi funnel &amp; sieve directly into a 0.5 L iSi Whipper.</p></li><li><span class="n">25</span><p>Screw on 1 iSi cream charger and shake vigorously.</p></li><li><span class="n">26</span><p>Refrigerate for 1-2 hours.</p></li><li><span class="n">27</span><p>Assemble and serve — Arrange some espresso pasta on the plate.</p></li><li><span class="n">28</span><p>Break up a sponge cake into irregular pieces and distribute on the plate.</p></li><li><span class="n">29</span><p>Squeeze a couple of dollops of espresso foam on the plate.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

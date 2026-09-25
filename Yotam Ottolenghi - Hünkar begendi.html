@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">H&#252;nkar begendi</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Serves <b>four.</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Mix the lamb in a large bowl with a tablespoon of the flour, a teaspoon of salt and half a teaspoon of pepper. On a high flame, heat two tablespoons of oil in a large, heavy-based casserole for which you have a lid. Sear the lamb, in batches if need be, for four minutes, turning regularly to brown it all over. Transfer to a bowl, turn the heat to medium-high and add the remaining tablespoon of oil. Saute the onions and peppers for five minutes, stirring now and then, until soft, then add the garlic. Stir for a minute, add the tomato paste, cayenne, plum tomatoes, bay, cinnamon and stock, then return the meat to the pot. Bring to a boil, turn down the heat to medium-low, cover and simmer for an hour and a half, until the lamb is very tender.</p></li><li><span class="n">2</span><p>Line the stove top with a big sheet of tin foil (make holes for the gas rings), then turn on three rings to a medium heat. Put an aubergine on top of each flame and roast for 15-18 minutes, turning occasionally, until the skin is burnt and the flesh soft and smoked. (Alternatively, heat the grill to its highest setting, put the aubergines on a foil-lined tray and grill for about an hour, turning every 20 minutes or so, until deflated and charred all over.) Once the aubergines are cool enough to handle, scrape out the flesh and discard the skin. Roughly chop the flesh and put it in a colander to drain for 30 minutes.</p></li><li><span class="n">3</span><p>Put a medium saucepan on a medium heat. Add the butter and, once it has melted, stir through the remaining 40g flour and cook for two minutes, until the roux is bubbling and slightly thickened. Slowly pour in the milk, whisking continuously until smooth. Cook over a medium-low heat for four minutes, stirring, until thick. Remove from the heat, and add the nutmeg, cheese, half a teaspoon of salt and a good grind of pepper. Stir in the aubergine pulp and half the parsley, then divide between four shallow bowls and top with the hot lamb and sauce. Sprinkle over the last of the parsley and serve.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Danish roast pork with pickled prunes and sweet cucumber</p>
 <p class="byline">Diana Henry</p>
 <div class="chips"><span class="chip">Prep <b>15 min</b></span><span class="chip">Marinate <b>12 hr+</b></span><span class="chip">Cook <b>2 hr</b></span><span class="chip">Serves <b>6-8</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Make the prunes at least a day ahead. Heat the white-wine vinegar with the sugar and spices, stirring a little to help the sugar melt. Once it has melted, boil until the liquid has reduced by one-third and is quite syrupy. Add the prunes and simmer very gently for about 10 minutes. Put the prunes in a sterilised preserving jar (wash it in boiling water and put in a low oven for 15 minutes), then pour over the syrup, cover and leave to plump up.</p></li><li><span class="n">2</span><p>For the pickled cucumber, cut off and discard the ends of the cucumber, then slice it very finely: the slices should be almost transparent. Layer in a colander, sprinkle with a teaspoon and a half of salt, then mix with your hands, place a plate on top to weigh it down and set the colander over a bowl for the juices to run out into. Leave for a couple of hours. Mix the cucumber with the rest of the salad ingredients and cover until you are ready to serve. (If I’m in a hurry, I sometimes skip the salting, in which case mix the sliced cucumber with the vinegar and flavourings and serve it immediately.)</p></li><li><span class="n">3</span><p>For the pork, crush the spices with some salt in a mortar. Add two tablespoons of oil, then rub this all over the pork. Cover and refrigerate for an hour, or overnight, if you can.</p></li><li><span class="n">4</span><p>Heat the oven to 240C (220C fan)/475F/gas 9. Rub the skin of the pork with more oil, then season all over with salt and pepper, pressing the salt flakes into the skin. Roast skin side up in the hot oven for 30 minutes.</p></li><li><span class="n">5</span><p>Pour half the white wine around the pork and turn down the oven to 190C (170C fan)/350F/gas 5. Cook the pork for a further hour and a half, pouring the rest of the wine around the joint about half an hour before the end of cooking time.</p></li><li><span class="n">6</span><p>Take the pork out of the oven, cover the flesh with foil but leave the crackling uncovered so it stays crisp, and leave to rest for about 15 minutes. Carve and serve with the pickles.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){

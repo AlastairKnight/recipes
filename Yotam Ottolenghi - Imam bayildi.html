@@ -37,10 +37,16 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 .method p{margin:2px 0 0;font-size:14px;line-height:1.55;}
 .notes{background:var(--surf);border:1px solid var(--line4);border-left:3px solid var(--accent4);border-radius:8px; padding:12px 14px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--sub4);}
 .notes b{color:var(--ink4);}
+.head{padding-right:64px;}
+.fav{position:absolute;top:18px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line4);background:var(--surf);color:var(--sub4);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.fav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;}
+.fav[aria-pressed="true"]{color:var(--accent4);}
+.fav[aria-pressed="true"] svg{fill:currentColor;}
 </style>
 </head>
 <body>
 <div class="head">
+<button class="fav" type="button" aria-label="Add to favourites" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg></button>
 <p class="title">Imam bayildi</p>
 <p class="byline">Yotam Ottolenghi</p>
 <div class="chips"><span class="chip">Serves <b>four.</b></span></div>
@@ -54,6 +60,27 @@ h2{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accen
 <ol class="method" style="list-style:none;"><li><span class="n">1</span><p>Shave long, alternate strips of peel off the aubergines, top to bottom, so they end up striped, like zebras. Starting 2cm from the top, make an incision halfway into the flesh and cut down to 2cm shy of the bottom.</p></li><li><span class="n">2</span><p>Put the aubergines in a large bowl and cover with two and a half litres of cold water. Squeeze in the lemon, drop in the skins and stir in two teaspoons of salt. Put a plate on top, to keep the aubergines immersed, and leave to soak for 45 minutes. Drain, then dry in a clean tea towel.</p></li><li><span class="n">3</span><p>Heat the oil in a large saute pan on a medium-high flame. Fry the aubergines for eight to 10 minutes (take care, because the oil may spit), turning regularly, until nicely browned on all sides. Remove from the pan, turn down the heat to medium-low, add the onion and peppers, and cook for 10 minutes, stirring often, until soft but not coloured. Add the garlic and spices, cook for a minute, then stir in the tomatoes, two tablespoons of water, the sugar, fresh oregano, half a teaspoon of salt and a good grind of pepper. Turn the heat to low, put the aubergines on top of the veg, cover the pan and cook for 45 minutes, until the aubergines are steamed through.</p></li><li><span class="n">4</span><p>In the meantime, heat the oven to 180C/350F/gas mark 4. Carefully lift out the cooked aubergines and place them cut side up in a 20cm x 30cm ceramic baking dish; they should be nice and snug. Prise open the aubergines, so they look like long canoes, then sprinkle the insides with a generous pinch of salt. Discard the oregano from the sauce, then spoon it into the aubergines, filling them as much as you can; don’t worry if some sauce spills out around them – it’s kind of unavoidable. Cover with foil and bake for 35 minutes. Remove the foil and leave the aubergines to cool to room temperature. Serve topped with a sprinkling of dried oregano.</p></li></ol>
 
 </div>
+<script>
+try {
+  (function(){
+    var KEY = 'recipe-favourites';
+    var btn = document.querySelector('.head .fav');
+    var file = decodeURIComponent(location.pathname.split('/').pop()).normalize('NFC');
+    function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]').map(function(f){ return f.normalize('NFC'); }); } catch (e) { return []; } }
+    function show(on){
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Remove from favourites' : 'Add to favourites');
+    }
+    show(load().indexOf(file) !== -1);
+    btn.addEventListener('click', function(){
+      var list = load(), i = list.indexOf(file);
+      if (i === -1) list.push(file); else list.splice(i, 1);
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+      show(i === -1);
+    });
+  })();
+} catch (e) {}
+</script>
 <script>
 try {
   document.querySelectorAll('.ing input[type="checkbox"]').forEach(function(box){
