@@ -1,8 +1,8 @@
 {
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
- "generated": "2026-09-21",
- "count": 139,
+ "generated": "2026-10-03",
+ "count": 149,
  "authors": [
   "Andrèa Fedder",
   "Asma Khan",
@@ -1938,6 +1938,170 @@
    "source": "https://www.theguardian.com/food/2025/may/10/slow-roast-pork-belly-with-spring-onion-mojo-verde-recipe-jose-pizarro?CMP=Share_AndroidApp_Other"
   },
   {
+   "title": "5-spice peach and raspberry salad",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%205-spice%20peach%20and%20raspberry%20salad.html",
+   "file": "Yotam Ottolenghi - 5-spice peach and raspberry salad.html",
+   "image": "https://alastairknight.github.io/recipes/Images/5-spice-peach-and-raspberry-salad.jpeg",
+   "chips": {
+    "Serves": "4 as a side"
+   },
+   "lede": "You don’t want this salad to be too sweet, so for the best results start with peaches that are not too ripe. This looks so perfectly summery and also works really well at a barbecue, where the fruit complements and cuts through all sorts of meat. Some slow-cooked pork belly alongside is a particularly winning combination.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "1½ tbsp cider vinegar",
+      "1 tsp maple syrup",
+      "¼ tsp Chinese 5-spice",
+      "1 tbsp olive oil",
+      "1 shallot, thinly sliced (20g)",
+      "100g raspberries",
+      "3 firm peaches, halved, stone removed, cut into ½cm wedges (290g)",
+      "40g watercress",
+      "½ small radicchio, cut into 2cm wide slices (50g)",
+      "salt"
+     ]
+    }
+   ],
+   "method": [
+    "In a large bowl, mix together the first five ingredients with ⅓ teaspoon of salt. Add the raspberries, lightly crushing them with the back of a fork, then add the remaining ingredients. Mix together well and serve."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - 5-spice peach and raspberry salad.pdf"
+  },
+  {
+   "title": "Beef sirloin and basil salad",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Beef%20sirloin%20and%20basil%20salad.html",
+   "file": "Yotam Ottolenghi - Beef sirloin and basil salad.html",
+   "image": "https://alastairknight.github.io/recipes/Images/beef-sirloin-and-basil-salad.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "This works either as an impressive starter or as a lunch or light supper. All the elements can be prepared a day in advance and kept in the fridge, just don’t put the dish together until you’re just about to serve: the leaves will wilt and the croutons don’t like to sit around and mingle for too long.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "50g basil leaves",
+      "1 garlic clove, crushed",
+      "135ml olive oil",
+      "400g beef sirloin (2 steaks, each about 1½cm thick)",
+      "2 pitta breads, roughly torn into 3cm pieces (120g)",
+      "2 red chicory, leaves separated, then sliced in half, lengthways, on the diagonal (160g)",
+      "40g rocket",
+      "3 tbsp lemon juice",
+      "60g Parmesan, shaved",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 200°C fan.",
+    "Place half the basil in the small bowl of a food processor with the garlic, 75ml of oil and ⅓ teaspoon of salt. Blitz to form a thick dressing and set aside.",
+    "Season the beef well with ¼ teaspoon of salt and a generous grind of black pepper. Pour 1 tablespoon of oil into a medium frying pan and place on a high heat. When the pan is very hot, add the beef and sear for 3–4 minutes (for medium-rare), turning halfway through. Remove from the pan and set aside to rest for 10 minutes.",
+    "Add the remaining 3 tablespoons of oil to the same pan and place on a high heat. When hot, add the pitta bread and fry for 2–3 minutes, shaking the pan from time to time, until golden and crisp all over. Transfer to a paper-lined plate, sprinkle with a pinch of salt and set aside.",
+    "Place the chicory, rocket, lemon juice, Parmesan, basil oil and remaining basil leaves in a large serving bowl and set aside.",
+    "When ready to serve, slice the beef against the grain into 1½cm thick slices. Sprinkle with a pinch of salt and add to the salad bowl. Add the pitta pieces, toss gently and serve at once."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Beef sirloin and basil salad.pdf"
+  },
+  {
+   "title": "Braised eggs with lamb, tahini & sumac",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Braised%20eggs%20with%20lamb%2C%20tahini%20%26%20sumac.html",
+   "file": "Yotam Ottolenghi - Braised eggs with lamb, tahini & sumac.html",
+   "image": "https://alastairknight.github.io/recipes/Images/braised-eggs-with-lamb-tahini-sumac.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "This concoction is Jerusalem fusion food at its very best. It incorporates traditional elements that are purely Palestinian with ingredients characteristic of various Jewish cuisines, and puts them all together in a completely non-traditional way. It was inspired by a very young classic, Hamshukah, signature dish at Machneyuda, the market restaurant that currently serves the most innovative food in town.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "1 tbsp olive oil",
+      "1 large onion, finely chopped (200g in total)",
+      "6 garlic cloves, sliced thinly",
+      "300g minced lamb",
+      "2 tsp sumac, plus extra to finish",
+      "1 tsp ground cumin",
+      "50g toasted unsalted pistachios, crushed",
+      "50g toasted pine nuts",
+      "2 tsp harissa paste (shop-bought or see recipe, page 303)",
+      "1 tbsp finely chopped preserved lemon (shop-bought or see recipe, page 303)",
+      "200g cherry tomatoes",
+      "120ml chicken stock",
+      "4 medium free-range eggs",
+      "5g picked coriander leaves, or 1 tbsp zhoug (see recipe, page 301)",
+      "salt and black pepper"
+     ]
+    },
+    {
+     "heading": "Yoghurt sauce",
+     "items": [
+      "100g Greek yoghurt",
+      "25g tahini paste",
+      "2 tbsp lemon juice",
+      "1 tbsp water"
+     ]
+    }
+   ],
+   "method": [
+    "Heat up the olive oil in a medium, heavy-based frying pan for which you have a tight-fitting lid. Add the onion and garlic and sauté on a medium-high heat for 6 minutes to soften and colour a bit. Add the minced lamb and brown well, 5–6 minutes, on a high heat. Season with the sumac, cumin, ¾ teaspoon of salt and some black pepper and cook for another minute. Off the heat, stir in the nuts, harissa and preserved lemon and set aside.",
+    "While the onion is cooking, heat up a separate small cast-iron or other heavy pan. Once piping hot, add the cherry tomatoes and char on a high heat for 4–6 minutes, tossing the pan occasionally, until slightly blackened on the outside. Set aside.",
+    "Prepare the yoghurt sauce by simply whisking together all the ingredients with a pinch of salt. It needs to be thick and rich, but you may need to add a splash of water if it is stiff.",
+    "You can leave the meat, tomatoes and sauce at this stage for up to an hour. When you are ready to serve, reheat the meat, add the chicken stock and bring to the boil. Make 4 small wells in the mix and break an egg into each. Cover the pan with a lid and cook the eggs on a low heat for 3 minutes. Place the tomatoes on top, avoiding the yolks, cover again and cook for 5 minutes, until the egg whites are cooked but the yolks are still runny.",
+    "Remove from the heat and dot with dollops of yoghurt sauce, sprinkle with sumac and finish with picked coriander or zhoug. Serve at once."
+   ],
+   "notes": [
+    "This dish can be served at the centre of an informal supper. The flavours are intense and the contrasting colours and textures are also pretty dramatic, so you should really serve it on its own, with minimal distractions and just a piece of bread. The list of ingredients isn’t set in stone. Other typical Jerusalem ingredients – roasted aubergine, red pepper strips, Swiss chard, cooked chickpeas, chopped almonds, za’atar – can be added or used as substitutes. The various components can be prepared in advance and cooked togeither at the very last minute."
+   ],
+   "source": "Yotam Ottolenghi - Braised eggs with lamb, tahini & sumac.pdf"
+  },
+  {
+   "title": "Braised eggs with leek and za’atar",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Braised%20eggs%20with%20leek%20and%20za%E2%80%99atar.html",
+   "file": "Yotam Ottolenghi - Braised eggs with leek and za’atar.html",
+   "image": "https://alastairknight.github.io/recipes/Images/braised-eggs-with-leek-and-za-atar.jpg",
+   "chips": {
+    "Serves": "6"
+   },
+   "lede": "This is a quick way to get a very comforting meal on the table in a wonderfully short amount of time. It’s a dish as happily eaten for brunch, with coffee, as it is for a light supper with some crusty white bread and a glass of wine. The leeks and spinach can be made up to a day ahead and kept in the fridge, ready for the eggs to be cracked in and braised.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "30g unsalted butter",
+      "2 tbsp olive oil",
+      "2 large leeks (or 4 smaller), trimmed and cut into ½cm slices (530g)",
+      "1 tsp cumin seeds, toasted and lightly crushed",
+      "2 small preserved lemons, pips discarded, skin and flesh finely chopped (30g)",
+      "300ml vegetable stock",
+      "200g baby spinach leaves",
+      "6 large eggs",
+      "90g feta, broken into 2cm pieces",
+      "1 tbsp za’atar",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Put the butter and 1 tablespoon of oil into a large sauté pan, for which you have a lid, and place on a medium high heat. Once the butter starts to foam, add the leeks, ½ teaspoon of salt and plenty of pepper. Fry for 3 minutes, stirring frequently, until the leeks are soft. Add the cumin, lemon and vegetable stock and boil rapidly for 4–5 minutes, until most of the stock has evaporated. Fold in the spinach and cook for a minute, until wilted, then reduce the heat to medium.",
+    "Use a large spoon to make six indentations in the mixture and break one egg into each space. Sprinkle the eggs with a pinch of salt, dot the feta around the eggs, then cover the pan. Simmer for 4–5 minutes, until the egg whites are cooked but the yolks are still runny.",
+    "Mix the za’atar with the remaining tablespoon of oil and brush over the eggs. Serve at once, straight from the pan."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Braised eggs with leek and za’atar.pdf"
+  },
+  {
    "title": "Caramelized garlic tart",
    "author": "Yotam Ottolenghi",
    "byline": "Yotam Ottolenghi",
@@ -1978,6 +2142,45 @@
    ],
    "notes": [],
    "source": "Ottolenghi - Caramelized Garlic Tart.pdf"
+  },
+  {
+   "title": "Chicken Marbella",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Chicken%20Marbella.html",
+   "file": "Yotam Ottolenghi - Chicken Marbella.html",
+   "image": "https://alastairknight.github.io/recipes/Images/chicken-marbella.jpeg",
+   "chips": {
+    "Serves": "4 generously"
+   },
+   "lede": "This is a dish I regularly cook for friends. All the work is done in advance – you can marinate it for up to 2 days in the fridge – and then it’s just into the baking tray and into the oven when you’re ready. The chicken loves the long marination but it can also be cooked straight away, if you don’t have the time. If you’re going to do this, just season the chicken with the teaspoon of salt and pepper (which would otherwise go into the marinade), rub it thoroughly \u0007nto the skin before combining it with the rest of the marinade ingredients (no more salt required) and bake according to the recipe. I like to use chicken legs but others prefer chicken supremes, on the bone, which also work very well. Thanks to Julee Rosso and Sheila Lukins’s The Silver Palate, whose recipe for Chicken Marbella inspired this recipe.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "8 chicken legs, drumstick and thigh attached, skin on and scored 3 or 4 times to the bone (2kg)",
+      "5 garlic cloves, crushed",
+      "15g fresh oregano, picked, plus extra to serve",
+      "3 tbsp red wine vinegar",
+      "3 tbsp olive oil",
+      "100g pitted green olives",
+      "60g capers, plus 2 tbsp of their juices",
+      "120g Medjool dates, pitted and quartered lengthways",
+      "2 bay leaves",
+      "120ml dry white wine",
+      "1 tbsp date molasses (or treacle)",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Place the chicken in a large, non-reactive bowl and add all of the remaining ingredients, apart from the wine and date molasses, along with 1 teaspoon of salt and a good grind of black pepper. Gently mix everything together, cover the bowl and leave in the fridge to marinate for 1–2 days, stirring the ingredients a few times during the process.",
+    "Preheat the oven to 180°C fan.",
+    "Spread the chicken legs out on a high-sided medium baking tray, along with all the marinade ingredients. Whisk together the wine and molasses and pour over the meat. Place in the oven and cook for 50 minutes, basting two or three times, until the meat is golden-brown on top and cooked through.",
+    "Remove from the oven, transfer everything to a large platter, sprinkle over some freshly picked oregano leaves and serve."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Chicken Marbella.pdf"
   },
   {
    "title": "Cucumber salad with smashed garlic and ginger",
@@ -2021,6 +2224,158 @@
    ],
    "notes": [],
    "source": "Ottolenghi - Cucumber Salad.pdf"
+  },
+  {
+   "title": "Lamb and feta meatballs",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Lamb%20and%20feta%20meatballs.html",
+   "file": "Yotam Ottolenghi - Lamb and feta meatballs.html",
+   "image": "https://alastairknight.github.io/recipes/Images/lamb-and-feta-meatballs.jpeg",
+   "chips": {
+    "Serves": "6"
+   },
+   "lede": "These work either as a main course, in a pitta or with some rice and vegetables, or eaten as they are as a canapé before supper. If you do this, you’ll make double the number of balls and they’ll need less cooking: 3–4 minutes in the pan, then 3 minutes in the oven to warm through. Once they’ve come out of the pan, put them on individual cocktail sticks at that stage: the wood will be fine in the oven for such a short time, then they’ll be ready to serve. The pomegranate molasses is a delicious addition, with its distinct sweet-sharpness, but don’t worry if you don’t have it: they’re still great without. These can be fried up to 6 hours in advance and warmed through for 5 minutes before serving. Leftovers can also be eaten the next day, either at room temperature or warmed through.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "500g minced lamb",
+      "100g feta, crumbled into 1cm pieces",
+      "2 tbsp picked thyme leaves",
+      "2 garlic cloves, crushed",
+      "10g parsley, finely chopped",
+      "1–2 slices of white bread, crust removed and blitzed in a food processor (45g)",
+      "½ tsp ground cinnamon",
+      "1 tbsp olive oil",
+      "2 tsp pomegranate molasses (optional)",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 200°C fan.",
+    "Put the mince into a large bowl with the feta, thyme, garlic, parsley, breadcrumbs, cinnamon, ¾ teaspoon salt and plenty of pepper. Mix well to combine, then form into about 18 balls (or 36, if making them for a canapé): they should all be about 4cm wide and weigh about 35g.",
+    "Put the oil into a large frying pan and place on a medium high heat. Once hot, add the meatballs and fry for 5–6 minutes, turning them over carefully throughout until golden-brown on all sides. Transfer them to a parchment-lined baking tray, drizzle with the pomegranate molasses, if using, and bake for 5 minutes, until the meatballs are cooked through. Serve hot."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Lamb and feta meatballs.pdf"
+  },
+  {
+   "title": "Lamb and pistachio patties with sumac yoghurt sauce",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Lamb%20and%20pistachio%20patties%20with%20sumac%20yoghurt%20sauce.html",
+   "file": "Yotam Ottolenghi - Lamb and pistachio patties with sumac yoghurt sauce.html",
+   "image": "https://alastairknight.github.io/recipes/Images/lamb-and-pistachio-patties-with-sumac-yoghurt-sauce.jpeg",
+   "chips": {
+    "Makes": "about 20 patties, to serve 4 as a main or 6 as a snack"
+   },
+   "lede": "These patties are lovely as a snack or as part of a feast at a barbecue. If you want to make them into a more substantial meal, however, just serve them with some rocket leaves tossed with olive oil, lemon juice and shaved Parmesan. The yoghurt sauce can be made the day before. The patties will keep in the fridge for 1 day uncooked, or they can be cooked up to 6 hours in advance, ready to be warmed through for 5 minutes before serving. Leftovers are also good the next day, at room temperature or warmed through.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "60g pistachio kernels",
+      "25g rocket leaves",
+      "1 onion, quartered (150g)",
+      "1 large garlic clove, peeled",
+      "500g lamb mince",
+      "about 3 tbsp olive oil",
+      "salt and black pepper"
+     ]
+    },
+    {
+     "heading": "Sumac yoghurt sauce",
+     "items": [
+      "250g Greek-style yoghurt",
+      "1 tbsp sumac",
+      "1 tbsp olive oil",
+      "1 tbsp lemon juice"
+     ]
+    }
+   ],
+   "method": [
+    "Mix together all the ingredients for the sumac yoghurt sauce and keep in the fridge until needed.",
+    "To make the patties, put the pistachios into the small bowl of a food processor. Blitz for a few seconds, to roughly chop, then put into a medium bowl. Add the rocket to the processor, blitz for a few seconds to roughly chop, then add to the bowl of pistachios. Continue with the onion and garlic, to form a smooth paste, and add to the bowl. Add the lamb, 1 tablespoon of oil, ¾ teaspoon of salt and a good grind of pepper. Mix well to combine, then, with wet hands, shape the mix into about 20 patties. They should each be about 5cm wide, 2cm thick and weigh about 40g.",
+    "Put 1 tablespoon of oil into a large non-stick frying pan and place on a medium heat. Once hot, add the patties – as many as you can fit without overcrowding the pan – and cook for 7 minutes, turning once halfway, until golden-brown and just cooked through. Keep warm while you repeat with the remaining patties. If you need to, add another tablespoon of oil to the pan during the process. When they are all cooked, pile all the patties on to a large platter and serve, with the sumac yoghurt alongside."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Lamb and pistachio patties with sumac yoghurt sauce.pdf"
+  },
+  {
+   "title": "Oven chips with oregano and feta",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Oven%20chips%20with%20oregano%20and%20feta.html",
+   "file": "Yotam Ottolenghi - Oven chips with oregano and feta.html",
+   "image": "https://alastairknight.github.io/recipes/Images/oven-chips-with-oregano-and-feta.jpeg",
+   "chips": {
+    "Serves": "6 as a side"
+   },
+   "lede": "These are inspired by some chips I ate in George Calombaris’s Melbourne-based restaurant, Jimmy Grants, when I was in Australia judging on MasterChef. I’d heard great things, but my high expectations were still exceeded. Eat these chips as they are, as a side to some fish or meat and with a simple salad, or with a wedge of lemon to squeeze over. If you happen to be on holiday in Greece (or live near a shop that sells Greek produce), be sure to pick up some dried Greek oregano: its flavour is much more intense than regular dried oregano. Get ahead by parboiling the potatoes up to 6 hours in advance.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "2kg Maris Piper potatoes, skin left on and cut into 2cm wide chips",
+      "90ml sunflower oil",
+      "60ml olive oil",
+      "6 garlic cloves, thinly sliced",
+      "2 tsp dried oregano (regular or Greek)",
+      "150g feta, roughly crumbled",
+      "flaked sea salt"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 220°C fan.",
+    "Place a large pot filled with plenty of salted water on a high heat. Once boiling, add the potatoes and cook for 7–8 minutes, until starting to soften at the edges but still holding their shape. Drain and set aside to dry out for 5 minutes, then transfer to a large bowl. Add the sunflower oil along with 1 tablespoon of flaked salt and mix well.",
+    "Tip the potatoes and oil on to two large parchment-lined baking trays (so that they are not overcrowded) and bake for 40–50 minutes, stirring a few times, until golden-brown and crisp.",
+    "About 5 minutes before the chips are ready, heat the olive oil and garlic in a small saucepan on a medium-high heat. Fry gently for 3–4 minutes, until the garlic is pale golden-brown. Take the cooked chips out of the oven and pour over the olive oil and garlic, then return to the oven for a further 4 minutes. Remove from the oven and, while piping hot, sprinkle with the oregano and feta. Serve at once."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Oven chips with oregano and feta.pdf"
+  },
+  {
+   "title": "Ricotta and oregano meatballs",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Ricotta%20and%20oregano%20meatballs.html",
+   "file": "Yotam Ottolenghi - Ricotta and oregano meatballs.html",
+   "image": "https://alastairknight.github.io/recipes/Images/ricotta-and-oregano-meatballs.jpeg",
+   "chips": {
+    "Serves": "4"
+   },
+   "lede": "Using ricotta makes the meatballs super light and fluffy. The dish can be made a day in advance, kept in the fridge, and then reheated.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "60ml olive oil",
+      "2 large onions, chopped (330g)",
+      "4 garlic cloves, crushed",
+      "20g oregano leaves, chopped, plus extra to serve",
+      "1 x 400g tin of chopped tomatoes",
+      "500ml chicken stock",
+      "500g beef mince",
+      "100g freshly made breadcrumbs (from 3–4 slices of crustless white bread)",
+      "250g ricotta",
+      "60g Parmesan, grated",
+      "1 large egg, beaten",
+      "20g parsley, chopped",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "First make the tomato sauce. Put 2 tablespoons of oil into a sauté pan and place on a medium high heat. Add half the onion, half the garlic and half the oregano and cook for 8–10 minutes, stirring until the onions have softened without taking on colour. Add the tomatoes, half the stock, ½ teaspoon of salt and some black pepper. Reduce the temperature to medium and cook for 10–15 minutes, stirring from time to time, to thicken the sauce.",
+    "Meanwhile, make the meatballs. Place the remaining onion, garlic and oregano in a large bowl along with the beef, breadcrumbs, ricotta, Parmesan, egg, parsley, ¾ teaspoon of salt and some black pepper. Using your hands, mix everything together and shape into 12–14 balls.",
+    "Put 1 tablespoon of oil into a large frying pan and, when hot, add the meatballs (you will need to do this in two batches, adding another tablespoon of oil to the pan for the next batch). Sear for 8 minutes, turning throughout, then transfer to a separate plate.",
+    "Gently lower the meatballs into the sauce and pour over enough of the remaining stock so that the meatballs are almost covered. Add a little water, if you need, to make up the liquid. Place on a medium low heat and simmer very gently, covered, for 30 minutes. To thicken the sauce – it should have the consistency of a thick pasta sauce – remove the lid towards the end of cooking and increase the temperature a little. Remove from the heat and set aside for at least 10 minutes. Add extra oregano and serve."
+   ],
+   "notes": [],
+   "source": "Yotam Ottolenghi - Ricotta and oregano meatballs.pdf"
   },
   {
    "title": "Roasted parsnips and sweet potatoes with caper vinaigrette",
@@ -6570,6 +6925,53 @@
    ],
    "notes": [],
    "source": "Ottolenghi - Spicy lamb and potato enchiladas.docx"
+  },
+  {
+   "title": "Stuffed aubergine with lamb & pine nuts",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Stuffed%20aubergine%20with%20lamb%20%26%20pine%20nuts.html",
+   "file": "Yotam Ottolenghi - Stuffed aubergine with lamb & pine nuts.html",
+   "image": "https://alastairknight.github.io/recipes/Images/stuffed-aubergine-with-lamb-pine-nuts.jpg",
+   "chips": {
+    "Serves": "4 generously"
+   },
+   "lede": "Elran Shrefler is the youngest of Ezra and Rachela Shrefler’s nine children, who run Azura, a restaurant in the heart of Machne Yehuda market that serves Jerusalemites traditional Kurdish recipes with a Turkish influence, the area from which Ezra hails. A member of the Slow Food movement, Elran starts work at four every morning and cooks all his food in massive pots on small oil-burning stoves (see picture on pages 122–3), just as his family has done for generations. His food, long-cooked stews and hearty soups, is ready for the first customers who arrive at around 8 a.m. (!). It is essentially real fast food – after the long hours of slow cooking, it takes seconds to plate and serve. Elran showed us how to make his stuffed aubergine, Turkish-style, which is our favourite dish at Azura. This is our interpretation.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "4 medium aubergines (about 1.2kg), halved lengthways",
+      "6 tbsp olive oil",
+      "1½ tsp ground cumin",
+      "1½ tbsp sweet paprika",
+      "1 tbsp ground cinnamon",
+      "2 medium onions (340g in total), finely chopped",
+      "500g minced lamb",
+      "50g pine nuts",
+      "20g flat-leaf parsley, chopped",
+      "2 tsp tomato purée",
+      "3 tsp caster sugar",
+      "150ml water",
+      "1½ tbsp lemon juice",
+      "1 tsp tamarind paste",
+      "4 cinnamon sticks",
+      "salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 220°C/200°C Fan/Gas Mark 7.",
+    "Place the aubergine halves, skin-side down, in a roasting tin large enough to accommodate them snugly. Brush the flesh with 4 tablespoons of the olive oil and season with 1 teaspoon of salt and plenty of black pepper. Roast for about 20 minutes, until golden brown. Remove from the oven and allow to cool slightly.",
+    "While the aubergines are cooking, you can start making the stuffing by heating up the remaining olive oil in a large frying pan. Mix together the cumin, paprika and ground cinnamon and add half of this spice mix to the pan, along with the onion. Cook on a medium-high heat for about 8 minutes, stirring often, before adding the lamb, pine nuts, parsley, tomato purée, 1 teaspoon of the sugar, 1 teaspoon of salt and some black pepper. Continue to cook and stir for another 8 minutes, until the meat is cooked.",
+    "Place the remaining spice mix in a bowl and add the water, lemon juice, tamarind, remaining sugar, cinnamon sticks and ½ teaspoon of salt; mix well.",
+    "Reduce the oven temperature to 195°C/175°C Fan/Gas Mark 5½. Pour the spice mix into the bottom of the aubergine roasting tin. Spoon the lamb mixture on top of each aubergine. Cover the tin tightly with foil, return to the oven and roast for 1 hour 30 minutes, by which point the aubergines should be completely soft and the sauce thick; twice through the cooking, remove the foil and baste the aubergines with the sauce, adding some water if the sauce dries out. Serve warm, not hot, or at room temperature."
+   ],
+   "notes": [
+    "In their book, The Flavor of Jerusalem, Joan Nathan and Judy Stacey Goldman give a slightly unorthodox recipe for stuffed aubergine with calves’ liver and apples. This is the creation of Reverend William Gardiner-Scott who, in the 1970s, was head of St Andrew’s, the only Presbyterian church in Jerusalem. The church was erected in 1927 to commemorate the capture of Jerusalem by the British during the First World War. This is one of only a few culinary marks the Brits have left behind.",
+    "These are deliciously hearty and best served with some bread or simple rice (see basmati rice and orzo, page 103) and some pickles on the side (see pickled turnip and beetroot, page 307)."
+   ],
+   "source": "Yotam Ottolenghi - Stuffed aubergine with lamb & pine nuts.pdf"
   },
   {
    "title": "Swede gnocchi with miso butter and morning glory",

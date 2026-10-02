@@ -82,26 +82,18 @@
   }
   #search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
 
-  .author-filters {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .chip {
-    padding: 8px 14px;
-    border-radius: 999px;
+  #authorSelect {
+    flex: 0 1 auto;
+    max-width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--card-bg);
     color: var(--text);
-    font-size: 13px;
-    cursor: pointer;
-    white-space: nowrap;
+    font-size: 14px;
+    font-family: inherit;
   }
-  .chip.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
+  #authorSelect:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
 
   main {
     max-width: 1200px;
@@ -247,10 +239,11 @@
   <div class="controls">
     <input type="text" id="search" placeholder="Search recipes…" autocomplete="off">
     <div class="fav-toggle" id="favToggle">
-      <button type="button" data-fav="0">All</button>
-      <button type="button" data-fav="1">★ Favourites <span id="favCount"></span></button>
+      <button type="button" data-view="all">All</button>
+      <button type="button" data-view="fav">★ Favourites <span id="favCount"></span></button>
+      <button type="button" data-view="picks">Al's Picks <span id="pickCount"></span></button>
     </div>
-    <div class="author-filters" id="authorFilters"></div>
+    <select id="authorSelect" aria-label="Filter by author"></select>
   </div>
 </header>
 
@@ -297,9 +290,18 @@
     {"file":"José Pizarro - Clams with chorizo.html","img":"Images/clams-with-chorizo.jpeg","author":"José Pizarro","title":"Clams with chorizo"},
     {"file":"José Pizarro - Pork chops with manzanilla-braised leeks.html","img":"Images/pork-chops-with-manzanilla-braised-leeks.jpeg","author":"José Pizarro","title":"Pork chops with manzanilla-braised leeks"},
     {"file":"José Pizarro - Slow-roast pork belly with spring onion mojo verde.html","img":"Images/slow-roast-pork-belly-with-spring-onion-mojo-verde.jpeg","author":"José Pizarro","title":"Slow-roast pork belly with spring onion mojo verde"},
+    {"file":"Yotam Ottolenghi - 5-spice peach and raspberry salad.html","img":"Images/5-spice-peach-and-raspberry-salad.jpeg","author":"Yotam Ottolenghi","title":"5-spice peach and raspberry salad","pick":true},
+    {"file":"Yotam Ottolenghi - Beef sirloin and basil salad.html","img":"Images/beef-sirloin-and-basil-salad.jpeg","author":"Yotam Ottolenghi","title":"Beef sirloin and basil salad","pick":true},
+    {"file":"Yotam Ottolenghi - Braised eggs with lamb, tahini & sumac.html","img":"Images/braised-eggs-with-lamb-tahini-sumac.jpeg","author":"Yotam Ottolenghi","title":"Braised eggs with lamb, tahini & sumac","pick":true},
+    {"file":"Yotam Ottolenghi - Braised eggs with leek and za’atar.html","img":"Images/braised-eggs-with-leek-and-za-atar.jpg","author":"Yotam Ottolenghi","title":"Braised eggs with leek and za’atar","pick":true},
     {"file":"Yotam Ottolenghi - Caramelized garlic tart.html","img":"Images/caramelized-garlic-tart.png","author":"Yotam Ottolenghi","title":"Caramelized garlic tart"},
+    {"file":"Yotam Ottolenghi - Chicken Marbella.html","img":"Images/chicken-marbella.jpeg","author":"Yotam Ottolenghi","title":"Chicken Marbella","pick":true},
     {"file":"Yotam Ottolenghi - Cucumber salad with smashed garlic and ginger.html","img":"Images/cucumber-salad-with-smashed-garlic-and-ginger.png","author":"Yotam Ottolenghi","title":"Cucumber salad with smashed garlic and ginger"},
-    {"file":"Yotam Ottolenghi - Roasted parsnips and sweet potatoes with caper vinaigrette.html","img":"Images/roasted-parsnips-and-sweet-potatoes-with-caper-vinaigrette.png","author":"Yotam Ottolenghi","title":"Roasted parsnips and sweet potatoes with caper vinaigrette"},
+    {"file":"Yotam Ottolenghi - Lamb and feta meatballs.html","img":"Images/lamb-and-feta-meatballs.jpeg","author":"Yotam Ottolenghi","title":"Lamb and feta meatballs","pick":true},
+    {"file":"Yotam Ottolenghi - Lamb and pistachio patties with sumac yoghurt sauce.html","img":"Images/lamb-and-pistachio-patties-with-sumac-yoghurt-sauce.jpeg","author":"Yotam Ottolenghi","title":"Lamb and pistachio patties with sumac yoghurt sauce","pick":true},
+    {"file":"Yotam Ottolenghi - Oven chips with oregano and feta.html","img":"Images/oven-chips-with-oregano-and-feta.jpeg","author":"Yotam Ottolenghi","title":"Oven chips with oregano and feta","pick":true},
+    {"file":"Yotam Ottolenghi - Ricotta and oregano meatballs.html","img":"Images/ricotta-and-oregano-meatballs.jpeg","author":"Yotam Ottolenghi","title":"Ricotta and oregano meatballs","pick":true},
+    {"file":"Yotam Ottolenghi - Roasted parsnips and sweet potatoes with caper vinaigrette.html","img":"Images/roasted-parsnips-and-sweet-potatoes-with-caper-vinaigrette.png","author":"Yotam Ottolenghi","title":"Roasted parsnips and sweet potatoes with caper vinaigrette","pick":true},
     {"file":"Rachel Roddy - Anna del Conte and Vincenzo Corrado’s fennel with pistachio, lemon and anchovy sauce.html","img":"Images/anna-del-conte-and-vincenzo-corrado-s-fennel-with-pistachio-lemon-and-anchovy-sauce.jpeg","author":"Rachel Roddy","title":"Anna del Conte and Vincenzo Corrado’s fennel with pistachio, lemon and anchovy sauce"},
     {"file":"Ravinder Bhogal - Glazed lamb chops with cauliflower, almond and date salad.html","img":"Images/glazed-lamb-chops-with-cauliflower-almond-and-date-salad.jpeg","author":"Ravinder Bhogal","title":"Glazed lamb chops with cauliflower, almond and date salad"},
     {"file":"Ravinder Bhogal - Jersey royals with sticky caramel Sichuan peppercorn sauce, peanuts and sesame seeds.html","img":"Images/jersey-royals-with-sticky-caramel-sichuan-peppercorn-sauce-peanuts-and-sesame-seeds.jpeg","author":"Ravinder Bhogal","title":"Jersey royals with sticky caramel Sichuan peppercorn sauce, peanuts and sesame seeds"},
@@ -325,7 +327,7 @@
     {"file":"Yotam Ottolenghi - Adjaruli khachapuri with aleppo chilli and spring onion butter.html","img":"Images/adjaruli-khachapuri-with-aleppo-chilli-and-spring-onion-butter.jpeg","author":"Yotam Ottolenghi","title":"Adjaruli khachapuri with aleppo chilli and spring onion butter"},
     {"file":"Yotam Ottolenghi - Aligot with roast winter vegetables and chermoula.html","img":"Images/aligot-with-roast-winter-vegetables-and-chermoula.jpeg","author":"Yotam Ottolenghi","title":"Aligot with roast winter vegetables and chermoula"},
     {"file":"Yotam Ottolenghi - Allspice chicken and rice with dill and yoghurt.html","img":"Images/allspice-chicken-and-rice-with-dill-and-yoghurt.jpeg","author":"Yotam Ottolenghi","title":"Allspice chicken and rice with dill and yoghurt"},
-    {"file":"Yotam Ottolenghi - Aubergine and ricotta dumplings in tomato sauce.html","img":"Images/aubergine-and-ricotta-dumplings-in-tomato-sauce.jpeg","author":"Yotam Ottolenghi","title":"Aubergine and ricotta dumplings in tomato sauce"},
+    {"file":"Yotam Ottolenghi - Aubergine and ricotta dumplings in tomato sauce.html","img":"Images/aubergine-and-ricotta-dumplings-in-tomato-sauce.jpeg","author":"Yotam Ottolenghi","title":"Aubergine and ricotta dumplings in tomato sauce","pick":true},
     {"file":"Yotam Ottolenghi - Aubergine and tomato salad with feta cream and oregano.html","img":"Images/aubergine-and-tomato-salad-with-feta-cream-and-oregano.jpeg","author":"Yotam Ottolenghi","title":"Aubergine and tomato salad with feta cream and oregano"},
     {"file":"Yotam Ottolenghi - Avgolemono soup with fennel and dill oil.html","img":"Images/avgolemono-soup-with-fennel-and-dill-oil.jpeg","author":"Yotam Ottolenghi","title":"Avgolemono soup with fennel and dill oil"},
     {"file":"Yotam Ottolenghi - Baked cauliflower with spices, spinach and tomato.html","img":"Images/baked-cauliflower-with-spices-spinach-and-tomato.jpeg","author":"Yotam Ottolenghi","title":"Baked cauliflower with spices, spinach and tomato"},
@@ -341,7 +343,7 @@
     {"file":"Yotam Ottolenghi - Chilli chicken with cinnamon and spinach.html","img":"Images/chilli-chicken-with-cinnamon-and-spinach.jpeg","author":"Yotam Ottolenghi","title":"Chilli chicken with cinnamon and spinach"},
     {"file":"Yotam Ottolenghi - Chipotle braised mushrooms.html","img":"Images/chipotle-braised-mushrooms.jpeg","author":"Yotam Ottolenghi","title":"Chipotle braised mushrooms"},
     {"file":"Yotam Ottolenghi - Chipotle, celeriac and tomato traybake.html","img":"Images/chipotle-celeriac-and-tomato-traybake.jpeg","author":"Yotam Ottolenghi","title":"Chipotle, celeriac and tomato traybake"},
-    {"file":"Yotam Ottolenghi - Chipotle-Roasted Chicken with Plum and Tarragon Salad.html","img":"Images/chipotle-roasted-chicken-with-plum-and-tarragon-salad.png","author":"Yotam Ottolenghi","title":"Chipotle-Roasted Chicken with Plum and Tarragon Salad"},
+    {"file":"Yotam Ottolenghi - Chipotle-Roasted Chicken with Plum and Tarragon Salad.html","img":"Images/chipotle-roasted-chicken-with-plum-and-tarragon-salad.png","author":"Yotam Ottolenghi","title":"Chipotle-Roasted Chicken with Plum and Tarragon Salad","pick":true},
     {"file":"Yotam Ottolenghi - Coconut greens with Scotch bonnet and eggs.html","img":"Images/coconut-greens-with-scotch-bonnet-and-eggs.jpeg","author":"Yotam Ottolenghi","title":"Coconut greens with Scotch bonnet and eggs"},
     {"file":"Yotam Ottolenghi - Coconut rice with peanut crunch.html","img":"Images/coconut-rice-with-peanut-crunch.jpeg","author":"Yotam Ottolenghi","title":"Coconut rice with peanut crunch"},
     {"file":"Yotam Ottolenghi - Coffee-marinated pork chops with white bean mash and kiwi salsa.html","img":"Images/coffee-marinated-pork-chops-with-white-bean-mash-and-kiwi-salsa.jpeg","author":"Yotam Ottolenghi","title":"Coffee-marinated pork chops with white bean mash and kiwi salsa"},
@@ -349,14 +351,14 @@
     {"file":"Yotam Ottolenghi - Cranberry-glazed spatchcocked duck.html","img":"Images/cranberry-glazed-spatchcocked-duck.jpeg","author":"Yotam Ottolenghi","title":"Cranberry-glazed spatchcocked duck"},
     {"file":"Yotam Ottolenghi - Creamy green peppers with jalapeño salsa.html","img":"Images/creamy-green-peppers-with-jalape-o-salsa.png","author":"Yotam Ottolenghi","title":"Creamy green peppers with jalapeño salsa"},
     {"file":"Yotam Ottolenghi - Creamy leeks and butter beans with za’atar breadcrumbs.html","img":"Images/creamy-leeks-and-butter-beans-with-za-atar-breadcrumbs.jpeg","author":"Yotam Ottolenghi","title":"Creamy leeks and butter beans with za’atar breadcrumbs"},
-    {"file":"Yotam Ottolenghi - Cucumber and berry salad with urfa and sesame.html","img":"Images/cucumber-and-berry-salad-with-urfa-and-sesame.jpeg","author":"Yotam Ottolenghi","title":"Cucumber and berry salad with urfa and sesame"},
+    {"file":"Yotam Ottolenghi - Cucumber and berry salad with urfa and sesame.html","img":"Images/cucumber-and-berry-salad-with-urfa-and-sesame.jpeg","author":"Yotam Ottolenghi","title":"Cucumber and berry salad with urfa and sesame","pick":true},
     {"file":"Yotam Ottolenghi - Cucumber crunch salad with curried cashews.html","img":"Images/cucumber-crunch-salad-with-curried-cashews.jpeg","author":"Yotam Ottolenghi","title":"Cucumber crunch salad with curried cashews"},
     {"file":"Yotam Ottolenghi - Durban bunny chow.html","img":"Images/durban-bunny-chow.jpeg","author":"Yotam Ottolenghi","title":"Durban bunny chow"},
     {"file":"Yotam Ottolenghi - Feta-stuffed koftas with grilled peppers.html","img":"Images/feta-stuffed-koftas-with-grilled-peppers.jpeg","author":"Yotam Ottolenghi","title":"Feta-stuffed koftas with grilled peppers"},
     {"file":"Yotam Ottolenghi - Four-allium baked rice.html","img":"Images/four-allium-baked-rice.jpeg","author":"Yotam Ottolenghi","title":"Four-allium baked rice"},
     {"file":"Yotam Ottolenghi - Ginataang kalabasa with ginger and prawn oil.html","img":"Images/ginataang-kalabasa-with-ginger-and-prawn-oil.jpeg","author":"Yotam Ottolenghi","title":"Ginataang kalabasa with ginger and prawn oil"},
     {"file":"Yotam Ottolenghi - Grilled lettuce with orange, almond and feta.html","img":"Images/grilled-lettuce-with-orange-almond-and-feta.jpeg","author":"Yotam Ottolenghi","title":"Grilled lettuce with orange, almond and feta"},
-    {"file":"Yotam Ottolenghi - Harissa vinegar chicken with chicory.html","img":"Images/harissa-vinegar-chicken-with-chicory.jpeg","author":"Yotam Ottolenghi","title":"Harissa vinegar chicken with chicory"},
+    {"file":"Yotam Ottolenghi - Harissa vinegar chicken with chicory.html","img":"Images/harissa-vinegar-chicken-with-chicory.jpeg","author":"Yotam Ottolenghi","title":"Harissa vinegar chicken with chicory","pick":true},
     {"file":"Yotam Ottolenghi - Herby cabbage and potato gratin with gruyère and ricotta.html","img":"Images/herby-cabbage-and-potato-gratin-with-gruy-re-and-ricotta.jpeg","author":"Yotam Ottolenghi","title":"Herby cabbage and potato gratin with gruyère and ricotta"},
     {"file":"Yotam Ottolenghi - Herby cabbage pudding with feta.html","img":"Images/herby-cabbage-pudding-with-feta.jpeg","author":"Yotam Ottolenghi","title":"Herby cabbage pudding with feta"},
     {"file":"Yotam Ottolenghi - Hünkar begendi.html","img":"Images/h-nkar-begendi.jpeg","author":"Yotam Ottolenghi","title":"Hünkar begendi"},
@@ -383,7 +385,7 @@
     {"file":"Yotam Ottolenghi - Roast chicken with tomatoes, bread and herbs.html","img":"Images/roast-chicken-with-tomatoes-bread-and-herbs.jpeg","author":"Yotam Ottolenghi","title":"Roast chicken with tomatoes, bread and herbs"},
     {"file":"Yotam Ottolenghi - Roast leeks with beetroot tahini and hazelnut salsa.html","img":"Images/roast-leeks-with-beetroot-tahini-and-hazelnut-salsa.jpeg","author":"Yotam Ottolenghi","title":"Roast leeks with beetroot tahini and hazelnut salsa"},
     {"file":"Yotam Ottolenghi - Roast pork belly with apple, soy and ginger.html","img":"Images/roast-pork-belly-with-apple-soy-and-ginger.jpeg","author":"Yotam Ottolenghi","title":"Roast pork belly with apple, soy and ginger"},
-    {"file":"Yotam Ottolenghi - Roast pork tenderloin with cherry and chipotle salsa.html","img":"Images/roast-pork-tenderloin-with-cherry-and-chipotle-salsa.jpeg","author":"Yotam Ottolenghi","title":"Roast pork tenderloin with cherry and chipotle salsa"},
+    {"file":"Yotam Ottolenghi - Roast pork tenderloin with cherry and chipotle salsa.html","img":"Images/roast-pork-tenderloin-with-cherry-and-chipotle-salsa.jpeg","author":"Yotam Ottolenghi","title":"Roast pork tenderloin with cherry and chipotle salsa","pick":true},
     {"file":"Yotam Ottolenghi - Roast red pepper salad with anchovies and almonds.html","img":"Images/roast-red-pepper-salad-with-anchovies-and-almonds.jpeg","author":"Yotam Ottolenghi","title":"Roast red pepper salad with anchovies and almonds"},
     {"file":"Yotam Ottolenghi - Roast Tenderstem broccoli with cherry and ancho ezme.html","img":"Images/roast-tenderstem-broccoli-with-cherry-and-ancho-ezme.jpeg","author":"Yotam Ottolenghi","title":"Roast Tenderstem broccoli with cherry and ancho ezme"},
     {"file":"Yotam Ottolenghi - Rum and currant dumplings with speculaas caramel.html","img":"Images/rum-and-currant-dumplings-with-speculaas-caramel.jpeg","author":"Yotam Ottolenghi","title":"Rum and currant dumplings with speculaas caramel"},
@@ -392,6 +394,7 @@
     {"file":"Yotam Ottolenghi - Slow-Cooked Hake in Cascabel Oil with Corn Tortillas.html","img":"Images/slow-cooked-hake-in-cascabel-oil-with-corn-tortillas.png","author":"Yotam Ottolenghi","title":"Slow-Cooked Hake in Cascabel Oil with Corn Tortillas"},
     {"file":"Yotam Ottolenghi - Spicy chipotle chicken with black-eyed bean salsa.html","img":"Images/spicy-chipotle-chicken-with-black-eyed-bean-salsa.png","author":"Yotam Ottolenghi","title":"Spicy chipotle chicken with black-eyed bean salsa"},
     {"file":"Yotam Ottolenghi - Spicy lamb and potato enchiladas.html","img":"Images/spicy-lamb-and-potato-enchiladas.jpeg","author":"Yotam Ottolenghi","title":"Spicy lamb and potato enchiladas"},
+    {"file":"Yotam Ottolenghi - Stuffed aubergine with lamb & pine nuts.html","img":"Images/stuffed-aubergine-with-lamb-pine-nuts.jpg","author":"Yotam Ottolenghi","title":"Stuffed aubergine with lamb & pine nuts","pick":true},
     {"file":"Yotam Ottolenghi - Swede gnocchi with miso butter and morning glory.html","img":"Images/swede-gnocchi-with-miso-butter-and-morning-glory.jpeg","author":"Yotam Ottolenghi","title":"Swede gnocchi with miso butter and morning glory"},
     {"file":"Yotam Ottolenghi - Sweet and smoky Mexican inspired chicken.html","img":"Images/sweet-and-smoky-mexican-inspired-chicken.png","author":"Yotam Ottolenghi","title":"Sweet and smoky Mexican inspired chicken"},
     {"file":"Yotam Ottolenghi - Tahini and halva brownies.html","img":"Images/tahini-and-halva-brownies.jpeg","author":"Yotam Ottolenghi","title":"Tahini and halva brownies"},
@@ -400,7 +403,7 @@
     {"file":"Yotam Ottolenghi - Tuna meatloaf.html","img":"Images/tuna-meatloaf.jpeg","author":"Yotam Ottolenghi","title":"Tuna meatloaf"},
     {"file":"Yotam Ottolenghi - Warm tomato salad.html","img":"Images/warm-tomato-salad.jpeg","author":"Yotam Ottolenghi","title":"Warm tomato salad"},
     {"file":"Yotam Ottolenghi - Yaji-spiced spatchcocked chicken with parsnips.html","img":"Images/yaji-spiced-spatchcocked-chicken-with-parsnips.jpeg","author":"Yotam Ottolenghi","title":"Yaji-spiced spatchcocked chicken with parsnips"},
-    {"file":"Yotam Ottolenghi - Zaatar Salmon Baked in Tahini.html","img":"Images/za-atar-salmon-baked-in-tahini.jpeg","author":"Yotam Ottolenghi","title":"Zaatar Salmon Baked in Tahini"}
+    {"file":"Yotam Ottolenghi - Zaatar Salmon Baked in Tahini.html","img":"Images/za-atar-salmon-baked-in-tahini.jpeg","author":"Yotam Ottolenghi","title":"Zaatar Salmon Baked in Tahini","pick":true}
   ];
 
   const grid = document.getElementById('grid');
@@ -408,22 +411,27 @@
   const countEl = document.getElementById('count');
   const subtitle = document.getElementById('subtitle');
   const searchInput = document.getElementById('search');
-  const authorFiltersEl = document.getElementById('authorFilters');
+  const authorSelect = document.getElementById('authorSelect');
 
   subtitle.textContent = RECIPES.length + ' recipes, ready to cook';
 
-  const authors = Array.from(new Set(RECIPES.map(r => r.author))).sort();
+  const authors = Array.from(new Set(RECIPES.map(r => r.author))).sort((a, b) => a.localeCompare(b));
   let activeAuthor = 'All';
 
   // Favourites: shared with the recipe pages via one localStorage key of file names.
   const FAV_KEY = 'recipe-favourites';
-  const FAV_ONLY_KEY = 'recipe-fav-only';
+  const VIEW_KEY = 'recipe-view';
   const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></svg>';
   const favToggleEl = document.getElementById('favToggle');
   const favCountEl = document.getElementById('favCount');
   let favs = loadFavs();
-  let favOnly = false;
-  try { favOnly = localStorage.getItem(FAV_ONLY_KEY) === '1'; } catch (e) {}
+  const pickCountEl = document.getElementById('pickCount');
+  // View: 'all', 'fav' (your stars) or 'picks' (Al's Picks, set by the pick flag in RECIPES).
+  let view = 'all';
+  try {
+    const v = localStorage.getItem(VIEW_KEY);
+    if (v === 'fav' || v === 'picks') view = v;
+  } catch (e) {}
 
   function loadFavs() {
     try {
@@ -447,10 +455,11 @@
 
   function renderFavToggle() {
     for (const b of favToggleEl.querySelectorAll('button')) {
-      b.classList.toggle('active', (b.dataset.fav === '1') === favOnly);
+      b.classList.toggle('active', b.dataset.view === view);
     }
     const n = RECIPES.filter(isFav).length;
     favCountEl.textContent = n ? '(' + n + ')' : '';
+    pickCountEl.textContent = '(' + RECIPES.filter(r => r.pick).length + ')';
   }
 
   function encodePath(path) {
@@ -472,8 +481,8 @@
     const filtered = RECIPES.filter(r => {
       const matchesAuthor = activeAuthor === 'All' || r.author === activeAuthor;
       const matchesQuery = !q || r.title.toLowerCase().includes(q) || r.author.toLowerCase().includes(q);
-      const matchesFav = !favOnly || isFav(r);
-      return matchesAuthor && matchesQuery && matchesFav;
+      const matchesView = view === 'all' || (view === 'fav' ? isFav(r) : !!r.pick);
+      return matchesAuthor && matchesQuery && matchesView;
     });
 
     countEl.textContent = filtered.length === RECIPES.length
@@ -482,7 +491,7 @@
 
     grid.innerHTML = '';
     empty.style.display = filtered.length ? 'none' : 'block';
-    empty.textContent = favOnly && !RECIPES.some(isFav)
+    empty.textContent = view === 'fav' && !RECIPES.some(isFav)
       ? 'No favourites yet. Tap the ☆ on a recipe to add it.'
       : 'No recipes match your search.';
     renderFavToggle();
@@ -531,7 +540,7 @@
         const key = r.file.normalize('NFC');
         if (favs.has(key)) favs.delete(key); else favs.add(key);
         saveFavs();
-        if (favOnly) render();
+        if (view === 'fav') render();
         else { setFavButton(fav, favs.has(key), r.title); renderFavToggle(); }
       });
 
@@ -542,28 +551,26 @@
   }
 
   function renderFilters() {
-    authorFiltersEl.innerHTML = '';
-    const all = ['All', ...authors];
-    for (const author of all) {
-      const chip = document.createElement('button');
-      chip.className = 'chip' + (author === activeAuthor ? ' active' : '');
-      chip.textContent = author;
-      chip.addEventListener('click', () => {
-        activeAuthor = author;
-        renderFilters();
-        render();
-      });
-      authorFiltersEl.appendChild(chip);
+    for (const author of ['All', ...authors]) {
+      const opt = document.createElement('option');
+      opt.value = opt.textContent = author;
+      authorSelect.appendChild(opt);
     }
+    authorSelect.value = activeAuthor;
   }
+
+  authorSelect.addEventListener('change', () => {
+    activeAuthor = authorSelect.value;
+    render();
+  });
 
   searchInput.addEventListener('input', render);
 
   favToggleEl.addEventListener('click', e => {
     const b = e.target.closest('button');
     if (!b) return;
-    favOnly = b.dataset.fav === '1';
-    try { localStorage.setItem(FAV_ONLY_KEY, favOnly ? '1' : '0'); } catch (e) {}
+    view = b.dataset.view;
+    try { localStorage.setItem(VIEW_KEY, view); } catch (e) {}
     render();
   });
 
