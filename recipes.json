@@ -1,8 +1,8 @@
 {
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
- "generated": "2026-10-03",
- "count": 149,
+ "generated": "2026-10-17",
+ "count": 151,
  "authors": [
   "Andrèa Fedder",
   "Asma Khan",
@@ -2226,6 +2226,59 @@
    "source": "Ottolenghi - Cucumber Salad.pdf"
   },
   {
+   "title": "Fried aubergines with zhoug and date molasses",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Fried%20aubergines%20with%20zhoug%20and%20date%20molasses.html",
+   "file": "Yotam Ottolenghi - Fried aubergines with zhoug and date molasses.html",
+   "image": "https://alastairknight.github.io/recipes/Images/fried-aubergines-with-zhoug-and-date-molasses.jpg",
+   "chips": {
+    "Prep": "20 min",
+    "Cook": "50 min",
+    "Serves": "4 as a side"
+   },
+   "lede": "Salting aubergines isn’t necessary for most preparations, but when you fry them, as done here, extracting some of the water with salt really helps the process. They go soft and deeply golden, then topped with zhoug (a Yemeni green chilli and herb sauce), tahini and a drizzle of date molasses. Serve them as they are or give them a rough smoosh with a fork first to make a dip. The zhoug makes more than you need, which is no bad thing as it keeps in the fridge for up to a week. Eggs, roast vegetables, grilled meat - they all get a nice lift from zhoug.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "2 large aubergines (800g)",
+      "135ml rapeseed oil (or other neutral oil)"
+     ]
+    },
+    {
+     "heading": "Zhoug",
+     "items": [
+      "70ml rapeseed oil (or other neutral oil)",
+      "2 green chillies (deseeded if you like less heat)",
+      "70g coriander, roughly chopped",
+      "20g parsley, roughly chopped",
+      "1 tsp ground cumin",
+      "1/8 tsp ground cardamom",
+      "A pinch of clove",
+      "½ tsp sugar",
+      "2 tbsp lemon juice"
+     ]
+    },
+    {
+     "heading": "To serve",
+     "items": [
+      "2 tbsp tahini",
+      "2 tsp date molasses",
+      "Fine sea salt"
+     ]
+    }
+   ],
+   "method": [
+    "Top and tail the aubergines and using a peeler, remove alternating strips of skin and cut into 2 cm thick rounds. Place in a large bowl, mix well with 1 teaspoon of salt, set aside for 30 minutes then pat dry with a kitchen cloth.",
+    "Heat 3 tablespoons of oil in a large frying pan on medium high heat. Once hot, add half the aubergines in a single layer and sear for 2-3 minutes on each side, until just starting to colour. Reduce the heat to medium and add another 1½ tablespoons of oil. Cook for 15 to 20 minutes, flipping halfway through, until deeply golden and soft. Transfer to a serving plate and repeat with the remaining aubergines and oil.",
+    "Meanwhile make the zhoug. Add everything, except for the lemon juice, to a food processor along with ¾ teaspoon of salt and blitz until almost fine but with some texture. Transfer to a bowl and stir in the lemon juice.",
+    "To assemble, spoon 3 tablespoons of the Zhoug over the aubergines. Drizzle over the tahini, followed by the molasses and serve."
+   ],
+   "notes": [],
+   "source": "https://ottolenghi.co.uk/pages/recipes/fried-aubergines-zhoug-date-molasses?utm_source=substack&utm_medium=email"
+  },
+  {
    "title": "Lamb and feta meatballs",
    "author": "Yotam Ottolenghi",
    "byline": "Yotam Ottolenghi",
@@ -2336,6 +2389,48 @@
    ],
    "notes": [],
    "source": "Yotam Ottolenghi - Oven chips with oregano and feta.pdf"
+  },
+  {
+   "title": "Pickled aubergine salad with sumac and almonds",
+   "author": "Yotam Ottolenghi",
+   "byline": "Yotam Ottolenghi",
+   "url": "https://alastairknight.github.io/recipes/Yotam%20Ottolenghi%20-%20Pickled%20aubergine%20salad%20with%20sumac%20and%20almonds.html",
+   "file": "Yotam Ottolenghi - Pickled aubergine salad with sumac and almonds.html",
+   "image": "https://alastairknight.github.io/recipes/Images/pickled-aubergine-salad-with-sumac-and-almonds.jpg",
+   "chips": {
+    "Prep": "15 min",
+    "Cook": "35 min",
+    "Serves": "4-6 as a side"
+   },
+   "lede": "If you peel the aubergines in alternating strips you end up with zebra stripes. The skin helps the wedges hold their shape in the oven, while the bare stripes soak up the dressing of red wine vinegar, maple syrup and garlic. Leave them for 30 minutes and the flavour turns truly pickled, so it's worth making ahead. It’s still delicious served warm, though, or at room temperature as a side, or stuff into sandwiches with yoghurt and a handful of crushed almonds.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "3-4 aubergines (1.2kg)",
+      "105ml olive oil",
+      "3 tbsp red wine vinegar",
+      "1 tbsp lemon juice",
+      "4 garlic cloves, finely chopped",
+      "2 tbsp maple syrup",
+      "30g coriander, leaves picked and stalks finely chopped",
+      "1 small red onion, thinly sliced and soaked in cold water",
+      "30g skin-on almonds, roughly crushed",
+      "1 tsp sumac (optional)",
+      "Fine sea salt and black pepper"
+     ]
+    }
+   ],
+   "method": [
+    "Preheat the oven to 230°C.",
+    "Trim the stalks from the aubergines. Using a vegetable peeler, remove alternating strips of skin. Cut each aubergine in half lengthways, then cut each half into three long wedges.",
+    "Place the aubergine wedges on a large parchment-lined baking tray. Add 60ml of the oil, 1¼ teaspoons of salt and a generous grind of black pepper. Toss well to coat, then spread out in a single layer. Roast for about 35 minutes, or until deeply golden and tender.",
+    "Meanwhile, make the dressing. Whisk the remaining 45ml of olive oil with the vinegar, lemon juice, garlic, maple syrup, coriander stalks and ¼ teaspoon of salt in a large bowl.",
+    "Drain the soaked onion well and pat dry. Add it to the bowl along with the roasted aubergines, coriander leaves and almonds. Gently toss everything together until evenly coated, taking care not to break up the aubergines.",
+    "Transfer to a serving platter, sprinkle with the sumac, if using, and serve warm or at room temperature."
+   ],
+   "notes": [],
+   "source": "https://ottolenghi.co.uk/pages/recipes/pickled-aubergine-salad-sumac-almonds?utm_source=substack&utm_medium=email"
   },
   {
    "title": "Ricotta and oregano meatballs",
