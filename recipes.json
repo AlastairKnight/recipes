@@ -1,8 +1,8 @@
 {
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
- "generated": "2026-10-17",
- "count": 151,
+ "generated": "2026-10-31",
+ "count": 152,
  "authors": [
   "Andrèa Fedder",
   "Asma Khan",
@@ -21,6 +21,7 @@
   "Rachel Roddy",
   "Ravinder Bhogal",
   "Sami Tamimi",
+  "Silwood School of Cookery",
   "Thomasina Miers",
   "Tom Hunt",
   "Tom Kitchin",
@@ -1936,6 +1937,53 @@
    ],
    "notes": [],
    "source": "https://www.theguardian.com/food/2025/may/10/slow-roast-pork-belly-with-spring-onion-mojo-verde-recipe-jose-pizarro?CMP=Share_AndroidApp_Other"
+  },
+  {
+   "title": "Beef Curry",
+   "author": "Silwood School of Cookery",
+   "byline": "Silwood School of Cookery",
+   "url": "https://alastairknight.github.io/recipes/Silwood%20School%20of%20Cookery%20-%20Beef%20Curry.html",
+   "file": "Silwood School of Cookery - Beef Curry.html",
+   "image": null,
+   "chips": {
+    "Serves": "4-5"
+   },
+   "lede": "A pressure cooker beef curry. Serve over basmati rice.",
+   "ingredients": [
+    {
+     "heading": null,
+     "items": [
+      "1 onion, chopped",
+      "oil, for frying",
+      "1kg beef cubes",
+      "10ml coriander, ground",
+      "5ml cumin, ground",
+      "10ml ground chilli or peri-peri",
+      "2ml Chinese 5 spice",
+      "5ml turmeric",
+      "5ml ground cinnamon",
+      "seeds from 4 cardamom pods",
+      "2 cinnamon sticks",
+      "3 cloves",
+      "125ml water",
+      "1 tin tomatoes, chopped",
+      "1 tin (400g) coconut cream",
+      "20ml cornflour slaked in 35ml water",
+      "juice from a lemon",
+      "salt, pepper and sugar to taste"
+     ]
+    }
+   ],
+   "method": [
+    "Select Browning and sauté the onion in oil, add meat and allow to brown.",
+    "Add coriander, cumin, chilli, Chinese 5-spice, turmeric and ground cinnamon. Select Sauté and sauté for 30 seconds.",
+    "Add cinnamon sticks, cardamom and whole cloves. Add water, coconut, tomatoes. Select High Pressure and set the timer for 35 minutes. When audible beep sounds, use Quick Pressure Release to release pressure. When the float valve drops, turn the pressure cooker off. Remove the lid carefully, tilting away from you to allow steam to disperse. The meat should be very tender.",
+    "Add the slaked cornflour. Select Sauté and simmer for 3-4 minutes until thick. Season with lemon juice, salt, pepper and sugar."
+   ],
+   "notes": [
+    "Serve over basmati rice."
+   ],
+   "source": "IMG_20261031_142751.jpg"
   },
   {
    "title": "5-spice peach and raspberry salad",
