@@ -1,7 +1,7 @@
 {
  "name": "Recipe Box",
  "site": "https://alastairknight.github.io/recipes/",
- "generated": "2026-10-31",
+ "generated": "2026-11-01",
  "count": 152,
  "authors": [
   "Andrèa Fedder",
@@ -1944,7 +1944,7 @@
    "byline": "Silwood School of Cookery",
    "url": "https://alastairknight.github.io/recipes/Silwood%20School%20of%20Cookery%20-%20Beef%20Curry.html",
    "file": "Silwood School of Cookery - Beef Curry.html",
-   "image": null,
+   "image": "https://alastairknight.github.io/recipes/Images/beef-curry.jpg",
    "chips": {
     "Serves": "4-5"
    },
